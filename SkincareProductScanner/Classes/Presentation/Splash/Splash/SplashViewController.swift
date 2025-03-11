@@ -62,7 +62,7 @@ extension SplashViewController {
 private extension SplashViewController {
     func route(_ route: SplashViewModel.Route) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
-            self?.goNext(route)
+            self?.goNext(route) 
         }
     }
     

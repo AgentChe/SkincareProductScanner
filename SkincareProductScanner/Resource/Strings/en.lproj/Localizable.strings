@@ -44,3 +44,6 @@
 "Paygate.PrivacyPolicy" = "Privacy Policy";
 "Paygate.RestorePurchases" = "Restore Purchases";
 "Paygate.BestOffer" = "⭐ Best Offer";
+
+// MARK: Splash
+"Splash.Title" = "‍Skincare\nProduct Scanner.";

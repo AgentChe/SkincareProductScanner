@@ -9,7 +9,9 @@ import UIKit
 
 final class SplashView: UIView {
     lazy var imageView = makeImageView()
-    lazy var preloader = makePreloader()
+    lazy var titleLabel = makeTitleLabel()
+    lazy var spinnerContainer = makeSpinnerContainer()
+    lazy var spinner = makeSpinner()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,17 +35,28 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 230.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 97.scale)
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            preloader.widthAnchor.constraint(equalToConstant: 24.scale),
-            preloader.heightAnchor.constraint(equalToConstant: 24.scale),
-            preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
-            preloader.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -33.scale)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 164.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            spinnerContainer.widthAnchor.constraint(equalToConstant: 64.scale),
+            spinnerContainer.heightAnchor.constraint(equalToConstant: 64.scale),
+            spinnerContainer.centerXAnchor.constraint(equalTo: centerXAnchor),
+            spinnerContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -127.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: spinnerContainer.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: spinnerContainer.centerYAnchor)
         ])
     }
 }
@@ -60,13 +73,36 @@ private extension SplashView {
         return view
     }
     
-    func makePreloader() -> UIActivityIndicatorView {
-        let view = UIActivityIndicatorView()
-        view.style = .medium
-        view.startAnimating()
-        view.color = Appearance.mono200
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.mono200)
+            .font(Fonts.Outfit.bold(size: 38.scale))
+            .lineHeight(48.scale)
+            .textAlignment(.left)
+        
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.attributedText = "Splash.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
+        return view
+    }
+    
+    func makeSpinnerContainer() -> UIView {
+        let view = UIView()
+        view.backgroundColor = Appearance.mono100
+        view.layer.cornerRadius = 32.scale
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSpinner() -> Spinner {
+        let view = Spinner()
+        view.startAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        spinnerContainer.addSubview(view)
         return view
     }
 }

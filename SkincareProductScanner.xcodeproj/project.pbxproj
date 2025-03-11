@@ -99,6 +99,7 @@
 		DE0AC2112D804347001C7664 /* OutfitRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0AC2102D804347001C7664 /* OutfitRegular.ttf */; };
 		DE0AC2132D80434D001C7664 /* OutfitSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0AC2122D80434D001C7664 /* OutfitSemiBold.ttf */; };
 		DE0AC2172D804BAE001C7664 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2162D804BAE001C7664 /* RequestResult.swift */; };
+		DE0AC2192D80607A001C7664 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2182D80607A001C7664 /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +198,7 @@
 		DE0AC2102D804347001C7664 /* OutfitRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OutfitRegular.ttf; sourceTree = "<group>"; };
 		DE0AC2122D80434D001C7664 /* OutfitSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OutfitSemiBold.ttf; sourceTree = "<group>"; };
 		DE0AC2162D804BAE001C7664 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		DE0AC2182D80607A001C7664 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		E60E243E07AB42DCED2DDA56 /* Pods-SkincareProductScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.release.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -306,6 +308,7 @@
 				DE0ABE7C2D803026001C7664 /* PaddingLabel.swift */,
 				DE0ABE7D2D803026001C7664 /* PaddingTextField.swift */,
 				DE0ABE7E2D803026001C7664 /* TapAreaButton.swift */,
+				DE0AC2182D80607A001C7664 /* Spinner.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -505,9 +508,9 @@
 			isa = PBXGroup;
 			children = (
 				DE0AC0082D803026001C7664 /* Utils */,
-				DE0AC0092D803026001C7664 /* SplashView.swift */,
 				DE0AC00A2D803026001C7664 /* SplashViewController.swift */,
 				DE0AC00B2D803026001C7664 /* SplashViewModel.swift */,
+				DE0AC0092D803026001C7664 /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				DE0AC16C2D803026001C7664 /* TapAreaButton.swift in Sources */,
 				DE0AC1712D803026001C7664 /* SignError.swift in Sources */,
 				DE0AC1722D803026001C7664 /* TextAttributes.swift in Sources */,
+				DE0AC2192D80607A001C7664 /* Spinner.swift in Sources */,
 				DE0AC17A2D803026001C7664 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE0AC17D2D803026001C7664 /* IAPErrorHelper.swift in Sources */,
 				DE0AC1832D803026001C7664 /* Appearance.swift in Sources */,
