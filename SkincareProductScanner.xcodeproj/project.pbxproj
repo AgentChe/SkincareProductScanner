@@ -100,6 +100,13 @@
 		DE0AC2132D80434D001C7664 /* OutfitSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0AC2122D80434D001C7664 /* OutfitSemiBold.ttf */; };
 		DE0AC2172D804BAE001C7664 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2162D804BAE001C7664 /* RequestResult.swift */; };
 		DE0AC2192D80607A001C7664 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2182D80607A001C7664 /* Spinner.swift */; };
+		DE0AC21F2D80752B001C7664 /* SkinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC21E2D80752B001C7664 /* SkinType.swift */; };
+		DE0AC2212D807676001C7664 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2202D807676001C7664 /* Goal.swift */; };
+		DE0AC2232D8076B1001C7664 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2222D8076B1001C7664 /* Preference.swift */; };
+		DE0AC2252D807708001C7664 /* ObtainSkinTypesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2242D807708001C7664 /* ObtainSkinTypesRequest.swift */; };
+		DE0AC2272D807735001C7664 /* ObtainGoalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2262D807735001C7664 /* ObtainGoalsRequest.swift */; };
+		DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2282D80774B001C7664 /* ObtainPreferencesRequest.swift */; };
+		DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC22A2D807795001C7664 /* DiscoveryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +206,13 @@
 		DE0AC2122D80434D001C7664 /* OutfitSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OutfitSemiBold.ttf; sourceTree = "<group>"; };
 		DE0AC2162D804BAE001C7664 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		DE0AC2182D80607A001C7664 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		DE0AC21E2D80752B001C7664 /* SkinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinType.swift; sourceTree = "<group>"; };
+		DE0AC2202D807676001C7664 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		DE0AC2222D8076B1001C7664 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		DE0AC2242D807708001C7664 /* ObtainSkinTypesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainSkinTypesRequest.swift; sourceTree = "<group>"; };
+		DE0AC2262D807735001C7664 /* ObtainGoalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainGoalsRequest.swift; sourceTree = "<group>"; };
+		DE0AC2282D80774B001C7664 /* ObtainPreferencesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainPreferencesRequest.swift; sourceTree = "<group>"; };
+		DE0AC22A2D807795001C7664 /* DiscoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryManager.swift; sourceTree = "<group>"; };
 		E60E243E07AB42DCED2DDA56 /* Pods-SkincareProductScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.release.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -664,7 +678,9 @@
 		DE0AC2142D804B9E001C7664 /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AC21D2D8074F0001C7664 /* Model */,
 				DE0AC2152D804BA5001C7664 /* Request */,
+				DE0AC22A2D807795001C7664 /* DiscoveryManager.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -673,8 +689,21 @@
 			isa = PBXGroup;
 			children = (
 				DE0AC2162D804BAE001C7664 /* RequestResult.swift */,
+				DE0AC2242D807708001C7664 /* ObtainSkinTypesRequest.swift */,
+				DE0AC2262D807735001C7664 /* ObtainGoalsRequest.swift */,
+				DE0AC2282D80774B001C7664 /* ObtainPreferencesRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		DE0AC21D2D8074F0001C7664 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AC21E2D80752B001C7664 /* SkinType.swift */,
+				DE0AC2202D807676001C7664 /* Goal.swift */,
+				DE0AC2222D8076B1001C7664 /* Preference.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -804,6 +833,7 @@
 				DE0AC0AC2D803026001C7664 /* PushNotificationsModel.swift in Sources */,
 				DE0AC0AE2D803026001C7664 /* ObtainProfileRequest.swift in Sources */,
 				DE0AC0BB2D803026001C7664 /* UIDevice+Extension.swift in Sources */,
+				DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */,
 				DE0AC0BF2D803026001C7664 /* PaygateBestOfferView.swift in Sources */,
 				DE0AC0C42D803026001C7664 /* APIFormDataRequestBody.swift in Sources */,
 				DE0AC0CE2D803026001C7664 /* ProfileMediator.swift in Sources */,
@@ -815,7 +845,9 @@
 				DE0AC0F12D803026001C7664 /* APIRequestBody.swift in Sources */,
 				DE0AC0F32D803026001C7664 /* PaddingLabel.swift in Sources */,
 				DE0AC0F42D803026001C7664 /* NumberLaunches.swift in Sources */,
+				DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */,
 				DE0AC0F92D803026001C7664 /* SplashViewModel.swift in Sources */,
+				DE0AC2232D8076B1001C7664 /* Preference.swift in Sources */,
 				DE0AC0FB2D803026001C7664 /* PaygateInfoCell.swift in Sources */,
 				DE0AC1002D803026001C7664 /* UIView+RxExtension.swift in Sources */,
 				DE0AC1012D803026001C7664 /* Currency.swift in Sources */,
@@ -830,11 +862,13 @@
 				DE0AC1252D803026001C7664 /* NavigationController.swift in Sources */,
 				DE0AC1262D803026001C7664 /* ContentError.swift in Sources */,
 				DE0AC1272D803026001C7664 /* TakePhoto.swift in Sources */,
+				DE0AC2272D807735001C7664 /* ObtainGoalsRequest.swift in Sources */,
 				DE0AC1282D803026001C7664 /* OProfileCollector.swift in Sources */,
 				DE0AC1322D803026001C7664 /* AmplitudeManager.swift in Sources */,
 				DE0AC1342D803026001C7664 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DE0AC1392D803026001C7664 /* FirebaseManager.swift in Sources */,
 				DE0AC14D2D803026001C7664 /* PaddingTextField.swift in Sources */,
+				DE0AC2252D807708001C7664 /* ObtainSkinTypesRequest.swift in Sources */,
 				DE0AC14E2D803026001C7664 /* Weak.swift in Sources */,
 				DE0AC14F2D803026001C7664 /* OnboardingView.swift in Sources */,
 				DE0AC1512D803026001C7664 /* TabItemButton.swift in Sources */,
@@ -845,6 +879,7 @@
 				DE0AC1622D803026001C7664 /* SceneDelegate.swift in Sources */,
 				DE0AC1672D803026001C7664 /* ProfileBindingRequest.swift in Sources */,
 				DE0AC1682D803026001C7664 /* IAPError.swift in Sources */,
+				DE0AC2212D807676001C7664 /* Goal.swift in Sources */,
 				DE0AC16A2D803026001C7664 /* IAPManager.swift in Sources */,
 				DE0AC16C2D803026001C7664 /* TapAreaButton.swift in Sources */,
 				DE0AC1712D803026001C7664 /* SignError.swift in Sources */,
@@ -873,6 +908,7 @@
 				DE0AC1CC2D803026001C7664 /* PaygateActionsView.swift in Sources */,
 				DE0AC1CE2D803026001C7664 /* OnboardingViewModel.swift in Sources */,
 				DE0AC1D82D803026001C7664 /* IAPProduct.swift in Sources */,
+				DE0AC21F2D80752B001C7664 /* SkinType.swift in Sources */,
 				DE0AC1DF2D803026001C7664 /* TryAgainView.swift in Sources */,
 				DE0AC1E12D803026001C7664 /* String+Extension.swift in Sources */,
 				DE0AC1E52D803026001C7664 /* NetworkError.swift in Sources */,

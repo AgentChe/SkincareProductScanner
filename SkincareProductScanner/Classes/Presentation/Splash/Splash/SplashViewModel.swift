@@ -17,6 +17,7 @@ final class SplashViewModel {
     
     private lazy var sessionManager = SessionManager()
     private lazy var profileManager = ProfileManager()
+    private lazy var discoveryManager = DiscoveryManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
 }
@@ -66,15 +67,19 @@ private extension SplashViewModel {
                     let profile = profileManager
                         .obtainProfile(forceUpdate: true)
                         .mapToVoid()
+                    let skinTypes = discoveryManager
+                        .obtainSkinTypes(forceUpdate: true)
+                        .mapToVoid()
+                    let goals = discoveryManager
+                        .obtainGoals(forceUpdate: true)
+                        .mapToVoid()
+                    let preferences = discoveryManager
+                        .obtainPreferences(forceUpdate: true)
+                        .mapToVoid()
                     
-                    return profile
-                    
-                    // TODO
-//                    return Single
-//                        .zip(
-//                            profile
-//                        )
-//                        .mapToVoid()
+                    return Single
+                        .zip(profile, skinTypes, goals, preferences)
+                        .mapToVoid()
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {

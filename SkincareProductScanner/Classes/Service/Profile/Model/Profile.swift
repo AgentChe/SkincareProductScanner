@@ -7,19 +7,23 @@
 
 import Foundation
 
-// TODO
 struct Profile {
-    
+    let skinTypesIds: [String]?
+    let goalsIds: [String]?
+    let preferencesIds: [String]?
 }
 
 // MARK: Public
 extension Profile {
+    // TODO
     init?(response: Any) {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any]
         else { return nil }
         
-        
+        self.skinTypesIds = body["skin_types"] as? [String]
+        self.goalsIds = body["goals"] as? [String]
+        self.preferencesIds = body["preferences"] as? [String]
     }
 }

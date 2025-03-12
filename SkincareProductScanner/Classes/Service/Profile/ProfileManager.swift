@@ -8,11 +8,14 @@
 import RxSwift
 import RxCocoa
 
-// TODO
+// TODO: соответствие всех запросов и моделей документации
 protocol ProfileManagerProtocol: AnyObject {
     func create() -> Single<Void>
     func binding() -> Single<Void>
     func setup(profile: Profile) -> Single<RequestResult>
+    func update(skinTypesIds: [String]) -> Single<RequestResult>
+    func update(goalsIds: [String]) -> Single<RequestResult>
+    func update(preferencesIds: [String]) -> Single<RequestResult>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
 }
 
@@ -49,7 +52,10 @@ extension ProfileManager: ProfileManagerProtocol {
     func setup(profile: Profile) -> Single<RequestResult> {
         let request = SetProfileRequest(
             anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId
+            internalId: sessionManager.internalId,
+            skinTypesIds: profile.skinTypesIds,
+            goalsIds: profile.goalsIds,
+            preferencesIds: profile.preferencesIds
         )
         
         return restApiTransport
@@ -62,6 +68,78 @@ extension ProfileManager: ProfileManagerProtocol {
             })
     }
     
+    func update(skinTypesIds: [String]) -> Single<RequestResult> {
+        cachedProfile()
+            .flatMap { [weak self] profile -> Single<RequestResult> in
+                guard let self else { return .never() }
+                
+                let request = SetProfileRequest(
+                    anonymousId: sessionManager.anonymousId,
+                    internalId: sessionManager.internalId,
+                    skinTypesIds: skinTypesIds,
+                    goalsIds: profile.goalsIds,
+                    preferencesIds: profile.preferencesIds
+                )
+                
+                return restApiTransport
+                    .callServerApi(requestBody: request)
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
+                        self?.store(skinTypesIds: skinTypesIds)
+                    })
+            }
+    }
+    
+    func update(goalsIds: [String]) -> Single<RequestResult> {
+        cachedProfile()
+            .flatMap { [weak self] profile -> Single<RequestResult> in
+                guard let self else { return .never() }
+                
+                let request = SetProfileRequest(
+                    anonymousId: sessionManager.anonymousId,
+                    internalId: sessionManager.internalId,
+                    skinTypesIds: profile.skinTypesIds,
+                    goalsIds: goalsIds,
+                    preferencesIds: profile.preferencesIds
+                )
+                
+                return restApiTransport
+                    .callServerApi(requestBody: request)
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
+                        self?.store(goalsIds: goalsIds)
+                    })
+            }
+    }
+    
+    func update(preferencesIds: [String]) -> Single<RequestResult> {
+        cachedProfile()
+            .flatMap { [weak self] profile -> Single<RequestResult> in
+                guard let self else { return .never() }
+                
+                let request = SetProfileRequest(
+                    anonymousId: sessionManager.anonymousId,
+                    internalId: sessionManager.internalId,
+                    skinTypesIds: profile.skinTypesIds,
+                    goalsIds: profile.goalsIds,
+                    preferencesIds: preferencesIds
+                )
+                
+                return restApiTransport
+                    .callServerApi(requestBody: request)
+                    .map { RequestResult.map(response: $0) }
+                    .do(onSuccess: { [weak self] result in
+                        guard result.success else { return }
+                        
+                        self?.store(preferencesIds: preferencesIds)
+                    })
+            }
+    }
+    
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
         forceUpdate ? loadProfile() : cachedProfile().map { profile -> Profile? in profile }
     }
@@ -70,53 +148,9 @@ extension ProfileManager: ProfileManagerProtocol {
 // MARK: Private
 private extension ProfileManager {
     enum Constants {
-        static let skinType = "pm_skin_type"
-    }
-    
-    func store(profile: Profile, notify: Bool) {
-//        let nameData: Data? = {
-//            guard let name = profile.name else { return nil }
-//            return try? JSONEncoder().encode(name)
-//        }()
-//        let avatarData: Data? = {
-//            guard let avatar = profile.avatar else { return nil }
-//            return try? JSONEncoder().encode(avatar)
-//        }()
-//        let sizeData: Data? = {
-//            guard let size = profile.size else { return nil }
-//            return try? JSONEncoder().encode(size)
-//        }()
-//        let genderData: Data? = {
-//            guard let gender = profile.gender else { return nil }
-//            return try? JSONEncoder().encode(gender)
-//        }()
-//        let heightData: Data? = {
-//            guard let height = profile.height else { return nil }
-//            return try? JSONEncoder().encode(height)
-//        }()
-//        let interestedColorsData: Data? = {
-//            guard let interestedColors = profile.interestedColors else { return nil }
-//            return try? JSONEncoder().encode(interestedColors)
-//        }()
-//        let occasionsData: Data? = {
-//            guard let occasions = profile.occasions else { return nil }
-//            return try? JSONEncoder().encode(occasions)
-//        }()
-//        let seasonData: Data? = {
-//            guard let season = profile.season else { return nil }
-//            return try? JSONEncoder().encode(season)
-//        }()
-//        
-//        UserDefaults.standard.set(nameData, forKey: Constants.nameKey)
-//        UserDefaults.standard.set(avatarData, forKey: Constants.avatarKey)
-//        UserDefaults.standard.set(sizeData, forKey: Constants.sizeKey)
-//        UserDefaults.standard.set(genderData, forKey: Constants.genderKey)
-//        UserDefaults.standard.set(heightData, forKey: Constants.heightKey)
-//        UserDefaults.standard.set(interestedColorsData, forKey: Constants.interestedColorsKey)
-//        UserDefaults.standard.set(occasionsData, forKey: Constants.occasionsKey)
-//        UserDefaults.standard.set(seasonData, forKey: Constants.seasonKey)
-//        
-//        ProfileMediator.shared.update(profile: profile)
+        static let skinTypesIds = "pm_skin_types_ids"
+        static let goalsIds = "pm_goals_ids"
+        static let preferencesIds = "pm_preferences_ids"
     }
    
     func loadProfile() -> Single<Profile?> {
@@ -137,51 +171,75 @@ private extension ProfileManager {
     
     func cachedProfile() -> Single<Profile> {
         Single<Profile>.create { single in
-//            let name: String? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.nameKey) else { return nil }
-//                return try? JSONDecoder().decode(String.self, from: data)
-//            }()
-//            
-//            let avatar: URL? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.avatarKey) else { return nil }
-//                return try? JSONDecoder().decode(URL.self, from: data)
-//            }()
-//            
-//            let size: Size? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.sizeKey) else { return nil }
-//                return try? JSONDecoder().decode(Size.self, from: data)
-//            }()
-//            
-//            let gender: Gender? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.genderKey) else { return nil }
-//                return try? JSONDecoder().decode(Gender.self, from: data)
-//            }()
-//            
-//            let height: Height? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.heightKey) else { return nil }
-//                return try? JSONDecoder().decode(Height.self, from: data)
-//            }()
-//            
-//            let interestedColors: [String]? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.interestedColorsKey) else { return nil }
-//                return try? JSONDecoder().decode([String].self, from: data)
-//            }()
-//            
-//            let occasions: [Occasion]? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.occasionsKey) else { return nil }
-//                return try? JSONDecoder().decode([Occasion].self, from: data)
-//            }()
-//            
-//            let season: Season? = {
-//                guard let data = UserDefaults.standard.data(forKey: Constants.seasonKey) else { return nil }
-//                return try? JSONDecoder().decode(Season.self, from: data)
-//            }()
+            let skinTypesIds: [String]? = {
+                guard let data = UserDefaults.standard.data(forKey: Constants.skinTypesIds) else { return nil }
+                return try? JSONDecoder().decode([String].self, from: data)
+            }()
+            let goalsIds: [String]? = {
+                guard let data = UserDefaults.standard.data(forKey: Constants.goalsIds) else { return nil }
+                return try? JSONDecoder().decode([String].self, from: data)
+            }()
+            let preferencesIds: [String]? = {
+                guard let data = UserDefaults.standard.data(forKey: Constants.preferencesIds) else { return nil }
+                return try? JSONDecoder().decode([String].self, from: data)
+            }()
             
-            let profile = Profile()
+            let profile = Profile(
+                skinTypesIds: skinTypesIds,
+                goalsIds: goalsIds,
+                preferencesIds: preferencesIds
+            )
             
             single(.success(profile))
             
             return Disposables.create()
         }
+    }
+    
+    func store(profile: Profile, notify: Bool) {
+        let skinTypesIds: Data? = {
+            guard let skinTypesIds = profile.skinTypesIds else { return nil }
+            return try? JSONEncoder().encode(skinTypesIds)
+        }()
+        let goalsIds: Data? = {
+            guard let goalsIds = profile.goalsIds else { return nil }
+            return try? JSONEncoder().encode(goalsIds)
+        }()
+        let preferencesIds: Data? = {
+            guard let preferencesIds = profile.preferencesIds else { return nil }
+            return try? JSONEncoder().encode(preferencesIds)
+        }()
+        
+        UserDefaults.standard.set(skinTypesIds, forKey: Constants.skinTypesIds)
+        UserDefaults.standard.set(goalsIds, forKey: Constants.goalsIds)
+        UserDefaults.standard.set(preferencesIds, forKey: Constants.preferencesIds)
+        
+        if notify {
+            ProfileMediator.shared.update(profile: profile)
+        }
+    }
+    
+    func store(skinTypesIds: [String]) {
+        guard let data = try? JSONEncoder().encode(skinTypesIds) else { return }
+        
+        UserDefaults.standard.set(data, forKey: Constants.skinTypesIds)
+        
+        ProfileMediator.shared.update(skinTypesIds: skinTypesIds)
+    }
+    
+    func store(goalsIds: [String]) {
+        guard let data = try? JSONEncoder().encode(goalsIds) else { return }
+        
+        UserDefaults.standard.set(data, forKey: Constants.goalsIds)
+        
+        ProfileMediator.shared.update(goalsIds: goalsIds)
+    }
+    
+    func store(preferencesIds: [String]) {
+        guard let data = try? JSONEncoder().encode(preferencesIds) else { return }
+        
+        UserDefaults.standard.set(data, forKey: Constants.preferencesIds)
+        
+        ProfileMediator.shared.update(preferencesIds: preferencesIds)
     }
 }

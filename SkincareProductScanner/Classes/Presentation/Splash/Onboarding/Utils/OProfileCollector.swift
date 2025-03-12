@@ -8,18 +8,30 @@
 import Foundation
 
 final class OProfileCollector {
-    private var name: String?
+    private var skinTypesIds: [String]?
+    private var goalsIds: [String]?
+    private var preferencesIds: [String]?
 }
 
 // MARK: Public
 extension OProfileCollector {
-    func setup(name: String?) {
-        self.name = name
+    func setup(skinTypesIds: [String]?) {
+        self.skinTypesIds = skinTypesIds
+    }
+    
+    func setup(goalsIds: [String]?) {
+        self.goalsIds = goalsIds
+    }
+    
+    func setup(preferencesIds: [String]?) {
+        self.preferencesIds = preferencesIds
     }
     
     func make() -> Profile {
         Profile(
-            
+            skinTypesIds: skinTypesIds,
+            goalsIds: goalsIds,
+            preferencesIds: preferencesIds
         )
     }
 }
