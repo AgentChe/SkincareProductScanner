@@ -107,6 +107,18 @@
 		DE0AC2272D807735001C7664 /* ObtainGoalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2262D807735001C7664 /* ObtainGoalsRequest.swift */; };
 		DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2282D80774B001C7664 /* ObtainPreferencesRequest.swift */; };
 		DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC22A2D807795001C7664 /* DiscoveryManager.swift */; };
+		DE0AC22D2D816EE4001C7664 /* ODisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC22C2D816EE4001C7664 /* ODisclaimerView.swift */; };
+		DE0AC22F2D817849001C7664 /* OScanInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC22E2D817849001C7664 /* OScanInfoView.swift */; };
+		DE0AC2322D817C29001C7664 /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2312D817C29001C7664 /* OnboardingHeaderView.swift */; };
+		DE0AC2352D818552001C7664 /* OnboardingDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2342D818552001C7664 /* OnboardingDisclaimerView.swift */; };
+		DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2362D818557001C7664 /* OnboardingDisclaimerViewController.swift */; };
+		DE0AC2392D8187CE001C7664 /* OCuratedListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2382D8187CE001C7664 /* OCuratedListsView.swift */; };
+		DE0AC23B2D818952001C7664 /* OSkinTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC23A2D818952001C7664 /* OSkinTypesView.swift */; };
+		DE0AC23F2D818C4E001C7664 /* OTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC23E2D818C4E001C7664 /* OTableView.swift */; };
+		DE0AC2412D818C55001C7664 /* OTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2402D818C55001C7664 /* OTableElement.swift */; };
+		DE0AC2432D818CBE001C7664 /* OTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2422D818CBE001C7664 /* OTableCell.swift */; };
+		DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2442D81982C001C7664 /* OGoalsView.swift */; };
+		DE0AC2472D819916001C7664 /* OPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2462D819916001C7664 /* OPreferencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +225,18 @@
 		DE0AC2262D807735001C7664 /* ObtainGoalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainGoalsRequest.swift; sourceTree = "<group>"; };
 		DE0AC2282D80774B001C7664 /* ObtainPreferencesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainPreferencesRequest.swift; sourceTree = "<group>"; };
 		DE0AC22A2D807795001C7664 /* DiscoveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryManager.swift; sourceTree = "<group>"; };
+		DE0AC22C2D816EE4001C7664 /* ODisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODisclaimerView.swift; sourceTree = "<group>"; };
+		DE0AC22E2D817849001C7664 /* OScanInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScanInfoView.swift; sourceTree = "<group>"; };
+		DE0AC2312D817C29001C7664 /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
+		DE0AC2342D818552001C7664 /* OnboardingDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDisclaimerView.swift; sourceTree = "<group>"; };
+		DE0AC2362D818557001C7664 /* OnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
+		DE0AC2382D8187CE001C7664 /* OCuratedListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCuratedListsView.swift; sourceTree = "<group>"; };
+		DE0AC23A2D818952001C7664 /* OSkinTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkinTypesView.swift; sourceTree = "<group>"; };
+		DE0AC23E2D818C4E001C7664 /* OTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableView.swift; sourceTree = "<group>"; };
+		DE0AC2402D818C55001C7664 /* OTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableElement.swift; sourceTree = "<group>"; };
+		DE0AC2422D818CBE001C7664 /* OTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableCell.swift; sourceTree = "<group>"; };
+		DE0AC2442D81982C001C7664 /* OGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoalsView.swift; sourceTree = "<group>"; };
+		DE0AC2462D819916001C7664 /* OPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreferencesView.swift; sourceTree = "<group>"; };
 		E60E243E07AB42DCED2DDA56 /* Pods-SkincareProductScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.release.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -460,6 +484,9 @@
 		DE0ABFF42D803026001C7664 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AC2332D818541001C7664 /* Disclaimer */,
+				DE0AC2302D817C16001C7664 /* Slides */,
+				DE0AC2312D817C29001C7664 /* OnboardingHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -706,6 +733,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DE0AC2302D817C16001C7664 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AC23C2D818C0B001C7664 /* Atoms */,
+				DE0AC22C2D816EE4001C7664 /* ODisclaimerView.swift */,
+				DE0AC22E2D817849001C7664 /* OScanInfoView.swift */,
+				DE0AC2382D8187CE001C7664 /* OCuratedListsView.swift */,
+				DE0AC23A2D818952001C7664 /* OSkinTypesView.swift */,
+				DE0AC2442D81982C001C7664 /* OGoalsView.swift */,
+				DE0AC2462D819916001C7664 /* OPreferencesView.swift */,
+			);
+			path = Slides;
+			sourceTree = "<group>";
+		};
+		DE0AC2332D818541001C7664 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AC2362D818557001C7664 /* OnboardingDisclaimerViewController.swift */,
+				DE0AC2342D818552001C7664 /* OnboardingDisclaimerView.swift */,
+			);
+			path = Disclaimer;
+			sourceTree = "<group>";
+		};
+		DE0AC23C2D818C0B001C7664 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AC23D2D818C40001C7664 /* TableView */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DE0AC23D2D818C40001C7664 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AC23E2D818C4E001C7664 /* OTableView.swift */,
+				DE0AC2402D818C55001C7664 /* OTableElement.swift */,
+				DE0AC2422D818CBE001C7664 /* OTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -838,9 +906,12 @@
 				DE0AC0C42D803026001C7664 /* APIFormDataRequestBody.swift in Sources */,
 				DE0AC0CE2D803026001C7664 /* ProfileMediator.swift in Sources */,
 				DE0AC0D42D803026001C7664 /* Scalable.swift in Sources */,
+				DE0AC2352D818552001C7664 /* OnboardingDisclaimerView.swift in Sources */,
+				DE0AC2322D817C29001C7664 /* OnboardingHeaderView.swift in Sources */,
 				DE0AC0DB2D803026001C7664 /* PaygateEnableTrialButton.swift in Sources */,
 				DE0AC0DE2D803026001C7664 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE0AC0E72D803026001C7664 /* PaygateViewController.swift in Sources */,
+				DE0AC22D2D816EE4001C7664 /* ODisclaimerView.swift in Sources */,
 				DE0AC0EA2D803026001C7664 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE0AC0F12D803026001C7664 /* APIRequestBody.swift in Sources */,
 				DE0AC0F32D803026001C7664 /* PaddingLabel.swift in Sources */,
@@ -857,6 +928,7 @@
 				DE0AC10F2D803026001C7664 /* RequestReview.swift in Sources */,
 				DE0AC1132D803026001C7664 /* OnboardingViewController.swift in Sources */,
 				DE0AC1182D803026001C7664 /* SplashView.swift in Sources */,
+				DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */,
 				DE0AC1192D803026001C7664 /* TabView.swift in Sources */,
 				DE0AC11F2D803026001C7664 /* SessionManager.swift in Sources */,
 				DE0AC1252D803026001C7664 /* NavigationController.swift in Sources */,
@@ -871,7 +943,9 @@
 				DE0AC2252D807708001C7664 /* ObtainSkinTypesRequest.swift in Sources */,
 				DE0AC14E2D803026001C7664 /* Weak.swift in Sources */,
 				DE0AC14F2D803026001C7664 /* OnboardingView.swift in Sources */,
+				DE0AC23B2D818952001C7664 /* OSkinTypesView.swift in Sources */,
 				DE0AC1512D803026001C7664 /* TabItemButton.swift in Sources */,
+				DE0AC22F2D817849001C7664 /* OScanInfoView.swift in Sources */,
 				DE0AC1522D803026001C7664 /* SetProfileRequest.swift in Sources */,
 				DE0AC1552D803026001C7664 /* MainView.swift in Sources */,
 				DE0AC1572D803026001C7664 /* PaygateView.swift in Sources */,
@@ -879,6 +953,7 @@
 				DE0AC1622D803026001C7664 /* SceneDelegate.swift in Sources */,
 				DE0AC1672D803026001C7664 /* ProfileBindingRequest.swift in Sources */,
 				DE0AC1682D803026001C7664 /* IAPError.swift in Sources */,
+				DE0AC2412D818C55001C7664 /* OTableElement.swift in Sources */,
 				DE0AC2212D807676001C7664 /* Goal.swift in Sources */,
 				DE0AC16A2D803026001C7664 /* IAPManager.swift in Sources */,
 				DE0AC16C2D803026001C7664 /* TapAreaButton.swift in Sources */,
@@ -896,12 +971,16 @@
 				DE0AC19D2D803026001C7664 /* ProfileCreateRequest.swift in Sources */,
 				DE0AC1A82D803026001C7664 /* SplashViewController.swift in Sources */,
 				DE0AC1A92D803026001C7664 /* PaygateProductButton.swift in Sources */,
+				DE0AC23F2D818C4E001C7664 /* OTableView.swift in Sources */,
 				DE0AC1AB2D803026001C7664 /* ChoosePhotoFromGallery.swift in Sources */,
 				DE0AC1AE2D803026001C7664 /* TryAgainViewController.swift in Sources */,
 				DE0AC1AF2D803026001C7664 /* NavigationControllerSettings.swift in Sources */,
 				DE0AC1B42D803026001C7664 /* RxActivityIndicator.swift in Sources */,
+				DE0AC2472D819916001C7664 /* OPreferencesView.swift in Sources */,
+				DE0AC2432D818CBE001C7664 /* OTableCell.swift in Sources */,
 				DE0AC1B52D803026001C7664 /* RestAPITransport.swift in Sources */,
 				DE0AC1B82D803026001C7664 /* PaygateInfoView.swift in Sources */,
+				DE0AC2392D8187CE001C7664 /* OCuratedListsView.swift in Sources */,
 				DE0AC1BA2D803026001C7664 /* UIColor+Extension.swift in Sources */,
 				DE0AC1C32D803026001C7664 /* GlobalDefinitions.swift in Sources */,
 				DE0AC1C52D803026001C7664 /* IAPActionResult.swift in Sources */,
@@ -913,6 +992,7 @@
 				DE0AC1E12D803026001C7664 /* String+Extension.swift in Sources */,
 				DE0AC1E52D803026001C7664 /* NetworkError.swift in Sources */,
 				DE0AC1E62D803026001C7664 /* UIEdgeInsets+Extension.swift in Sources */,
+				DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */,
 				DE0AC1E72D803026001C7664 /* PurchaseValidationObserver.swift in Sources */,
 				DE0AC1EC2D803026001C7664 /* MainViewController.swift in Sources */,
 				DE0AC1F02D803026001C7664 /* XOREncryption.swift in Sources */,

@@ -14,7 +14,7 @@ final class OnboardingViewController: UIViewController {
         static let wasViewedKey = "onboarding_view_controller_was_viewed_key"
     }
     
-    private lazy var mainView = OnboardingView { [weak self] profile in
+    private lazy var mainView = OnboardingView(vc: self) { [weak self] profile in
         guard let self else { return }
         
         collectedProfileTrigger.accept(profile)
@@ -56,8 +56,10 @@ extension OnboardingViewController {
         OnboardingViewController()
     }
     
+    // TODO
     static func wasViewed() -> Bool {
-        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
+        false
+//        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
     }
 }
 

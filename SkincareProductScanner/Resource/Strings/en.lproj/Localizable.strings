@@ -21,6 +21,14 @@
 "TryAgain.Button" = "Try again";
 "TryAgain.Contact" = "Contact support";
 
+// MARK: Disclaimer
+"Disclaimer.Title" = "Disclaimer";
+"Disclaimer.Text.1" = "The information provided in this application ";
+"Disclaimer.Text.2" = "MUST NOT";
+"Disclaimer.Text.3" = " be regarded as a replacement for a professional medical advice. All of the medical decisions you make ";
+"Disclaimer.Text.4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
+"Disclaimer.Text.5" = "  who is able to take all of your conditions into account.";
+
 // MARK: Paygate
 "Paygate.Error.Title" = "Error";
 "Paygate.Error.Text" = "An error occurred during execution. Try later.";
@@ -47,3 +55,11 @@
 
 // MARK: Splash
 "Splash.Title" = "‍Skincare\nProduct Scanner.";
+
+// MARK: Onboarding
+"Onboarding.DisclaimerInfo" = "Disclaimer info";
+"Onboarding.ScanInfo.Title" = "Scan any product to access all the essential information about it.";
+"Onboarding.CuratedLists.Title" = "View curated lists or categories of skincare products.";
+"Onboarding.SkinTypes.Title" = "What is your skin type?";
+"Onboarding.Goals.Title" = "What are your skincare goals?";
+"Onboarding.Preferences.Title" = "Do you have any ingredient preferences or restrictions?";
