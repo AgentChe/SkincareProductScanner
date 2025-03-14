@@ -12,9 +12,9 @@ final class PaygateInfoView: UIView {
     lazy var label = makeLabel()
     
     private lazy var infoAttrs = TextAttributes()
-        .textColor(Appearance.mono100)
-        .font(Fonts.Outfit.regular(size: 12.scale))
-        .lineHeight(15.scale)
+        .textColor(Appearance.custom40_50_68)
+        .font(Fonts.Outfit.regular(size: 14.scale))
+        .lineHeight(20.scale)
         .textAlignment(.center)
     
     override init(frame: CGRect) {
@@ -48,8 +48,8 @@ private extension PaygateInfoView {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28.scale),
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5.scale)
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 2.5.scale),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2.5.scale)
         ])
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 final class PaygateView: UIView {
+    lazy var backgroundView = makeBackgroundView()
     lazy var imageView = makeImageView()
     lazy var closeButton = makeCloseButton()
     lazy var titleLabel = makeTitleLabel()
@@ -25,7 +26,7 @@ final class PaygateView: UIView {
     
     private lazy var buyAttrs = TextAttributes()
         .textColor(Appearance.mono100)
-        .font(Fonts.Outfit.bold(size: 16.scale))
+        .font(Fonts.Outfit.medium(size: 18.scale))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +50,7 @@ extension PaygateView {
 // MARK: Private
 private extension PaygateView {
     func initialize() {
-        backgroundColor = Appearance.mono200
+        backgroundColor = Appearance.main500
     }
 }
 
@@ -57,10 +58,17 @@ private extension PaygateView {
 private extension PaygateView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 190.scale : 130.scale),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor)
+            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 424.scale : 408.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 160.scale : 120.scale),
+            imageView.widthAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 160.scale : 130.scale),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 44.scale : 20.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -73,7 +81,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 34.scale : 27.scale)
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 20.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -124,7 +132,7 @@ private extension PaygateView {
             buyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             buyButton.topAnchor.constraint(equalTo: product2Button.bottomAnchor, constant: ScreenSize.isIphone ? 16.scale : 12.scale),
-            buyButton.heightAnchor.constraint(equalToConstant: 52.scale)
+            buyButton.heightAnchor.constraint(equalToConstant: 54.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -133,15 +141,11 @@ private extension PaygateView {
         ])
         
         NSLayoutConstraint.activate([
-            actionsView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            actionsView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            actionsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -6.scale),
-            actionsView.heightAnchor.constraint(equalToConstant: 22.scale)
+            actionsView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            actionsView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -6.scale)
         ])
         
         NSLayoutConstraint.activate([
-            preloader.widthAnchor.constraint(equalToConstant: 45.scale),
-            preloader.heightAnchor.constraint(equalToConstant: 45.scale),
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
             preloader.centerYAnchor.constraint(equalTo: buyButton.centerYAnchor)
         ])
@@ -150,6 +154,16 @@ private extension PaygateView {
 
 // MARK: Lazy initialization
 private extension PaygateView {
+    func makeBackgroundView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        view.image = UIImage(named: ScreenSize.isIphoneXFamily ? "Paygate.Background.X" : "Paygate.Background.8")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeImageView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -170,9 +184,9 @@ private extension PaygateView {
     
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
-            .font(Fonts.Outfit.bold(size: 24.scale))
-            .lineHeight(29.scale)
+            .textColor(Appearance.mono200)
+            .font(Fonts.Outfit.bold(size: ScreenSize.isIphoneXFamily ? 22.scale : 20.scale))
+            .lineHeight(ScreenSize.isIphoneXFamily ? 30.scale : 23.scale)
             .textAlignment(.center)
         
         let view = UILabel()
@@ -212,7 +226,7 @@ private extension PaygateView {
     
     func makeBuyButton() -> UIButton {
         let view = UIButton()
-        view.layer.cornerRadius = 3.scale
+        view.layer.cornerRadius = 12.scale
         view.backgroundColor = Appearance.main100
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -233,11 +247,8 @@ private extension PaygateView {
         return view
     }
     
-    func makePreloader() -> UIActivityIndicatorView {
-        let view = UIActivityIndicatorView()
-        view.style = .large
-        view.color = Appearance.mono100
-        view.hidesWhenStopped = true
+    func makePreloader() -> Spinner {
+        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

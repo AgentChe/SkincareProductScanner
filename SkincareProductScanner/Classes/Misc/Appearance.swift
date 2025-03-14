@@ -20,4 +20,6 @@ struct Appearance {
     static let main800 = UIColor(integralRed: 189, green: 164, blue: 125)
     static let main900 = UIColor(integralRed: 203, green: 184, blue: 154)
     static let system100 = UIColor(integralRed: 235, green: 97, blue: 91)
+    
+    static let custom40_50_68 = UIColor(integralRed: 40, green: 50, blue: 68)
 }

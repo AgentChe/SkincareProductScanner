@@ -35,18 +35,25 @@ private extension PaygateActionsView {
 private extension PaygateActionsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            termsOfUseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 39.scale),
-            termsOfUseButton.centerYAnchor.constraint(equalTo: centerYAnchor)
+            termsOfUseButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            termsOfUseButton.topAnchor.constraint(equalTo: topAnchor),
+            termsOfUseButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            termsOfUseButton.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 20.scale : 14.scale)
         ])
         
         NSLayoutConstraint.activate([
-            privacyPolicyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 141.scale),
-            privacyPolicyButton.centerYAnchor.constraint(equalTo: centerYAnchor)
+            privacyPolicyButton.leadingAnchor.constraint(equalTo: termsOfUseButton.trailingAnchor, constant: 12.scale),
+            privacyPolicyButton.topAnchor.constraint(equalTo: topAnchor),
+            privacyPolicyButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            privacyPolicyButton.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 20.scale : 14.scale)
         ])
         
         NSLayoutConstraint.activate([
-            restoreButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 246.scale),
-            restoreButton.centerYAnchor.constraint(equalTo: centerYAnchor)
+            restoreButton.leadingAnchor.constraint(equalTo: privacyPolicyButton.trailingAnchor, constant: 12.scale),
+            restoreButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            restoreButton.topAnchor.constraint(equalTo: topAnchor),
+            restoreButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            restoreButton.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 20.scale : 14.scale)
         ])
     }
 }
@@ -55,8 +62,8 @@ private extension PaygateActionsView {
 private extension PaygateActionsView {
     func makeActionButton(text: String) -> TapAreaButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono100.withAlphaComponent(0.6))
-            .font(Fonts.Outfit.regular(size: 12.scale))
+            .textColor(Appearance.mono200.withAlphaComponent(0.6))
+            .font(Fonts.Outfit.regular(size: 14.scale))
         
         let view = TapAreaButton()
         view.backgroundColor = UIColor.clear

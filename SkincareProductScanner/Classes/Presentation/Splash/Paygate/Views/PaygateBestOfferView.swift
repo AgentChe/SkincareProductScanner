@@ -12,13 +12,13 @@ final class PaygateBestOfferView: UIView {
     
     private lazy var selectedAttrs = TextAttributes()
         .textColor(Appearance.mono100)
-        .font(Fonts.Outfit.medium(size: 12.scale))
-        .lineHeight(19.scale)
+        .font(Fonts.Outfit.regular(size: 14.scale))
+        .lineHeight(20.scale)
         .textAlignment(.center)
     private lazy var deselectedAttrs = TextAttributes()
-        .textColor(Appearance.mono100)
-        .font(Fonts.Outfit.medium(size: 12.scale))
-        .lineHeight(19.scale)
+        .textColor(Appearance.mono200)
+        .font(Fonts.Outfit.regular(size: 14.scale))
+        .lineHeight(20.scale)
         .textAlignment(.center)
     
     override init(frame: CGRect) {
@@ -43,10 +43,10 @@ extension PaygateBestOfferView {
         let attrs = marked ? selectedAttrs : deselectedAttrs
         label.attributedText = "Paygate.BestOffer".localized.attributed(with: attrs)
         
-        backgroundColor = marked ? Appearance.main200 : Appearance.main500
+        backgroundColor = marked ? Appearance.main100 : Appearance.mono100
         
         layer.borderWidth = 1.scale
-        layer.borderColor = marked ? Appearance.main200.cgColor : Appearance.main400.cgColor
+        layer.borderColor = marked ? Appearance.main100.cgColor : Appearance.main700.cgColor
     }
 }
 
@@ -56,7 +56,7 @@ private extension PaygateBestOfferView {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8.scale),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8.scale),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 3.scale),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 2.scale),
             label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3.scale)
         ])
     }

@@ -41,6 +41,7 @@ final class PaygateProductButton: UIButton {
 // MARK: Private
 private extension PaygateProductButton {
     func initialize() {
+        backgroundColor = Appearance.mono100
         layer.cornerRadius = 10.scale
     }
     
@@ -60,23 +61,23 @@ private extension PaygateProductButton {
         switch isYearly {
         case true:
             let nameAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Outfit.regular(size: 14.scale))
+                .textColor(Appearance.mono200)
+                .font(Fonts.Outfit.medium(size: 14.scale))
                 .lineHeight(20.scale)
             let name = "Paygate.Yearly".localized + "\n"
             result.append(name.attributed(with: nameAttrs))
             
             let bottomAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Outfit.semiBold(size: 16.scale))
+                .textColor(Appearance.mono200)
+                .font(Fonts.Outfit.bold(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product).formatted() ?? ""
             let bottom = String(format: "Paygate.Yearly.Bottom".localized, price)
             result.append(bottom.attributed(with: bottomAttrs))
         case false:
             let attrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Outfit.semiBold(size: 16.scale))
+                .textColor(Appearance.mono200)
+                .font(Fonts.Outfit.bold(size: 16.scale))
                 .lineHeight(22.scale)
             result.append("Paygate.FreeTrialDays".localized.uppercased().attributed(with: attrs))
         }
@@ -96,27 +97,27 @@ private extension PaygateProductButton {
         switch isYearly {
         case true:
             let priceAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Outfit.regular(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product, div: 52).formatted() ?? ""
             result.append((price + "\n").attributed(with: priceAttrs))
             
             let periodAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Outfit.regular(size: 14.scale))
+                .textColor(Appearance.mono200)
+                .font(Fonts.Outfit.medium(size: 14.scale))
                 .lineHeight(20.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
         case false:
             let priceAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Outfit.semiBold(size: 16.scale))
+                .textColor(Appearance.mono200)
+                .font(Fonts.Outfit.bold(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product).formatted() ?? ""
             result.append(String(format: "Paygate.Then".localized, price).attributed(with: priceAttrs))
             
             let periodAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Outfit.regular(size: 14.scale))
                 .lineHeight(20.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
@@ -133,9 +134,8 @@ private extension PaygateProductButton {
         let imageName = marked ? "Paygate.Marker.S" : "Paygate.Marker.D"
         markerView.image = UIImage(named: imageName)
         
-        backgroundColor = marked ? Appearance.mono200 : Appearance.main500
-        layer.borderWidth = marked ? 2.scale : 0
-        layer.borderColor = marked ? Appearance.main200.cgColor : UIColor.clear.cgColor
+        layer.borderWidth = marked ? 2.scale : 1.scale
+        layer.borderColor = marked ? Appearance.main100.cgColor : Appearance.main700.cgColor
     }
 }
 
