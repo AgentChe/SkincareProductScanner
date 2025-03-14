@@ -13,7 +13,7 @@ final class TabView: UIView {
     }
     
     lazy var container = makeContainer()
-    lazy var exploreButton = makeButton(imageDomain: "Main.Home")
+    lazy var exploreButton = makeButton(imageDomain: "Main.Explore")
     lazy var scanButton = makeScanButton()
     lazy var chatButton = makeButton(imageDomain: "Main.Chat")
     
@@ -71,7 +71,7 @@ private extension TabView {
             chatButton.widthAnchor.constraint(equalToConstant: 24.scale),
             chatButton.heightAnchor.constraint(equalToConstant: 24.scale),
             chatButton.topAnchor.constraint(equalTo: container.topAnchor, constant: 23.scale),
-            chatButton.leadingAnchor.constraint(equalTo: container.trailingAnchor, constant: -66.scale)
+            chatButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -66.scale)
         ])
     }
 }
@@ -85,7 +85,6 @@ private extension TabView {
         view.layer.shadowOffset = .zero
         view.layer.shadowRadius = 4.scale
         view.backgroundColor = Appearance.mono100
-        view.layer.cornerRadius = 35.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
