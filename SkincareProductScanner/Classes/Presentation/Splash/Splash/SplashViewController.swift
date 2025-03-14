@@ -66,24 +66,20 @@ private extension SplashViewController {
         }
     }
     
-    // TODO
     func goNext(_ route: SplashViewModel.Route) {
-        let vc = TryAgainViewController.make(error: ContentError(.notContent))
-        present(vc, animated: true)
-        
-//        switch route {
-//        case .onboarding:
-//            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
-//        case .paygateTransitionMain:
-//            let vc = PaygateViewController.make { [weak self] in
-//                self?.goNext(.main)
-//            }
-//            present(vc, animated: true)
-//        case .main:
-//            let vc = MainViewController.make(requestReview: false)
-//            let nc = NavigationController(rootViewController: vc)
-//            UIApplication.shared.keyWindow?.rootViewController = nc
-//        }
+        switch route {
+        case .onboarding:
+            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
+        case .paygateTransitionMain:
+            let vc = PaygateViewController.make { [weak self] in
+                self?.goNext(.main)
+            }
+            present(vc, animated: true)
+        case .main:
+            let vc = MainViewController.make(requestReview: false)
+            let nc = NavigationController(rootViewController: vc)
+            UIApplication.shared.keyWindow?.rootViewController = nc
+        }
     }
     
     func open(error: Error) -> Observable<Void> {
