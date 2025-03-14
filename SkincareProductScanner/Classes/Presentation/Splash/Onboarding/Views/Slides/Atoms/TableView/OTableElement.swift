@@ -10,21 +10,21 @@ final class OTableElement {
     let name: String
     var marked: Bool
     
-    init(skinType: SkinType) {
+    init(skinType: SkinType, marked: Bool = false) {
         self.id = skinType.id
         self.name = skinType.name
-        self.marked = false
+        self.marked = marked
     }
     
-    init(goal: Goal) {
+    init(goal: Goal, marked: Bool = false) {
         self.id = goal.id
         self.name = goal.name
-        self.marked = false
+        self.marked = marked
     }
     
-    init(preference: Preference) {
+    init(preference: Preference, marked: Bool = false) {
         self.id = preference.id
         self.name = preference.name
-        self.marked = false
+        self.marked = marked
     }
 }

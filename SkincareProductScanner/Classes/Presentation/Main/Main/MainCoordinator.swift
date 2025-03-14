@@ -10,8 +10,7 @@ import UIKit
 final class MainCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var exploreVC = UIViewController()
-    lazy var scanVC = UIViewController()
+    lazy var exploreVC = ExploreViewController.make()
     lazy var chatVC = UIViewController()
     
     private var previousVC: UIViewController?

@@ -119,6 +119,29 @@
 		DE0AC2432D818CBE001C7664 /* OTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2422D818CBE001C7664 /* OTableCell.swift */; };
 		DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2442D81982C001C7664 /* OGoalsView.swift */; };
 		DE0AC2472D819916001C7664 /* OPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC2462D819916001C7664 /* OPreferencesView.swift */; };
+		DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */; };
+		DEAD18E72D842A7C003C4FFA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */; };
+		DEAD18E92D842A80003C4FFA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E82D842A80003C4FFA /* ExploreView.swift */; };
+		DEAD18EC2D842B9A003C4FFA /* ExploreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18EB2D842B9A003C4FFA /* ExploreHeaderView.swift */; };
+		DEAD18F02D84320C003C4FFA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18EF2D84320C003C4FFA /* MenuViewController.swift */; };
+		DEAD18F22D84321D003C4FFA /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18F12D84321D003C4FFA /* MenuViewModel.swift */; };
+		DEAD18F42D843222003C4FFA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18F32D843222003C4FFA /* MenuView.swift */; };
+		DEAD18F82D8433B7003C4FFA /* MenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18F72D8433B7003C4FFA /* MenuTableView.swift */; };
+		DEAD18FA2D8433BC003C4FFA /* MenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18F92D8433BC003C4FFA /* MenuTableCell.swift */; };
+		DEAD18FC2D8433C0003C4FFA /* MenuTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18FB2D8433C0003C4FFA /* MenuTableElement.swift */; };
+		DEAD18FE2D84342A003C4FFA /* BottomInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18FD2D84342A003C4FFA /* BottomInfoView.swift */; };
+		DEAD19002D843794003C4FFA /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18FF2D843794003C4FFA /* UITapGestureRecognizer+Extension.swift */; };
+		DEAD19032D846E5F003C4FFA /* ReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19022D846E5F003C4FFA /* ReferencesView.swift */; };
+		DEAD19052D846E65003C4FFA /* ReferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19042D846E65003C4FFA /* ReferencesViewController.swift */; };
+		DEAD190A2D84740C003C4FFA /* ReferencesLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19092D84740C003C4FFA /* ReferencesLinkButton.swift */; };
+		DEAD190D2D847851003C4FFA /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD190C2D847851003C4FFA /* DisclaimerViewController.swift */; };
+		DEAD190F2D847855003C4FFA /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD190E2D847855003C4FFA /* DisclaimerView.swift */; };
+		DEAD19132D847D92003C4FFA /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19122D847D92003C4FFA /* ChangeProfileViewController.swift */; };
+		DEAD19152D847D99003C4FFA /* ChangeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19142D847D99003C4FFA /* ChangeProfileViewModel.swift */; };
+		DEAD19182D847DBE003C4FFA /* ChangeProfileFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19172D847DBE003C4FFA /* ChangeProfileFieldView.swift */; };
+		DEAD191A2D84802E003C4FFA /* ChangeSkinTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */; };
+		DEAD191C2D84894A003C4FFA /* ChangeGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */; };
+		DEAD191E2D848A72003C4FFA /* ChangePreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +260,29 @@
 		DE0AC2422D818CBE001C7664 /* OTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTableCell.swift; sourceTree = "<group>"; };
 		DE0AC2442D81982C001C7664 /* OGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoalsView.swift; sourceTree = "<group>"; };
 		DE0AC2462D819916001C7664 /* OPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreferencesView.swift; sourceTree = "<group>"; };
+		DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		DEAD18E82D842A80003C4FFA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		DEAD18EB2D842B9A003C4FFA /* ExploreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHeaderView.swift; sourceTree = "<group>"; };
+		DEAD18EF2D84320C003C4FFA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DEAD18F12D84321D003C4FFA /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		DEAD18F32D843222003C4FFA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DEAD18F72D8433B7003C4FFA /* MenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableView.swift; sourceTree = "<group>"; };
+		DEAD18F92D8433BC003C4FFA /* MenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableCell.swift; sourceTree = "<group>"; };
+		DEAD18FB2D8433C0003C4FFA /* MenuTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableElement.swift; sourceTree = "<group>"; };
+		DEAD18FD2D84342A003C4FFA /* BottomInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomInfoView.swift; sourceTree = "<group>"; };
+		DEAD18FF2D843794003C4FFA /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		DEAD19022D846E5F003C4FFA /* ReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesView.swift; sourceTree = "<group>"; };
+		DEAD19042D846E65003C4FFA /* ReferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesViewController.swift; sourceTree = "<group>"; };
+		DEAD19092D84740C003C4FFA /* ReferencesLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesLinkButton.swift; sourceTree = "<group>"; };
+		DEAD190C2D847851003C4FFA /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
+		DEAD190E2D847855003C4FFA /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		DEAD19122D847D92003C4FFA /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		DEAD19142D847D99003C4FFA /* ChangeProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewModel.swift; sourceTree = "<group>"; };
+		DEAD19172D847DBE003C4FFA /* ChangeProfileFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileFieldView.swift; sourceTree = "<group>"; };
+		DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSkinTypesView.swift; sourceTree = "<group>"; };
+		DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalsView.swift; sourceTree = "<group>"; };
+		DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePreferencesView.swift; sourceTree = "<group>"; };
 		E60E243E07AB42DCED2DDA56 /* Pods-SkincareProductScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.release.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -347,6 +393,7 @@
 				DE0ABE7D2D803026001C7664 /* PaddingTextField.swift */,
 				DE0ABE7E2D803026001C7664 /* TapAreaButton.swift */,
 				DE0AC2182D80607A001C7664 /* Spinner.swift */,
+				DEAD18FD2D84342A003C4FFA /* BottomInfoView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -361,6 +408,7 @@
 				DE0ABE842D803026001C7664 /* UIDevice+Extension.swift */,
 				DE0ABE852D803026001C7664 /* UIEdgeInsets+Extension.swift */,
 				DE0ABE862D803026001C7664 /* UIView+RxExtension.swift */,
+				DEAD18FF2D843794003C4FFA /* UITapGestureRecognizer+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -578,6 +626,7 @@
 		DE0AC03C2D803026001C7664 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DEAD18E32D842A61003C4FFA /* Explore */,
 				DE0ABFDD2D803026001C7664 /* Main */,
 				DE0AC00D2D803026001C7664 /* Splash */,
 				DE0AC0102D803026001C7664 /* TryAgain */,
@@ -774,6 +823,122 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		DEAD18E32D842A61003C4FFA /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18EE2D8431D4003C4FFA /* Menu */,
+				DEAD18ED2D8431B1003C4FFA /* Explore */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		DEAD18EA2D842B90003C4FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18EB2D842B9A003C4FFA /* ExploreHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEAD18ED2D8431B1003C4FFA /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18EA2D842B90003C4FFA /* Views */,
+				DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */,
+				DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */,
+				DEAD18E82D842A80003C4FFA /* ExploreView.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		DEAD18EE2D8431D4003C4FFA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD19112D847D76003C4FFA /* ChangeProfile */,
+				DEAD19012D846E50003C4FFA /* References */,
+				DEAD19102D847D64003C4FFA /* Menu */,
+				DEAD190B2D847846003C4FFA /* Disclaimer */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DEAD18F52D843398003C4FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18F62D8433AE003C4FFA /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEAD18F62D8433AE003C4FFA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18F72D8433B7003C4FFA /* MenuTableView.swift */,
+				DEAD18F92D8433BC003C4FFA /* MenuTableCell.swift */,
+				DEAD18FB2D8433C0003C4FFA /* MenuTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEAD19012D846E50003C4FFA /* References */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD19062D8473C1003C4FFA /* Views */,
+				DEAD19042D846E65003C4FFA /* ReferencesViewController.swift */,
+				DEAD19022D846E5F003C4FFA /* ReferencesView.swift */,
+			);
+			path = References;
+			sourceTree = "<group>";
+		};
+		DEAD19062D8473C1003C4FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD19092D84740C003C4FFA /* ReferencesLinkButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEAD190B2D847846003C4FFA /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD190C2D847851003C4FFA /* DisclaimerViewController.swift */,
+				DEAD190E2D847855003C4FFA /* DisclaimerView.swift */,
+			);
+			path = Disclaimer;
+			sourceTree = "<group>";
+		};
+		DEAD19102D847D64003C4FFA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD18F52D843398003C4FFA /* Views */,
+				DEAD18EF2D84320C003C4FFA /* MenuViewController.swift */,
+				DEAD18F12D84321D003C4FFA /* MenuViewModel.swift */,
+				DEAD18F32D843222003C4FFA /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DEAD19112D847D76003C4FFA /* ChangeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD19162D847D9D003C4FFA /* Views */,
+				DEAD19122D847D92003C4FFA /* ChangeProfileViewController.swift */,
+				DEAD19142D847D99003C4FFA /* ChangeProfileViewModel.swift */,
+			);
+			path = ChangeProfile;
+			sourceTree = "<group>";
+		};
+		DEAD19162D847D9D003C4FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEAD19172D847DBE003C4FFA /* ChangeProfileFieldView.swift */,
+				DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */,
+				DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */,
+				DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -897,9 +1062,11 @@
 				DE0AC08C2D803026001C7664 /* Collection+Extension.swift in Sources */,
 				DE0AC2172D804BAE001C7664 /* RequestResult.swift in Sources */,
 				DE0AC08D2D803026001C7664 /* PaygateInteractor.swift in Sources */,
+				DEAD19182D847DBE003C4FFA /* ChangeProfileFieldView.swift in Sources */,
 				DE0AC0AA2D803026001C7664 /* ScreenSize.swift in Sources */,
 				DE0AC0AC2D803026001C7664 /* PushNotificationsModel.swift in Sources */,
 				DE0AC0AE2D803026001C7664 /* ObtainProfileRequest.swift in Sources */,
+				DEAD18E72D842A7C003C4FFA /* ExploreViewModel.swift in Sources */,
 				DE0AC0BB2D803026001C7664 /* UIDevice+Extension.swift in Sources */,
 				DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */,
 				DE0AC0BF2D803026001C7664 /* PaygateBestOfferView.swift in Sources */,
@@ -909,17 +1076,21 @@
 				DE0AC2352D818552001C7664 /* OnboardingDisclaimerView.swift in Sources */,
 				DE0AC2322D817C29001C7664 /* OnboardingHeaderView.swift in Sources */,
 				DE0AC0DB2D803026001C7664 /* PaygateEnableTrialButton.swift in Sources */,
+				DEAD19032D846E5F003C4FFA /* ReferencesView.swift in Sources */,
 				DE0AC0DE2D803026001C7664 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE0AC0E72D803026001C7664 /* PaygateViewController.swift in Sources */,
 				DE0AC22D2D816EE4001C7664 /* ODisclaimerView.swift in Sources */,
 				DE0AC0EA2D803026001C7664 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE0AC0F12D803026001C7664 /* APIRequestBody.swift in Sources */,
 				DE0AC0F32D803026001C7664 /* PaddingLabel.swift in Sources */,
+				DEAD19052D846E65003C4FFA /* ReferencesViewController.swift in Sources */,
 				DE0AC0F42D803026001C7664 /* NumberLaunches.swift in Sources */,
 				DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */,
 				DE0AC0F92D803026001C7664 /* SplashViewModel.swift in Sources */,
 				DE0AC2232D8076B1001C7664 /* Preference.swift in Sources */,
+				DEAD18FC2D8433C0003C4FFA /* MenuTableElement.swift in Sources */,
 				DE0AC0FB2D803026001C7664 /* PaygateInfoCell.swift in Sources */,
+				DEAD190D2D847851003C4FFA /* DisclaimerViewController.swift in Sources */,
 				DE0AC1002D803026001C7664 /* UIView+RxExtension.swift in Sources */,
 				DE0AC1012D803026001C7664 /* Currency.swift in Sources */,
 				DE0AC1072D803026001C7664 /* PushNotificationsManager.swift in Sources */,
@@ -930,11 +1101,13 @@
 				DE0AC1182D803026001C7664 /* SplashView.swift in Sources */,
 				DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */,
 				DE0AC1192D803026001C7664 /* TabView.swift in Sources */,
+				DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */,
 				DE0AC11F2D803026001C7664 /* SessionManager.swift in Sources */,
 				DE0AC1252D803026001C7664 /* NavigationController.swift in Sources */,
 				DE0AC1262D803026001C7664 /* ContentError.swift in Sources */,
 				DE0AC1272D803026001C7664 /* TakePhoto.swift in Sources */,
 				DE0AC2272D807735001C7664 /* ObtainGoalsRequest.swift in Sources */,
+				DEAD18FA2D8433BC003C4FFA /* MenuTableCell.swift in Sources */,
 				DE0AC1282D803026001C7664 /* OProfileCollector.swift in Sources */,
 				DE0AC1322D803026001C7664 /* AmplitudeManager.swift in Sources */,
 				DE0AC1342D803026001C7664 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
@@ -955,6 +1128,7 @@
 				DE0AC1682D803026001C7664 /* IAPError.swift in Sources */,
 				DE0AC2412D818C55001C7664 /* OTableElement.swift in Sources */,
 				DE0AC2212D807676001C7664 /* Goal.swift in Sources */,
+				DEAD190A2D84740C003C4FFA /* ReferencesLinkButton.swift in Sources */,
 				DE0AC16A2D803026001C7664 /* IAPManager.swift in Sources */,
 				DE0AC16C2D803026001C7664 /* TapAreaButton.swift in Sources */,
 				DE0AC1712D803026001C7664 /* SignError.swift in Sources */,
@@ -969,21 +1143,32 @@
 				DE0AC1932D803026001C7664 /* AppDelegate.swift in Sources */,
 				DE0AC1952D803026001C7664 /* Profile.swift in Sources */,
 				DE0AC19D2D803026001C7664 /* ProfileCreateRequest.swift in Sources */,
+				DEAD18EC2D842B9A003C4FFA /* ExploreHeaderView.swift in Sources */,
 				DE0AC1A82D803026001C7664 /* SplashViewController.swift in Sources */,
 				DE0AC1A92D803026001C7664 /* PaygateProductButton.swift in Sources */,
+				DEAD191A2D84802E003C4FFA /* ChangeSkinTypesView.swift in Sources */,
+				DEAD18F22D84321D003C4FFA /* MenuViewModel.swift in Sources */,
 				DE0AC23F2D818C4E001C7664 /* OTableView.swift in Sources */,
+				DEAD18E92D842A80003C4FFA /* ExploreView.swift in Sources */,
+				DEAD19002D843794003C4FFA /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE0AC1AB2D803026001C7664 /* ChoosePhotoFromGallery.swift in Sources */,
 				DE0AC1AE2D803026001C7664 /* TryAgainViewController.swift in Sources */,
 				DE0AC1AF2D803026001C7664 /* NavigationControllerSettings.swift in Sources */,
 				DE0AC1B42D803026001C7664 /* RxActivityIndicator.swift in Sources */,
+				DEAD191C2D84894A003C4FFA /* ChangeGoalsView.swift in Sources */,
+				DEAD19152D847D99003C4FFA /* ChangeProfileViewModel.swift in Sources */,
 				DE0AC2472D819916001C7664 /* OPreferencesView.swift in Sources */,
 				DE0AC2432D818CBE001C7664 /* OTableCell.swift in Sources */,
 				DE0AC1B52D803026001C7664 /* RestAPITransport.swift in Sources */,
 				DE0AC1B82D803026001C7664 /* PaygateInfoView.swift in Sources */,
+				DEAD18F82D8433B7003C4FFA /* MenuTableView.swift in Sources */,
 				DE0AC2392D8187CE001C7664 /* OCuratedListsView.swift in Sources */,
 				DE0AC1BA2D803026001C7664 /* UIColor+Extension.swift in Sources */,
+				DEAD19132D847D92003C4FFA /* ChangeProfileViewController.swift in Sources */,
 				DE0AC1C32D803026001C7664 /* GlobalDefinitions.swift in Sources */,
 				DE0AC1C52D803026001C7664 /* IAPActionResult.swift in Sources */,
+				DEAD190F2D847855003C4FFA /* DisclaimerView.swift in Sources */,
+				DEAD18F42D843222003C4FFA /* MenuView.swift in Sources */,
 				DE0AC1CC2D803026001C7664 /* PaygateActionsView.swift in Sources */,
 				DE0AC1CE2D803026001C7664 /* OnboardingViewModel.swift in Sources */,
 				DE0AC1D82D803026001C7664 /* IAPProduct.swift in Sources */,
@@ -993,6 +1178,9 @@
 				DE0AC1E52D803026001C7664 /* NetworkError.swift in Sources */,
 				DE0AC1E62D803026001C7664 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */,
+				DEAD18F02D84320C003C4FFA /* MenuViewController.swift in Sources */,
+				DEAD18FE2D84342A003C4FFA /* BottomInfoView.swift in Sources */,
+				DEAD191E2D848A72003C4FFA /* ChangePreferencesView.swift in Sources */,
 				DE0AC1E72D803026001C7664 /* PurchaseValidationObserver.swift in Sources */,
 				DE0AC1EC2D803026001C7664 /* MainViewController.swift in Sources */,
 				DE0AC1F02D803026001C7664 /* XOREncryption.swift in Sources */,

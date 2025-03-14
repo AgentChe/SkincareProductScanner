@@ -26,4 +26,9 @@ final class GlobalDefinitions {
         static let yearly = "app.iphone.tracker.lifetime"
         static let weekly = "app.iphone.tracker.weekly2"
     }
+    
+    enum References {
+        static let link1 = URL(string: "https://www.nlm.nih.gov")!
+        static let link2 = URL(string: "https://www.cir-safety.org")!
+    }
 }

@@ -29,6 +29,13 @@
 "Disclaimer.Text.4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
 "Disclaimer.Text.5" = "  who is able to take all of your conditions into account.";
 
+// MARK: BottomInfo
+"BottomInfo.Text1" = "The information provided in the app ";
+"BottomInfo.Text2" = "MUST NOT";
+"BottomInfo.Text3" = " be regarded as a replacement for a professional medical advice. ";
+"BottomInfo.Text4" = "Read more";
+"BottomInfo.Text5" = "\nThis product uses publicly available data form the U.S. National Library of Medicine (NLM) and the Cosmetic Ingredient Review (CIR).";
+
 // MARK: Paygate
 "Paygate.Error.Title" = "Error";
 "Paygate.Error.Text" = "An error occurred during execution. Try later.";
@@ -63,3 +70,27 @@
 "Onboarding.SkinTypes.Title" = "What is your skin type?";
 "Onboarding.Goals.Title" = "What are your skincare goals?";
 "Onboarding.Preferences.Title" = "Do you have any ingredient preferences or restrictions?";
+
+// MARK: Explore
+"Explore.Title" = "Explore";
+
+// MARK: Menu
+"Menu.Title" = "Menu";
+"Menu.SkinTypes" = "Skin type";
+"Menu.Goals" = "Skincare goals";
+"Menu.Preferences" = " Ingredient preferences";
+"Menu.References" = "References";
+"Menu.Disclaimer" = "Disclaimer";
+"Menu.TermsOfUse" = "Terms of use";
+"Menu.PrivacyPolicy" = "Privacy policy";
+"Menu.Support" = "Support";
+
+// MARK: References
+"References.Title" = "References";
+"References.Block1" = "This product uses publicly available data from the U.S. National Library of Medicine (NLM) and the Cosmetic Ingredient Review (CIR). ";
+"References.Block2" = "Both NLM and CIR provide access to essential scientific articles, data, and resources. NLM and CIR are not responsible for this product and do not endorse or recommend it or any other product.";
+
+// MARK: ChangeProfile
+"ChangeProfile.Title.SkinTypes" = "Skin Type";
+"ChangeProfile.Title.Goals" = "Skincare Goals";
+"ChangeProfile.Title.Preferences" = " Ingredient Preferences";
