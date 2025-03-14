@@ -44,7 +44,13 @@ final class TryAgainViewController: UIViewController {
         
         mainView.contactButton.rx.tap
             .bind(to: Binder(self) { base, void in
-                UIApplication.shared.open(GlobalDefinitions.contactUsUrl)
+                UIApplication.shared.open(GlobalDefinitions.contactUsUrl, options: [:], completionHandler: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.closeButton.rx.tap
+            .bind(to: Binder(self) { base, void in
+                base.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
     }
@@ -53,6 +59,8 @@ final class TryAgainViewController: UIViewController {
 // MARK: Make
 extension TryAgainViewController {
     static func make(error: Error, tryAgain: (() -> Void)? = nil) -> TryAgainViewController {
-        TryAgainViewController(error: error, tryAgain: tryAgain)
+        let vc = TryAgainViewController(error: error, tryAgain: tryAgain)
+        vc.modalPresentationStyle = .fullScreen
+        return vc
     }
 }
