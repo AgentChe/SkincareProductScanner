@@ -34,7 +34,7 @@
 "BottomInfo.Text2" = "MUST NOT";
 "BottomInfo.Text3" = " be regarded as a replacement for a professional medical advice. ";
 "BottomInfo.Text4" = "Read more";
-"BottomInfo.Text5" = "\nThis product uses publicly available data form the U.S. National Library of Medicine (NLM) and the Cosmetic Ingredient Review (CIR).";
+"BottomInfo.Text5" = "\nThis product uses publicly available data form the U.S. National Library of Medicine (NLM) and the Cosmetic Ingredient Review (CIR). ";
 
 // MARK: Paygate
 "Paygate.Error.Title" = "Error";
@@ -94,3 +94,18 @@
 "ChangeProfile.Title.SkinTypes" = "Skin Type";
 "ChangeProfile.Title.Goals" = "Skincare Goals";
 "ChangeProfile.Title.Preferences" = " Ingredient Preferences";
+
+// MARK: Chat
+"Chat.Title" = "AI dermatologist";
+"Chat.Placeholder.Title" = "Ask the AI dermatologist";
+"Chat.Placeholder.SubTitle" = "Type any skin question for instant answers";
+"Chat.Input.Placeholder" = "Type in your question";
+"Chat.Regenerate.Text" = "There was an error generating a response";
+"Chat.Regenerate.Button" = "Regenerate";
+"Chat.Copied.Toast" = "Text copied";
+
+// MARK: Chats
+"Chats.Title" = "Chat history";
+"Chats.ConfirmDelete.Title" = "Are you sure?";
+"Chats.ConfirmDelete.SubTitle" = "Do you really want to delete this chat?";
+"Chats.ConfirmDelete.Delete" = "Remove";

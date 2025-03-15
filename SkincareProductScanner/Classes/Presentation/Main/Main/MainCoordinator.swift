@@ -11,7 +11,7 @@ final class MainCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var exploreVC = ExploreViewController.make()
-    lazy var chatVC = UIViewController()
+    lazy var chatVC = ChatViewController.make()
     
     private var previousVC: UIViewController?
     
