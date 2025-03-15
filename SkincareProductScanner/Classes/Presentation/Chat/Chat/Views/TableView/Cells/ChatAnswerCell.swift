@@ -37,7 +37,6 @@ final class ChatAnswerCell: UITableViewCell {
 
 // MARK: Public
 extension ChatAnswerCell {
-    // TODO: Передать Толе замечание о пустом переносе в конце
     func setup(text: String, refreshHidden: Bool) {
         let html: NSAttributedString = {
             let font = Fonts.Outfit.regular(size: 16.scale)
@@ -45,7 +44,7 @@ extension ChatAnswerCell {
             
             guard let data = htmlWithStyle.data(using: .utf8) else { return text.attributed(with: attrs) }
             
-            let attributedString = try? NSAttributedString(
+            let attributedString = try? NSMutableAttributedString(
                 data: data,
                 options: [
                     .documentType: NSAttributedString.DocumentType.html,
@@ -54,6 +53,10 @@ extension ChatAnswerCell {
                 documentAttributes: nil
             )
             guard let attributedString else { return text.attributed(with: attrs) }
+            
+            if attributedString.string.last == "\n" {
+                attributedString.mutableString.deleteCharacters(in: NSRange(location: attributedString.length - 1, length: 1))
+            }
             
             return attributedString
         }()
