@@ -114,3 +114,8 @@
 "Chats.ConfirmDelete.Title" = "Are you sure?";
 "Chats.ConfirmDelete.SubTitle" = "Do you really want to delete this chat?";
 "Chats.ConfirmDelete.Delete" = "Remove";
+
+// MARK: Catalogs
+"Catalogs.Procedures.Title" = "Procedures guide";
+"Catalogs.Glossaries.Title" = "Glossary";
+"Catalogs.Search" = "Search";

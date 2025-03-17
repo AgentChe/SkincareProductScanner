@@ -77,9 +77,11 @@ private extension ExploreViewController {
         case .allProducts:
             print("allProducts") // TODO
         case .procedures:
-            print("procedures") // TODO
+            let vc = CatalogsViewController.make(item: .procedure)
+            navigationController?.pushViewController(vc, animated: true)
         case .glossary:
-            print("glossary") // TODO
+            let vc = CatalogsViewController.make(item: .glossary)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

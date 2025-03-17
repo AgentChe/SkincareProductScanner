@@ -124,6 +124,29 @@
 		DE6EEA112D87F28A000577F3 /* ExploreTableCatalogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA102D87F28A000577F3 /* ExploreTableCatalogsCell.swift */; };
 		DE6EEA142D87F32A000577F3 /* ExploreCatalogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA132D87F32A000577F3 /* ExploreCatalogButton.swift */; };
 		DE6EEA182D880549000577F3 /* ExploreTableBookmarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA172D880549000577F3 /* ExploreTableBookmarksCell.swift */; };
+		DE6EEA1C2D880F6C000577F3 /* CatalogBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA1B2D880F6C000577F3 /* CatalogBlock.swift */; };
+		DE6EEA1E2D880F73000577F3 /* CatalogSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA1D2D880F73000577F3 /* CatalogSection.swift */; };
+		DE6EEA202D880F7B000577F3 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA1F2D880F7B000577F3 /* Catalog.swift */; };
+		DE6EEA222D880F82000577F3 /* CatalogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA212D880F82000577F3 /* CatalogDetails.swift */; };
+		DE6EEA252D880FD9000577F3 /* GetGlossariesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA242D880FD9000577F3 /* GetGlossariesRequest.swift */; };
+		DE6EEA272D880FE0000577F3 /* GetProceduresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA262D880FE0000577F3 /* GetProceduresRequest.swift */; };
+		DE6EEA292D880FE9000577F3 /* GetGlossaryDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA282D880FE9000577F3 /* GetGlossaryDetailsRequest.swift */; };
+		DE6EEA2B2D880FF1000577F3 /* GetProcedureDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA2A2D880FF1000577F3 /* GetProcedureDetailsRequest.swift */; };
+		DE6EEA2D2D880FF9000577F3 /* SaveGlossaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA2C2D880FF9000577F3 /* SaveGlossaryRequest.swift */; };
+		DE6EEA2F2D881001000577F3 /* UnsaveGlossaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA2E2D881001000577F3 /* UnsaveGlossaryRequest.swift */; };
+		DE6EEA312D88100B000577F3 /* SaveProcedureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA302D88100B000577F3 /* SaveProcedureRequest.swift */; };
+		DE6EEA332D881012000577F3 /* UnsaveProcedureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA322D881012000577F3 /* UnsaveProcedureRequest.swift */; };
+		DE6EEA352D88101E000577F3 /* GetBookmarksGlossariesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA342D88101E000577F3 /* GetBookmarksGlossariesRequest.swift */; };
+		DE6EEA372D881027000577F3 /* GetBookmarksProceduresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA362D881027000577F3 /* GetBookmarksProceduresRequest.swift */; };
+		DE6EEA392D881815000577F3 /* CatalogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA382D881815000577F3 /* CatalogManager.swift */; };
+		DE6EEA3B2D88181D000577F3 /* CatalogMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA3A2D88181D000577F3 /* CatalogMediator.swift */; };
+		DE6EEA3F2D881E40000577F3 /* CatalogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA3E2D881E40000577F3 /* CatalogsViewController.swift */; };
+		DE6EEA412D881E46000577F3 /* CatalogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA402D881E46000577F3 /* CatalogsViewModel.swift */; };
+		DE6EEA432D881E4D000577F3 /* CatalogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA422D881E4D000577F3 /* CatalogsView.swift */; };
+		DE6EEA472D881E61000577F3 /* CatalogsSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA462D881E61000577F3 /* CatalogsSearchField.swift */; };
+		DE6EEA492D881E69000577F3 /* CatalogsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA482D881E69000577F3 /* CatalogsTableView.swift */; };
+		DE6EEA4B2D881E70000577F3 /* CatalogsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4A2D881E70000577F3 /* CatalogsTableElement.swift */; };
+		DE6EEA4D2D881E8D000577F3 /* CatalogsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */; };
 		DEAAEF432D859BCC0055C6BF /* ChatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF332D859BCC0055C6BF /* ChatsTableView.swift */; };
 		DEAAEF462D859BCC0055C6BF /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF382D859BCC0055C6BF /* ChatsViewModel.swift */; };
 		DEAAEF482D859BCC0055C6BF /* ChatsTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */; };
@@ -306,6 +329,29 @@
 		DE6EEA102D87F28A000577F3 /* ExploreTableCatalogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableCatalogsCell.swift; sourceTree = "<group>"; };
 		DE6EEA132D87F32A000577F3 /* ExploreCatalogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCatalogButton.swift; sourceTree = "<group>"; };
 		DE6EEA172D880549000577F3 /* ExploreTableBookmarksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableBookmarksCell.swift; sourceTree = "<group>"; };
+		DE6EEA1B2D880F6C000577F3 /* CatalogBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBlock.swift; sourceTree = "<group>"; };
+		DE6EEA1D2D880F73000577F3 /* CatalogSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSection.swift; sourceTree = "<group>"; };
+		DE6EEA1F2D880F7B000577F3 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		DE6EEA212D880F82000577F3 /* CatalogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetails.swift; sourceTree = "<group>"; };
+		DE6EEA242D880FD9000577F3 /* GetGlossariesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlossariesRequest.swift; sourceTree = "<group>"; };
+		DE6EEA262D880FE0000577F3 /* GetProceduresRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProceduresRequest.swift; sourceTree = "<group>"; };
+		DE6EEA282D880FE9000577F3 /* GetGlossaryDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlossaryDetailsRequest.swift; sourceTree = "<group>"; };
+		DE6EEA2A2D880FF1000577F3 /* GetProcedureDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProcedureDetailsRequest.swift; sourceTree = "<group>"; };
+		DE6EEA2C2D880FF9000577F3 /* SaveGlossaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveGlossaryRequest.swift; sourceTree = "<group>"; };
+		DE6EEA2E2D881001000577F3 /* UnsaveGlossaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaveGlossaryRequest.swift; sourceTree = "<group>"; };
+		DE6EEA302D88100B000577F3 /* SaveProcedureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProcedureRequest.swift; sourceTree = "<group>"; };
+		DE6EEA322D881012000577F3 /* UnsaveProcedureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaveProcedureRequest.swift; sourceTree = "<group>"; };
+		DE6EEA342D88101E000577F3 /* GetBookmarksGlossariesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksGlossariesRequest.swift; sourceTree = "<group>"; };
+		DE6EEA362D881027000577F3 /* GetBookmarksProceduresRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksProceduresRequest.swift; sourceTree = "<group>"; };
+		DE6EEA382D881815000577F3 /* CatalogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogManager.swift; sourceTree = "<group>"; };
+		DE6EEA3A2D88181D000577F3 /* CatalogMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogMediator.swift; sourceTree = "<group>"; };
+		DE6EEA3E2D881E40000577F3 /* CatalogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsViewController.swift; sourceTree = "<group>"; };
+		DE6EEA402D881E46000577F3 /* CatalogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsViewModel.swift; sourceTree = "<group>"; };
+		DE6EEA422D881E4D000577F3 /* CatalogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsView.swift; sourceTree = "<group>"; };
+		DE6EEA462D881E61000577F3 /* CatalogsSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsSearchField.swift; sourceTree = "<group>"; };
+		DE6EEA482D881E69000577F3 /* CatalogsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableView.swift; sourceTree = "<group>"; };
+		DE6EEA4A2D881E70000577F3 /* CatalogsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableElement.swift; sourceTree = "<group>"; };
+		DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableCell.swift; sourceTree = "<group>"; };
 		DEAAEF2E2D859BCC0055C6BF /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
 		DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableFooterView.swift; sourceTree = "<group>"; };
 		DEAAEF302D859BCC0055C6BF /* ChatsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableHeaderView.swift; sourceTree = "<group>"; };
@@ -708,6 +754,7 @@
 		DE0AC03C2D803026001C7664 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE6EEA3C2D881D09000577F3 /* Catalog */,
 				DEAAEF012D859B900055C6BF /* Chat */,
 				DEAD18E32D842A61003C4FFA /* Explore */,
 				DE0ABFDD2D803026001C7664 /* Main */,
@@ -788,6 +835,7 @@
 		DE0AC0822D803026001C7664 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE6EEA192D880F52000577F3 /* Catalog */,
 				DEAAEF652D859E980055C6BF /* Chat */,
 				DE0AC2142D804B9E001C7664 /* Discovery */,
 				DE0AC0752D803026001C7664 /* Profile */,
@@ -933,6 +981,83 @@
 				DE6EEA132D87F32A000577F3 /* ExploreCatalogButton.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DE6EEA192D880F52000577F3 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA232D880FBE000577F3 /* Request */,
+				DE6EEA1A2D880F5A000577F3 /* Model */,
+				DE6EEA382D881815000577F3 /* CatalogManager.swift */,
+				DE6EEA3A2D88181D000577F3 /* CatalogMediator.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		DE6EEA1A2D880F5A000577F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA1B2D880F6C000577F3 /* CatalogBlock.swift */,
+				DE6EEA1D2D880F73000577F3 /* CatalogSection.swift */,
+				DE6EEA1F2D880F7B000577F3 /* Catalog.swift */,
+				DE6EEA212D880F82000577F3 /* CatalogDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE6EEA232D880FBE000577F3 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA242D880FD9000577F3 /* GetGlossariesRequest.swift */,
+				DE6EEA262D880FE0000577F3 /* GetProceduresRequest.swift */,
+				DE6EEA282D880FE9000577F3 /* GetGlossaryDetailsRequest.swift */,
+				DE6EEA2A2D880FF1000577F3 /* GetProcedureDetailsRequest.swift */,
+				DE6EEA2C2D880FF9000577F3 /* SaveGlossaryRequest.swift */,
+				DE6EEA2E2D881001000577F3 /* UnsaveGlossaryRequest.swift */,
+				DE6EEA302D88100B000577F3 /* SaveProcedureRequest.swift */,
+				DE6EEA322D881012000577F3 /* UnsaveProcedureRequest.swift */,
+				DE6EEA342D88101E000577F3 /* GetBookmarksGlossariesRequest.swift */,
+				DE6EEA362D881027000577F3 /* GetBookmarksProceduresRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DE6EEA3C2D881D09000577F3 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA3D2D881E30000577F3 /* Catalogs */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		DE6EEA3D2D881E30000577F3 /* Catalogs */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA442D881E53000577F3 /* Views */,
+				DE6EEA3E2D881E40000577F3 /* CatalogsViewController.swift */,
+				DE6EEA402D881E46000577F3 /* CatalogsViewModel.swift */,
+				DE6EEA422D881E4D000577F3 /* CatalogsView.swift */,
+			);
+			path = Catalogs;
+			sourceTree = "<group>";
+		};
+		DE6EEA442D881E53000577F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA452D881E57000577F3 /* TableView */,
+				DE6EEA462D881E61000577F3 /* CatalogsSearchField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE6EEA452D881E57000577F3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA482D881E69000577F3 /* CatalogsTableView.swift */,
+				DE6EEA4A2D881E70000577F3 /* CatalogsTableElement.swift */,
+				DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		DEAAEF012D859B900055C6BF /* Chat */ = {
@@ -1334,12 +1459,14 @@
 				DE0AC0AC2D803026001C7664 /* PushNotificationsModel.swift in Sources */,
 				DE0AC0AE2D803026001C7664 /* ObtainProfileRequest.swift in Sources */,
 				DEAD18E72D842A7C003C4FFA /* ExploreViewModel.swift in Sources */,
+				DE6EEA352D88101E000577F3 /* GetBookmarksGlossariesRequest.swift in Sources */,
 				DE0AC0BB2D803026001C7664 /* UIDevice+Extension.swift in Sources */,
 				DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */,
 				DE0AC0BF2D803026001C7664 /* PaygateBestOfferView.swift in Sources */,
 				DE0AC0C42D803026001C7664 /* APIFormDataRequestBody.swift in Sources */,
 				DE0AC0CE2D803026001C7664 /* ProfileMediator.swift in Sources */,
 				DE0AC0D42D803026001C7664 /* Scalable.swift in Sources */,
+				DE6EEA252D880FD9000577F3 /* GetGlossariesRequest.swift in Sources */,
 				DE0AC2352D818552001C7664 /* OnboardingDisclaimerView.swift in Sources */,
 				DE0AC2322D817C29001C7664 /* OnboardingHeaderView.swift in Sources */,
 				DE0AC0DB2D803026001C7664 /* PaygateEnableTrialButton.swift in Sources */,
@@ -1353,6 +1480,7 @@
 				DEAD19052D846E65003C4FFA /* ReferencesViewController.swift in Sources */,
 				DE0AC0F42D803026001C7664 /* NumberLaunches.swift in Sources */,
 				DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */,
+				DE6EEA1C2D880F6C000577F3 /* CatalogBlock.swift in Sources */,
 				DE0AC0F92D803026001C7664 /* SplashViewModel.swift in Sources */,
 				DE0AC2232D8076B1001C7664 /* Preference.swift in Sources */,
 				DEAD18FC2D8433C0003C4FFA /* MenuTableElement.swift in Sources */,
@@ -1364,15 +1492,19 @@
 				DE0AC1092D803026001C7664 /* MainCoordinator.swift in Sources */,
 				DE0AC10B2D803026001C7664 /* PaygateViewModel.swift in Sources */,
 				DE0AC10F2D803026001C7664 /* RequestReview.swift in Sources */,
+				DE6EEA4B2D881E70000577F3 /* CatalogsTableElement.swift in Sources */,
+				DE6EEA272D880FE0000577F3 /* GetProceduresRequest.swift in Sources */,
 				DE0AC1132D803026001C7664 /* OnboardingViewController.swift in Sources */,
 				DE0AC1182D803026001C7664 /* SplashView.swift in Sources */,
 				DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */,
 				DE0AC1192D803026001C7664 /* TabView.swift in Sources */,
+				DE6EEA432D881E4D000577F3 /* CatalogsView.swift in Sources */,
 				DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */,
 				DE0AC11F2D803026001C7664 /* SessionManager.swift in Sources */,
 				DE0AC1252D803026001C7664 /* NavigationController.swift in Sources */,
 				DE0AC1262D803026001C7664 /* ContentError.swift in Sources */,
 				DE0AC1272D803026001C7664 /* TakePhoto.swift in Sources */,
+				DE6EEA392D881815000577F3 /* CatalogManager.swift in Sources */,
 				DE0AC2272D807735001C7664 /* ObtainGoalsRequest.swift in Sources */,
 				DEAD18FA2D8433BC003C4FFA /* MenuTableCell.swift in Sources */,
 				DE6EEA0C2D87F1F6000577F3 /* ExploreTableView.swift in Sources */,
@@ -1391,6 +1523,7 @@
 				DE0AC1552D803026001C7664 /* MainView.swift in Sources */,
 				DE0AC1572D803026001C7664 /* PaygateView.swift in Sources */,
 				DE0AC15F2D803026001C7664 /* GradientView.swift in Sources */,
+				DE6EEA312D88100B000577F3 /* SaveProcedureRequest.swift in Sources */,
 				DE0AC1622D803026001C7664 /* SceneDelegate.swift in Sources */,
 				DE0AC1672D803026001C7664 /* ProfileBindingRequest.swift in Sources */,
 				DE0AC1682D803026001C7664 /* IAPError.swift in Sources */,
@@ -1410,7 +1543,9 @@
 				DE0AC1922D803026001C7664 /* Fonts.swift in Sources */,
 				DE0AC1932D803026001C7664 /* AppDelegate.swift in Sources */,
 				DE0AC1952D803026001C7664 /* Profile.swift in Sources */,
+				DE6EEA372D881027000577F3 /* GetBookmarksProceduresRequest.swift in Sources */,
 				DE0AC19D2D803026001C7664 /* ProfileCreateRequest.swift in Sources */,
+				DE6EEA4D2D881E8D000577F3 /* CatalogsTableCell.swift in Sources */,
 				DEAD18EC2D842B9A003C4FFA /* ExploreHeaderView.swift in Sources */,
 				DE0AC1A82D803026001C7664 /* SplashViewController.swift in Sources */,
 				DE0AC1A92D803026001C7664 /* PaygateProductButton.swift in Sources */,
@@ -1419,12 +1554,14 @@
 				DEAD18F22D84321D003C4FFA /* MenuViewModel.swift in Sources */,
 				DE0AC23F2D818C4E001C7664 /* OTableView.swift in Sources */,
 				DE6EEA112D87F28A000577F3 /* ExploreTableCatalogsCell.swift in Sources */,
+				DE6EEA2D2D880FF9000577F3 /* SaveGlossaryRequest.swift in Sources */,
 				DEAD18E92D842A80003C4FFA /* ExploreView.swift in Sources */,
 				DEAD19002D843794003C4FFA /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE0AC1AB2D803026001C7664 /* ChoosePhotoFromGallery.swift in Sources */,
 				DE0AC1AE2D803026001C7664 /* TryAgainViewController.swift in Sources */,
 				DE0AC1AF2D803026001C7664 /* NavigationControllerSettings.swift in Sources */,
 				DE0AC1B42D803026001C7664 /* RxActivityIndicator.swift in Sources */,
+				DE6EEA412D881E46000577F3 /* CatalogsViewModel.swift in Sources */,
 				DEAD191C2D84894A003C4FFA /* ChangeGoalsView.swift in Sources */,
 				DEAD19152D847D99003C4FFA /* ChangeProfileViewModel.swift in Sources */,
 				DEAAEF432D859BCC0055C6BF /* ChatsTableView.swift in Sources */,
@@ -1440,6 +1577,7 @@
 				DE6EEA0E2D87F1FE000577F3 /* ExploreTableElement.swift in Sources */,
 				DEAAEF852D85A0E30055C6BF /* ChatQuestionImageCell.swift in Sources */,
 				DEAAEF862D85A0E30055C6BF /* ChatPlaceholderView.swift in Sources */,
+				DE6EEA202D880F7B000577F3 /* Catalog.swift in Sources */,
 				DEAAEF872D85A0E30055C6BF /* ChatAnswerCell.swift in Sources */,
 				DEAAEF882D85A0E30055C6BF /* ChatLoadingCell.swift in Sources */,
 				DEAAEF892D85A0E30055C6BF /* ChatViewModel.swift in Sources */,
@@ -1447,7 +1585,10 @@
 				DEAAEF8B2D85A0E30055C6BF /* ChatRegenerateView.swift in Sources */,
 				DEAAEF8C2D85A0E30055C6BF /* ChatInputField.swift in Sources */,
 				DEAAEF8D2D85A0E30055C6BF /* ChatQuestionTextCell.swift in Sources */,
+				DE6EEA1E2D880F73000577F3 /* CatalogSection.swift in Sources */,
 				DEAAEF8E2D85A0E30055C6BF /* ChatViewController.swift in Sources */,
+				DE6EEA2B2D880FF1000577F3 /* GetProcedureDetailsRequest.swift in Sources */,
+				DE6EEA292D880FE9000577F3 /* GetGlossaryDetailsRequest.swift in Sources */,
 				DEAAEF8F2D85A0E30055C6BF /* ChatTableElement.swift in Sources */,
 				DEAAEF6B2D859E980055C6BF /* CreateChatRequest.swift in Sources */,
 				DEAAEF6C2D859E980055C6BF /* CheckMessageCompleteResponse.swift in Sources */,
@@ -1460,9 +1601,14 @@
 				DEAAEF732D859E980055C6BF /* CheckMessageCompleteRequest.swift in Sources */,
 				DEAAEF4C2D859BCC0055C6BF /* ChatsTableSection.swift in Sources */,
 				DEAAEF4E2D859BCC0055C6BF /* CDCView.swift in Sources */,
+				DE6EEA2F2D881001000577F3 /* UnsaveGlossaryRequest.swift in Sources */,
 				DE6EEA182D880549000577F3 /* ExploreTableBookmarksCell.swift in Sources */,
+				DE6EEA3F2D881E40000577F3 /* CatalogsViewController.swift in Sources */,
 				DEAAEF502D859BCC0055C6BF /* CDCViewController.swift in Sources */,
+				DE6EEA472D881E61000577F3 /* CatalogsSearchField.swift in Sources */,
 				DEAAEF512D859BCC0055C6BF /* ChatsTableHeaderView.swift in Sources */,
+				DE6EEA3B2D88181D000577F3 /* CatalogMediator.swift in Sources */,
+				DE6EEA332D881012000577F3 /* UnsaveProcedureRequest.swift in Sources */,
 				DEAAEF522D859BCC0055C6BF /* ChatsViewController.swift in Sources */,
 				DEAAEF532D859BCC0055C6BF /* ChatsTableCell.swift in Sources */,
 				DE0AC2472D819916001C7664 /* OPreferencesView.swift in Sources */,
@@ -1472,6 +1618,7 @@
 				DEAD18F82D8433B7003C4FFA /* MenuTableView.swift in Sources */,
 				DE0AC2392D8187CE001C7664 /* OCuratedListsView.swift in Sources */,
 				DE0AC1BA2D803026001C7664 /* UIColor+Extension.swift in Sources */,
+				DE6EEA222D880F82000577F3 /* CatalogDetails.swift in Sources */,
 				DEAD19132D847D92003C4FFA /* ChangeProfileViewController.swift in Sources */,
 				DE0AC1C32D803026001C7664 /* GlobalDefinitions.swift in Sources */,
 				DE0AC1C52D803026001C7664 /* IAPActionResult.swift in Sources */,
@@ -1489,6 +1636,7 @@
 				DEAD18F02D84320C003C4FFA /* MenuViewController.swift in Sources */,
 				DEAD18FE2D84342A003C4FFA /* BottomInfoView.swift in Sources */,
 				DEAD191E2D848A72003C4FFA /* ChangePreferencesView.swift in Sources */,
+				DE6EEA492D881E69000577F3 /* CatalogsTableView.swift in Sources */,
 				DE0AC1E72D803026001C7664 /* PurchaseValidationObserver.swift in Sources */,
 				DE0AC1EC2D803026001C7664 /* MainViewController.swift in Sources */,
 				DE0AC1F02D803026001C7664 /* XOREncryption.swift in Sources */,
