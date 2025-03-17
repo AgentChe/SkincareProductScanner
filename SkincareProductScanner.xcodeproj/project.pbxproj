@@ -147,6 +147,17 @@
 		DE6EEA492D881E69000577F3 /* CatalogsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA482D881E69000577F3 /* CatalogsTableView.swift */; };
 		DE6EEA4B2D881E70000577F3 /* CatalogsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4A2D881E70000577F3 /* CatalogsTableElement.swift */; };
 		DE6EEA4D2D881E8D000577F3 /* CatalogsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */; };
+		DE6EEA5D2D883484000577F3 /* CatalogDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA5A2D883484000577F3 /* CatalogDetailsViewController.swift */; };
+		DE6EEA5E2D883484000577F3 /* CDTableSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA502D883484000577F3 /* CDTableSectionCell.swift */; };
+		DE6EEA5F2D883484000577F3 /* CDTableTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA522D883484000577F3 /* CDTableTextCell.swift */; };
+		DE6EEA602D883484000577F3 /* CDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA562D883484000577F3 /* CDTableView.swift */; };
+		DE6EEA612D883484000577F3 /* CDTableNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4F2D883484000577F3 /* CDTableNameCell.swift */; };
+		DE6EEA622D883484000577F3 /* CatalogDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA5B2D883484000577F3 /* CatalogDetailsViewModel.swift */; };
+		DE6EEA632D883484000577F3 /* CDTableTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA532D883484000577F3 /* CDTableTitleCell.swift */; };
+		DE6EEA642D883484000577F3 /* CDTableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA4E2D883484000577F3 /* CDTableImageCell.swift */; };
+		DE6EEA652D883484000577F3 /* CDTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA552D883484000577F3 /* CDTableElement.swift */; };
+		DE6EEA662D883484000577F3 /* CDTableSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA512D883484000577F3 /* CDTableSeparatorCell.swift */; };
+		DE6EEA672D883484000577F3 /* CatalogDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */; };
 		DEAAEF432D859BCC0055C6BF /* ChatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF332D859BCC0055C6BF /* ChatsTableView.swift */; };
 		DEAAEF462D859BCC0055C6BF /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF382D859BCC0055C6BF /* ChatsViewModel.swift */; };
 		DEAAEF482D859BCC0055C6BF /* ChatsTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */; };
@@ -352,6 +363,17 @@
 		DE6EEA482D881E69000577F3 /* CatalogsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableView.swift; sourceTree = "<group>"; };
 		DE6EEA4A2D881E70000577F3 /* CatalogsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableElement.swift; sourceTree = "<group>"; };
 		DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogsTableCell.swift; sourceTree = "<group>"; };
+		DE6EEA4E2D883484000577F3 /* CDTableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableImageCell.swift; sourceTree = "<group>"; };
+		DE6EEA4F2D883484000577F3 /* CDTableNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableNameCell.swift; sourceTree = "<group>"; };
+		DE6EEA502D883484000577F3 /* CDTableSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableSectionCell.swift; sourceTree = "<group>"; };
+		DE6EEA512D883484000577F3 /* CDTableSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableSeparatorCell.swift; sourceTree = "<group>"; };
+		DE6EEA522D883484000577F3 /* CDTableTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableTextCell.swift; sourceTree = "<group>"; };
+		DE6EEA532D883484000577F3 /* CDTableTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableTitleCell.swift; sourceTree = "<group>"; };
+		DE6EEA552D883484000577F3 /* CDTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableElement.swift; sourceTree = "<group>"; };
+		DE6EEA562D883484000577F3 /* CDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableView.swift; sourceTree = "<group>"; };
+		DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsView.swift; sourceTree = "<group>"; };
+		DE6EEA5A2D883484000577F3 /* CatalogDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsViewController.swift; sourceTree = "<group>"; };
+		DE6EEA5B2D883484000577F3 /* CatalogDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsViewModel.swift; sourceTree = "<group>"; };
 		DEAAEF2E2D859BCC0055C6BF /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
 		DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableFooterView.swift; sourceTree = "<group>"; };
 		DEAAEF302D859BCC0055C6BF /* ChatsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableHeaderView.swift; sourceTree = "<group>"; };
@@ -1025,6 +1047,7 @@
 		DE6EEA3C2D881D09000577F3 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				DE6EEA5C2D883484000577F3 /* CatalogDetails */,
 				DE6EEA3D2D881E30000577F3 /* Catalogs */,
 			);
 			path = Catalog;
@@ -1058,6 +1081,48 @@
 				DE6EEA4C2D881E8D000577F3 /* CatalogsTableCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE6EEA542D883484000577F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA4E2D883484000577F3 /* CDTableImageCell.swift */,
+				DE6EEA4F2D883484000577F3 /* CDTableNameCell.swift */,
+				DE6EEA502D883484000577F3 /* CDTableSectionCell.swift */,
+				DE6EEA512D883484000577F3 /* CDTableSeparatorCell.swift */,
+				DE6EEA522D883484000577F3 /* CDTableTextCell.swift */,
+				DE6EEA532D883484000577F3 /* CDTableTitleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE6EEA572D883484000577F3 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA542D883484000577F3 /* Cells */,
+				DE6EEA552D883484000577F3 /* CDTableElement.swift */,
+				DE6EEA562D883484000577F3 /* CDTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE6EEA582D883484000577F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA572D883484000577F3 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE6EEA5C2D883484000577F3 /* CatalogDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EEA582D883484000577F3 /* Views */,
+				DE6EEA5A2D883484000577F3 /* CatalogDetailsViewController.swift */,
+				DE6EEA5B2D883484000577F3 /* CatalogDetailsViewModel.swift */,
+				DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */,
+			);
+			path = CatalogDetails;
 			sourceTree = "<group>";
 		};
 		DEAAEF012D859B900055C6BF /* Chat */ = {
@@ -1579,6 +1644,17 @@
 				DEAAEF862D85A0E30055C6BF /* ChatPlaceholderView.swift in Sources */,
 				DE6EEA202D880F7B000577F3 /* Catalog.swift in Sources */,
 				DEAAEF872D85A0E30055C6BF /* ChatAnswerCell.swift in Sources */,
+				DE6EEA5D2D883484000577F3 /* CatalogDetailsViewController.swift in Sources */,
+				DE6EEA5E2D883484000577F3 /* CDTableSectionCell.swift in Sources */,
+				DE6EEA5F2D883484000577F3 /* CDTableTextCell.swift in Sources */,
+				DE6EEA602D883484000577F3 /* CDTableView.swift in Sources */,
+				DE6EEA612D883484000577F3 /* CDTableNameCell.swift in Sources */,
+				DE6EEA622D883484000577F3 /* CatalogDetailsViewModel.swift in Sources */,
+				DE6EEA632D883484000577F3 /* CDTableTitleCell.swift in Sources */,
+				DE6EEA642D883484000577F3 /* CDTableImageCell.swift in Sources */,
+				DE6EEA652D883484000577F3 /* CDTableElement.swift in Sources */,
+				DE6EEA662D883484000577F3 /* CDTableSeparatorCell.swift in Sources */,
+				DE6EEA672D883484000577F3 /* CatalogDetailsView.swift in Sources */,
 				DEAAEF882D85A0E30055C6BF /* ChatLoadingCell.swift in Sources */,
 				DEAAEF892D85A0E30055C6BF /* ChatViewModel.swift in Sources */,
 				DEAAEF8A2D85A0E30055C6BF /* ChatView.swift in Sources */,

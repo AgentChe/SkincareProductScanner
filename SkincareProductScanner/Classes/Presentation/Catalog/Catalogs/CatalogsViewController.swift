@@ -74,9 +74,11 @@ private extension CatalogsViewController {
     func route(_ route: CatalogsViewModel.Route) {
         switch route {
         case .glossaryDetails(let catalog):
-            break // TODO
+            let vc = CatalogDetailsViewController.make(item: .glossary, catalog: catalog)
+            navigationController?.pushViewController(vc, animated: true)
         case .procedureDetails(let catalog):
-            break // TODO
+            let vc = CatalogDetailsViewController.make(item: .procedure, catalog: catalog)
+            navigationController?.pushViewController(vc, animated: true)
         case .paygate:
             let vc = PaygateViewController.make()
             present(vc, animated: true)
