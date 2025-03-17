@@ -1,0 +1,107 @@
+//
+//  ExploreTableView.swift
+//  SkincareProductScanner
+//
+//  Created by Андрей Чернышев on 17.03.2025.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+final class ExploreTableView: UITableView {
+    private lazy var elements = [ExploreTableElement]()
+    
+    private lazy var didTapBookmarksTrigger = PublishRelay<Void>()
+    private lazy var didTapAllProductsTrigger = PublishRelay<Void>()
+    private lazy var didTapProceduresTrigger = PublishRelay<Void>()
+    private lazy var didTapGlossaryTrigger = PublishRelay<Void>()
+    
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+        
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension ExploreTableView {
+    func setup(elements: [ExploreTableElement]) {
+        self.elements = elements
+        
+        reloadData()
+    }
+    
+    var didTapBookmarks: Signal<Void> {
+        didTapBookmarksTrigger.asSignal()
+    }
+    
+    var didTapAllProducts: Signal<Void> {
+        didTapAllProductsTrigger.asSignal()
+    }
+    
+    var didTapProcedures: Signal<Void> {
+        didTapProceduresTrigger.asSignal()
+    }
+    
+    var didTapGlossary: Signal<Void> {
+        didTapGlossaryTrigger.asSignal()
+    }
+}
+
+// MARK: UITableViewDataSource
+extension ExploreTableView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        elements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch elements[indexPath.row] {
+        case .bookmarks:
+            return dequeueReusableCell(withIdentifier: String(describing: ExploreTableBookmarksCell.self), for: indexPath)
+        case .catalogs:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableCatalogsCell.self), for: indexPath) as! ExploreTableCatalogsCell
+            cell.didTapAllProducts = { [weak self] in
+                self?.didTapAllProductsTrigger.accept(Void())
+            }
+            cell.didTapProcedures = { [weak self] in
+                self?.didTapProceduresTrigger.accept(Void())
+            }
+            cell.didTapGlossary = { [weak self] in
+                self?.didTapGlossaryTrigger.accept(Void())
+            }
+            return cell
+        }
+    }
+}
+
+// MARK: UITableViewDelegate
+extension ExploreTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch elements[indexPath.row] {
+        case .bookmarks:
+            didTapBookmarksTrigger.accept(Void())
+        default:
+            return 
+        }
+    }
+}
+
+// MARK: Private
+private extension ExploreTableView {
+    func initialize() {
+        register(ExploreTableBookmarksCell.self, forCellReuseIdentifier: String(describing: ExploreTableBookmarksCell.self))
+        register(ExploreTableCatalogsCell.self, forCellReuseIdentifier: String(describing: ExploreTableCatalogsCell.self))
+        
+        dataSource = self
+        delegate = self
+    }
+}

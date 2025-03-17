@@ -10,6 +10,7 @@ import UIKit
 final class ExploreView: UIView {
     lazy var backgroundView = makeBackgroundView()
     lazy var headerView = makeHeaderView()
+    lazy var tableView = makeTableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +46,13 @@ private extension ExploreView {
             headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 34.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
 
@@ -61,6 +69,18 @@ private extension ExploreView {
     
     func makeHeaderView() -> ExploreHeaderView {
         let view = ExploreHeaderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTableView() -> ExploreTableView {
+        let view = ExploreTableView()
+        view.backgroundColor = UIColor.clear
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
+        view.contentInset = UIEdgeInsets(vertical: 24.scale)
+        view.setContentOffset(CGPoint(x: 0, y: -24.scale), animated: false)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

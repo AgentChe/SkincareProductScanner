@@ -23,12 +23,22 @@ final class ExploreViewController: UIViewController {
         super.viewDidLoad()
         
         let output = viewModel.configure(input: ExploreViewModel.Input(
-            didTapMenu: mainView.headerView.menuButton.rx.tap.asSignal()
+            didTapMenu: mainView.headerView.menuButton.rx.tap.asSignal(),
+            didTapBookmarks: mainView.tableView.didTapBookmarks,
+            didTapAllProducts: mainView.tableView.didTapAllProducts,
+            didTapProcedures: mainView.tableView.didTapProcedures,
+            didTapGlossary: mainView.tableView.didTapGlossary
         ))
         
         output.route
             .drive(Binder(self) { base, route in
                 base.route(route)
+            })
+            .disposed(by: disposeBag)
+        
+        output.elements
+            .drive(Binder(mainView.tableView) { base, elements in
+                base.setup(elements: elements)
             })
             .disposed(by: disposeBag)
     }
@@ -62,6 +72,14 @@ private extension ExploreViewController {
         case .menu:
             let vc = MenuViewController.make()
             navigationController?.pushViewController(vc, animated: true)
+        case .bookmarks:
+            print("bookmarks") // TODO
+        case .allProducts:
+            print("allProducts") // TODO
+        case .procedures:
+            print("procedures") // TODO
+        case .glossary:
+            print("glossary") // TODO
         }
     }
 }
