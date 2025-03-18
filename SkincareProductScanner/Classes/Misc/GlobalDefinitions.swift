@@ -12,6 +12,9 @@ final class GlobalDefinitions {
     static let domain = "https://closet.korrekted.com"
     static let apiKey = "c3Mtc21hcnQtY2xvc2V0LW5ldy10b2tlbg=="
     
+    static let dermatologyDomain = "https://dermatology.awesum-apps.com"
+    static let dermatologyApiKey = "7LexM8IGOSmIrpEimANw"
+    
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "v6yHI2AQpAq7YNYX"
     

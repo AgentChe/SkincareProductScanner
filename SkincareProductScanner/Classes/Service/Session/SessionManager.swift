@@ -24,8 +24,10 @@ extension SessionManager: SessionManagerProtocol {
         "anon_id_ohbfgotiujrsvtteradflwzjekazkahbgznqjsvsgmhyisiupwffpoyhtkirixhl"
     }
     
+    // TODO
     var internalId: String {
-        OtterScale.shared.getInternalID()
+//        OtterScale.shared.getInternalID()
+        "anon_id_ohbfgotiujrsvtteradflwzjekazkahbgznqjsvsgmhyisiupwffpoyhtkirixhl"
     }
     
     func hasActiveSubscriptions() -> Bool {

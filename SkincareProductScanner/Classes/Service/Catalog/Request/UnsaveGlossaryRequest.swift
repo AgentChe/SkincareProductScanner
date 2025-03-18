@@ -7,14 +7,12 @@
 
 import Alamofire
 
-// TODO: полное соответствие документу
 struct UnsaveGlossaryRequest: APIRequestBody {
-    let anonymousId: String
-    let internalId: String
+    let userToken: String
     let id: String
 
     var url: String {
-        "https://dermatology.awesum-apps.com" + "/api/dermatologic_term/unsave"
+        GlobalDefinitions.dermatologyDomain + "/api/dermatologic_term/unsave"
     }
     
     var method: HTTPMethod {
@@ -23,9 +21,9 @@ struct UnsaveGlossaryRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
-            "_api_key": "7LexM8IGOSmIrpEimANw",
-            "_user_token": anonymousId,
-            "dermatologic_terms": [id] // TODO: убрать массив
+            "_api_key": GlobalDefinitions.dermatologyApiKey,
+            "_user_token": userToken,
+            "dermatologic_terms": [id] 
         ]
     }
 }

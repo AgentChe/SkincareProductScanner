@@ -36,10 +36,7 @@ final class CatalogManager {
 extension CatalogManager: CatalogManagerProtocol {
     func obtainGlossaries(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
-            let request = GetGlossariesRequest(
-                anonymousId: sessionManager.anonymousId,
-                internalId: sessionManager.internalId
-            )
+            let request = GetGlossariesRequest(userToken: sessionManager.internalId)
             return loadCatalogs(request: request, storageKey: Constants.glossariesKey)
         } else {
             return cachedCatalogs(storageKey: Constants.glossariesKey)
@@ -48,10 +45,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func obtainProcedures(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
-            let request = GetProceduresRequest(
-                anonymousId: sessionManager.anonymousId,
-                internalId: sessionManager.internalId
-            )
+            let request = GetProceduresRequest(userToken: sessionManager.internalId)
             return loadCatalogs(request: request, storageKey: Constants.proceduresKey)
         } else {
             return cachedCatalogs(storageKey: Constants.proceduresKey)
@@ -60,8 +54,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func obtainGlossaryDetails(id: String) -> Single<CatalogDetails?> {
         let request = GetGlossaryDetailsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -72,8 +65,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func obtainProcedureDetails(id: String) -> Single<CatalogDetails?> {
         let request = GetProcedureDetailsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -84,8 +76,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func saveGlossary(id: String) -> Single<RequestResult> {
         let request = SaveGlossaryRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -101,8 +92,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func saveProcedure(id: String) -> Single<RequestResult> {
         let request = SaveProcedureRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -118,8 +108,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func unsaveGlossary(id: String) -> Single<RequestResult> {
         let request = UnsaveGlossaryRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -135,8 +124,7 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func unsaveProcedure(id: String) -> Single<RequestResult> {
         let request = UnsaveProcedureRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
+            userToken: sessionManager.internalId,
             id: id
         )
         
@@ -151,10 +139,7 @@ extension CatalogManager: CatalogManagerProtocol {
     }
     
     func obtainBookmarksGlossaries() -> Single<[Catalog]> {
-        let request = GetBookmarksGlossariesRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId
-        )
+        let request = GetBookmarksGlossariesRequest(userToken: sessionManager.internalId)
         
         return restAPITransport
             .callServerApi(requestBody: request)
@@ -162,10 +147,7 @@ extension CatalogManager: CatalogManagerProtocol {
     }
     
     func obtainBookmarksProcedures() -> Single<[Catalog]> {
-        let request = GetBookmarksProceduresRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId
-        )
+        let request = GetBookmarksProceduresRequest(userToken: sessionManager.internalId)
         
         return restAPITransport
             .callServerApi(requestBody: request)

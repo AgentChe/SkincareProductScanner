@@ -26,7 +26,6 @@ extension Catalog {
     init?(json: [String: Any]) {
         guard
             let id: String = {
-                // TODO: cразу извлекать String
                 guard let int = json["id"] as? Int else { return nil }
                 return String(int)
             }(),

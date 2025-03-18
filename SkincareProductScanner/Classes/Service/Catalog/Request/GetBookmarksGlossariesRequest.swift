@@ -7,13 +7,11 @@
 
 import Alamofire
 
-// TODO: полное соответствие документу
 struct GetBookmarksGlossariesRequest: APIRequestBody {
-    let anonymousId: String
-    let internalId: String
+    let userToken: String
 
     var url: String {
-        "https://dermatology.awesum-apps.com" + "/api/dermatologic_term/bookmarks"
+        GlobalDefinitions.dermatologyDomain + "/api/dermatologic_term/bookmarks"
     }
     
     var method: HTTPMethod {
@@ -22,8 +20,8 @@ struct GetBookmarksGlossariesRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
-            "_api_key": "7LexM8IGOSmIrpEimANw",
-            "_user_token": anonymousId
+            "_api_key": GlobalDefinitions.dermatologyApiKey,
+            "_user_token": userToken
         ]
     }
 }

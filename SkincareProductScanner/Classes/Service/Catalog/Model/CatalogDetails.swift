@@ -19,7 +19,6 @@ extension CatalogDetails {
             let json = response as? [String: Any],
             let data = json["_data"] as? [String: Any],
             let id: String = {
-                // TODO: cразу извлекать String
                 guard let int = data["id"] as? Int else { return nil }
                 return String(int)
             }(),

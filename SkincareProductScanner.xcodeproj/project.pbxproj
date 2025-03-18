@@ -194,6 +194,8 @@
 		DEAAEF8D2D85A0E30055C6BF /* ChatQuestionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF772D85A0E30055C6BF /* ChatQuestionTextCell.swift */; };
 		DEAAEF8E2D85A0E30055C6BF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF812D85A0E30055C6BF /* ChatViewController.swift */; };
 		DEAAEF8F2D85A0E30055C6BF /* ChatTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF792D85A0E30055C6BF /* ChatTableElement.swift */; };
+		DEABF2C52D897E5400505F00 /* DermatologyLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2C42D897E5400505F00 /* DermatologyLoginRequest.swift */; };
+		DEABF2C72D897E6800505F00 /* DermatologySyncTokensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2C62D897E6800505F00 /* DermatologySyncTokensRequest.swift */; };
 		DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */; };
 		DEAD18E72D842A7C003C4FFA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */; };
 		DEAD18E92D842A80003C4FFA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E82D842A80003C4FFA /* ExploreView.swift */; };
@@ -410,6 +412,8 @@
 		DEAAEF802D85A0E30055C6BF /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		DEAAEF812D85A0E30055C6BF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DEAAEF822D85A0E30055C6BF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DEABF2C42D897E5400505F00 /* DermatologyLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DermatologyLoginRequest.swift; sourceTree = "<group>"; };
+		DEABF2C62D897E6800505F00 /* DermatologySyncTokensRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DermatologySyncTokensRequest.swift; sourceTree = "<group>"; };
 		DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		DEAD18E82D842A80003C4FFA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -801,6 +805,8 @@
 				DE0AC06F2D803026001C7664 /* ProfileBindingRequest.swift */,
 				DE0AC0702D803026001C7664 /* ProfileCreateRequest.swift */,
 				DE0AC0712D803026001C7664 /* SetProfileRequest.swift */,
+				DEABF2C42D897E5400505F00 /* DermatologyLoginRequest.swift */,
+				DEABF2C62D897E6800505F00 /* DermatologySyncTokensRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1696,7 +1702,9 @@
 				DE0AC1BA2D803026001C7664 /* UIColor+Extension.swift in Sources */,
 				DE6EEA222D880F82000577F3 /* CatalogDetails.swift in Sources */,
 				DEAD19132D847D92003C4FFA /* ChangeProfileViewController.swift in Sources */,
+				DEABF2C72D897E6800505F00 /* DermatologySyncTokensRequest.swift in Sources */,
 				DE0AC1C32D803026001C7664 /* GlobalDefinitions.swift in Sources */,
+				DEABF2C52D897E5400505F00 /* DermatologyLoginRequest.swift in Sources */,
 				DE0AC1C52D803026001C7664 /* IAPActionResult.swift in Sources */,
 				DEAD190F2D847855003C4FFA /* DisclaimerView.swift in Sources */,
 				DEAD18F42D843222003C4FFA /* MenuView.swift in Sources */,
