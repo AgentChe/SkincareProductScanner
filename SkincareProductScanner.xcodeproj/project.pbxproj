@@ -196,6 +196,15 @@
 		DEAAEF8F2D85A0E30055C6BF /* ChatTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF792D85A0E30055C6BF /* ChatTableElement.swift */; };
 		DEABF2C52D897E5400505F00 /* DermatologyLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2C42D897E5400505F00 /* DermatologyLoginRequest.swift */; };
 		DEABF2C72D897E6800505F00 /* DermatologySyncTokensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2C62D897E6800505F00 /* DermatologySyncTokensRequest.swift */; };
+		DEABF2CA2D89845200505F00 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2C92D89845200505F00 /* BookmarksViewController.swift */; };
+		DEABF2CC2D89845800505F00 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2CB2D89845800505F00 /* BookmarksViewModel.swift */; };
+		DEABF2CE2D89845D00505F00 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2CD2D89845D00505F00 /* BookmarksView.swift */; };
+		DEABF2D12D89863300505F00 /* BookmarksEntitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2D02D89863300505F00 /* BookmarksEntitiesView.swift */; };
+		DEABF2D42D89864900505F00 /* BookmarksEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2D32D89864900505F00 /* BookmarksEntityButton.swift */; };
+		DEABF2D62D89D7D800505F00 /* BookmarksEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2D52D89D7D800505F00 /* BookmarksEmptyView.swift */; };
+		DEABF2D92D89DE3400505F00 /* BookmarksCatalogsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2D82D89DE3400505F00 /* BookmarksCatalogsTableView.swift */; };
+		DEABF2DB2D89DE4100505F00 /* BookmarksCatalogsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2DA2D89DE4100505F00 /* BookmarksCatalogsTableElement.swift */; };
+		DEABF2DE2D89DE5300505F00 /* BookmarksCatalogsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABF2DD2D89DE5300505F00 /* BookmarksCatalogsTableCell.swift */; };
 		DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */; };
 		DEAD18E72D842A7C003C4FFA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */; };
 		DEAD18E92D842A80003C4FFA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD18E82D842A80003C4FFA /* ExploreView.swift */; };
@@ -219,6 +228,10 @@
 		DEAD191A2D84802E003C4FFA /* ChangeSkinTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */; };
 		DEAD191C2D84894A003C4FFA /* ChangeGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */; };
 		DEAD191E2D848A72003C4FFA /* ChangePreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */; };
+		DEC29E092D8B2774003803BA /* BookmarksCatalogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E082D8B2774003803BA /* BookmarksCatalogsViewController.swift */; };
+		DEC29E0B2D8B27A0003803BA /* BookmarksCatalogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E0A2D8B27A0003803BA /* BookmarksCatalogsViewModel.swift */; };
+		DEC29E0D2D8B27A5003803BA /* BookmarksCatalogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E0C2D8B27A5003803BA /* BookmarksCatalogsView.swift */; };
+		DEC29E102D8B30F7003803BA /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC29E0F2D8B30F7003803BA /* BookmarksCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -414,6 +427,15 @@
 		DEAAEF822D85A0E30055C6BF /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		DEABF2C42D897E5400505F00 /* DermatologyLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DermatologyLoginRequest.swift; sourceTree = "<group>"; };
 		DEABF2C62D897E6800505F00 /* DermatologySyncTokensRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DermatologySyncTokensRequest.swift; sourceTree = "<group>"; };
+		DEABF2C92D89845200505F00 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		DEABF2CB2D89845800505F00 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		DEABF2CD2D89845D00505F00 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		DEABF2D02D89863300505F00 /* BookmarksEntitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksEntitiesView.swift; sourceTree = "<group>"; };
+		DEABF2D32D89864900505F00 /* BookmarksEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksEntityButton.swift; sourceTree = "<group>"; };
+		DEABF2D52D89D7D800505F00 /* BookmarksEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksEmptyView.swift; sourceTree = "<group>"; };
+		DEABF2D82D89DE3400505F00 /* BookmarksCatalogsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsTableView.swift; sourceTree = "<group>"; };
+		DEABF2DA2D89DE4100505F00 /* BookmarksCatalogsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsTableElement.swift; sourceTree = "<group>"; };
+		DEABF2DD2D89DE5300505F00 /* BookmarksCatalogsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsTableCell.swift; sourceTree = "<group>"; };
 		DEAD18E42D842A77003C4FFA /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		DEAD18E62D842A7C003C4FFA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		DEAD18E82D842A80003C4FFA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -437,6 +459,10 @@
 		DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSkinTypesView.swift; sourceTree = "<group>"; };
 		DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalsView.swift; sourceTree = "<group>"; };
 		DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePreferencesView.swift; sourceTree = "<group>"; };
+		DEC29E082D8B2774003803BA /* BookmarksCatalogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsViewController.swift; sourceTree = "<group>"; };
+		DEC29E0A2D8B27A0003803BA /* BookmarksCatalogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsViewModel.swift; sourceTree = "<group>"; };
+		DEC29E0C2D8B27A5003803BA /* BookmarksCatalogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCatalogsView.swift; sourceTree = "<group>"; };
+		DEC29E0F2D8B30F7003803BA /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		E60E243E07AB42DCED2DDA56 /* Pods-SkincareProductScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.release.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1053,6 +1079,7 @@
 		DE6EEA3C2D881D09000577F3 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				DEABF2C82D89843B00505F00 /* Bookmarks */,
 				DE6EEA5C2D883484000577F3 /* CatalogDetails */,
 				DE6EEA3D2D881E30000577F3 /* Catalogs */,
 			);
@@ -1285,6 +1312,47 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		DEABF2C82D89843B00505F00 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				DEABF2CF2D8985F900505F00 /* Views */,
+				DEC29E0F2D8B30F7003803BA /* BookmarksCoordinator.swift */,
+				DEABF2C92D89845200505F00 /* BookmarksViewController.swift */,
+				DEABF2CB2D89845800505F00 /* BookmarksViewModel.swift */,
+				DEABF2CD2D89845D00505F00 /* BookmarksView.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		DEABF2CF2D8985F900505F00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC29E062D8B2759003803BA /* List */,
+				DEABF2D22D89863700505F00 /* Entity */,
+				DEABF2D52D89D7D800505F00 /* BookmarksEmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEABF2D22D89863700505F00 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DEABF2D02D89863300505F00 /* BookmarksEntitiesView.swift */,
+				DEABF2D32D89864900505F00 /* BookmarksEntityButton.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DEABF2D72D89DE2400505F00 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEABF2D82D89DE3400505F00 /* BookmarksCatalogsTableView.swift */,
+				DEABF2DA2D89DE4100505F00 /* BookmarksCatalogsTableElement.swift */,
+				DEABF2DD2D89DE5300505F00 /* BookmarksCatalogsTableCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		DEAD18E32D842A61003C4FFA /* Explore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1398,6 +1466,33 @@
 				DEAD19192D84802E003C4FFA /* ChangeSkinTypesView.swift */,
 				DEAD191B2D84894A003C4FFA /* ChangeGoalsView.swift */,
 				DEAD191D2D848A72003C4FFA /* ChangePreferencesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC29E062D8B2759003803BA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DEC29E072D8B2762003803BA /* Catalogs */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DEC29E072D8B2762003803BA /* Catalogs */ = {
+			isa = PBXGroup;
+			children = (
+				DEC29E0E2D8B27DF003803BA /* Views */,
+				DEC29E082D8B2774003803BA /* BookmarksCatalogsViewController.swift */,
+				DEC29E0A2D8B27A0003803BA /* BookmarksCatalogsViewModel.swift */,
+				DEC29E0C2D8B27A5003803BA /* BookmarksCatalogsView.swift */,
+			);
+			path = Catalogs;
+			sourceTree = "<group>";
+		};
+		DEC29E0E2D8B27DF003803BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEABF2D72D89DE2400505F00 /* TableView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1553,9 +1648,11 @@
 				DE0AC22B2D807795001C7664 /* DiscoveryManager.swift in Sources */,
 				DE6EEA1C2D880F6C000577F3 /* CatalogBlock.swift in Sources */,
 				DE0AC0F92D803026001C7664 /* SplashViewModel.swift in Sources */,
+				DEABF2CC2D89845800505F00 /* BookmarksViewModel.swift in Sources */,
 				DE0AC2232D8076B1001C7664 /* Preference.swift in Sources */,
 				DEAD18FC2D8433C0003C4FFA /* MenuTableElement.swift in Sources */,
 				DE0AC0FB2D803026001C7664 /* PaygateInfoCell.swift in Sources */,
+				DEABF2D92D89DE3400505F00 /* BookmarksCatalogsTableView.swift in Sources */,
 				DEAD190D2D847851003C4FFA /* DisclaimerViewController.swift in Sources */,
 				DE0AC1002D803026001C7664 /* UIView+RxExtension.swift in Sources */,
 				DE0AC1012D803026001C7664 /* Currency.swift in Sources */,
@@ -1565,6 +1662,7 @@
 				DE0AC10F2D803026001C7664 /* RequestReview.swift in Sources */,
 				DE6EEA4B2D881E70000577F3 /* CatalogsTableElement.swift in Sources */,
 				DE6EEA272D880FE0000577F3 /* GetProceduresRequest.swift in Sources */,
+				DEABF2CE2D89845D00505F00 /* BookmarksView.swift in Sources */,
 				DE0AC1132D803026001C7664 /* OnboardingViewController.swift in Sources */,
 				DE0AC1182D803026001C7664 /* SplashView.swift in Sources */,
 				DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */,
@@ -1592,6 +1690,7 @@
 				DE0AC22F2D817849001C7664 /* OScanInfoView.swift in Sources */,
 				DE0AC1522D803026001C7664 /* SetProfileRequest.swift in Sources */,
 				DE0AC1552D803026001C7664 /* MainView.swift in Sources */,
+				DEABF2D42D89864900505F00 /* BookmarksEntityButton.swift in Sources */,
 				DE0AC1572D803026001C7664 /* PaygateView.swift in Sources */,
 				DE0AC15F2D803026001C7664 /* GradientView.swift in Sources */,
 				DE6EEA312D88100B000577F3 /* SaveProcedureRequest.swift in Sources */,
@@ -1600,10 +1699,12 @@
 				DE0AC1682D803026001C7664 /* IAPError.swift in Sources */,
 				DE0AC2412D818C55001C7664 /* OTableElement.swift in Sources */,
 				DE0AC2212D807676001C7664 /* Goal.swift in Sources */,
+				DEC29E102D8B30F7003803BA /* BookmarksCoordinator.swift in Sources */,
 				DEAD190A2D84740C003C4FFA /* ReferencesLinkButton.swift in Sources */,
 				DE0AC16A2D803026001C7664 /* IAPManager.swift in Sources */,
 				DE0AC16C2D803026001C7664 /* TapAreaButton.swift in Sources */,
 				DE0AC1712D803026001C7664 /* SignError.swift in Sources */,
+				DEC29E092D8B2774003803BA /* BookmarksCatalogsViewController.swift in Sources */,
 				DE0AC1722D803026001C7664 /* TextAttributes.swift in Sources */,
 				DE0AC2192D80607A001C7664 /* Spinner.swift in Sources */,
 				DE0AC17A2D803026001C7664 /* PushNotificationsAuthorizationStatus.swift in Sources */,
@@ -1621,6 +1722,7 @@
 				DE0AC1A82D803026001C7664 /* SplashViewController.swift in Sources */,
 				DE0AC1A92D803026001C7664 /* PaygateProductButton.swift in Sources */,
 				DEAD191A2D84802E003C4FFA /* ChangeSkinTypesView.swift in Sources */,
+				DEABF2DB2D89DE4100505F00 /* BookmarksCatalogsTableElement.swift in Sources */,
 				DE6EEA142D87F32A000577F3 /* ExploreCatalogButton.swift in Sources */,
 				DEAD18F22D84321D003C4FFA /* MenuViewModel.swift in Sources */,
 				DE0AC23F2D818C4E001C7664 /* OTableView.swift in Sources */,
@@ -1690,6 +1792,7 @@
 				DE6EEA472D881E61000577F3 /* CatalogsSearchField.swift in Sources */,
 				DEAAEF512D859BCC0055C6BF /* ChatsTableHeaderView.swift in Sources */,
 				DE6EEA3B2D88181D000577F3 /* CatalogMediator.swift in Sources */,
+				DEABF2CA2D89845200505F00 /* BookmarksViewController.swift in Sources */,
 				DE6EEA332D881012000577F3 /* UnsaveProcedureRequest.swift in Sources */,
 				DEAAEF522D859BCC0055C6BF /* ChatsViewController.swift in Sources */,
 				DEAAEF532D859BCC0055C6BF /* ChatsTableCell.swift in Sources */,
@@ -1697,10 +1800,14 @@
 				DE0AC2432D818CBE001C7664 /* OTableCell.swift in Sources */,
 				DE0AC1B52D803026001C7664 /* RestAPITransport.swift in Sources */,
 				DE0AC1B82D803026001C7664 /* PaygateInfoView.swift in Sources */,
+				DEABF2D12D89863300505F00 /* BookmarksEntitiesView.swift in Sources */,
+				DEABF2D62D89D7D800505F00 /* BookmarksEmptyView.swift in Sources */,
+				DEABF2DE2D89DE5300505F00 /* BookmarksCatalogsTableCell.swift in Sources */,
 				DEAD18F82D8433B7003C4FFA /* MenuTableView.swift in Sources */,
 				DE0AC2392D8187CE001C7664 /* OCuratedListsView.swift in Sources */,
 				DE0AC1BA2D803026001C7664 /* UIColor+Extension.swift in Sources */,
 				DE6EEA222D880F82000577F3 /* CatalogDetails.swift in Sources */,
+				DEC29E0D2D8B27A5003803BA /* BookmarksCatalogsView.swift in Sources */,
 				DEAD19132D847D92003C4FFA /* ChangeProfileViewController.swift in Sources */,
 				DEABF2C72D897E6800505F00 /* DermatologySyncTokensRequest.swift in Sources */,
 				DE0AC1C32D803026001C7664 /* GlobalDefinitions.swift in Sources */,
@@ -1718,6 +1825,7 @@
 				DE0AC1E62D803026001C7664 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */,
 				DEAD18F02D84320C003C4FFA /* MenuViewController.swift in Sources */,
+				DEC29E0B2D8B27A0003803BA /* BookmarksCatalogsViewModel.swift in Sources */,
 				DEAD18FE2D84342A003C4FFA /* BottomInfoView.swift in Sources */,
 				DEAD191E2D848A72003C4FFA /* ChangePreferencesView.swift in Sources */,
 				DE6EEA492D881E69000577F3 /* CatalogsTableView.swift in Sources */,

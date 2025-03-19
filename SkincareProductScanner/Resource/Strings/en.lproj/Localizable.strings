@@ -119,3 +119,13 @@
 "Catalogs.Procedures.Title" = "Procedures guide";
 "Catalogs.Glossaries.Title" = "Glossary";
 "Catalogs.Search" = "Search";
+
+// MARK: Bookmarks
+"Bookmarks.Title" = "Bookmarks";
+"Bookmarks.Entity.Products" = "Products";
+"Bookmarks.Entity.Procedures" = "Procedures";
+"Bookmarks.Entity.Glossary" = "Glossary";
+"Bookmarks.Empty.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Products" = "Keep your favourite products\nlisted in one place";
+"Bookmarks.Empty.Procedures" = "Saved procedures will\nappear here";
+"Bookmarks.Empty.Glossary" = "Saved dermatologic terms\nwill appear here";

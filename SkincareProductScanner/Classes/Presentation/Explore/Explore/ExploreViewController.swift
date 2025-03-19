@@ -73,7 +73,8 @@ private extension ExploreViewController {
             let vc = MenuViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .bookmarks:
-            print("bookmarks") // TODO
+            let vc = BookmarksViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .allProducts:
             print("allProducts") // TODO
         case .procedures:
