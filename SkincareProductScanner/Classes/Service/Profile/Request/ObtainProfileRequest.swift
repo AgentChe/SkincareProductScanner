@@ -12,7 +12,7 @@ struct ObtainProfileRequest: APIRequestBody {
     let internalId: String
     
     var url: String {
-        GlobalDefinitions.domain + "/backend/v1/profile/get"
+        GlobalDefinitions.domain + "/api/v1/profile/get"
     }
     
     var method: HTTPMethod {

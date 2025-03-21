@@ -18,37 +18,31 @@ final class SessionManager {}
 
 // MARK: SessionManagerProtocol
 extension SessionManager: SessionManagerProtocol {
-    // TODO
     var anonymousId: String {
-//        OtterScale.shared.getAnonymousID()
-        "anon_id_ohbfgotiujrsvtteradflwzjekazkahbgznqjsvsgmhyisiupwffpoyhtkirixhl"
+        OtterScale.shared.getAnonymousID()
     }
     
-    // TODO
     var internalId: String {
-//        OtterScale.shared.getInternalID()
-        "anon_id_ohbfgotiujrsvtteradflwzjekazkahbgznqjsvsgmhyisiupwffpoyhtkirixhl"
+        OtterScale.shared.getInternalID()
     }
     
-    // TODO
     func hasActiveSubscriptions() -> Bool {
-        true
-//        guard let paymentData = OtterScale.shared.getPaymentData() else {
-//            return false
-//        }
-//
-//        let subscriptions = paymentData.subscriptions.appleAppStore
-//            + paymentData.subscriptions.googlePlay
-//            + paymentData.subscriptions.stripe
-//            + paymentData.subscriptions.paypal
-//        let nonConsumables = paymentData.nonConsumables.appleAppStore
-//            + paymentData.nonConsumables.googlePlay
-//            + paymentData.nonConsumables.stripe
-//            + paymentData.nonConsumables.paypal
-//
-//        let hasValidSubscription = subscriptions.contains(where: { $0.valid })
-//        let hasValidNonConsumable = nonConsumables.contains(where: { $0.valid })
-//
-//        return hasValidSubscription || hasValidNonConsumable
+        guard let paymentData = OtterScale.shared.getPaymentData() else {
+            return false
+        }
+
+        let subscriptions = paymentData.subscriptions.appleAppStore
+            + paymentData.subscriptions.googlePlay
+            + paymentData.subscriptions.stripe
+            + paymentData.subscriptions.paypal
+        let nonConsumables = paymentData.nonConsumables.appleAppStore
+            + paymentData.nonConsumables.googlePlay
+            + paymentData.nonConsumables.stripe
+            + paymentData.nonConsumables.paypal
+
+        let hasValidSubscription = subscriptions.contains(where: { $0.valid })
+        let hasValidNonConsumable = nonConsumables.contains(where: { $0.valid })
+
+        return hasValidSubscription || hasValidNonConsumable
     }
 }

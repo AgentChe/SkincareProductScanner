@@ -15,7 +15,6 @@ struct Profile {
 
 // MARK: Public
 extension Profile {
-    // TODO
     init?(response: Any) {
         guard
             let json = response as? [String: Any],

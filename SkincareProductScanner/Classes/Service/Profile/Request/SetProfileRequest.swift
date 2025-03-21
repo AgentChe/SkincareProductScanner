@@ -7,7 +7,6 @@
 
 import Alamofire
 
-// TODO
 struct SetProfileRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String
@@ -16,7 +15,7 @@ struct SetProfileRequest: APIRequestBody {
     let preferencesIds: [String]?
     
     var url: String {
-        GlobalDefinitions.domain + "/backend/v1/profile/update"
+        GlobalDefinitions.domain + "/api/v1/profile/attribute"
     }
     
     var method: HTTPMethod {

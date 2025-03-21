@@ -13,19 +13,17 @@ struct GetMessagesRequest: APIRequestBody {
     let chatId: String
     let page: Int
     
-    // TODO: https://skin.thinkaboutapps.com -> GlobalDefinitions.domain
     var url: String {
-        "https://skin.thinkaboutapps.com" + "/api/v1/ai/chat/messages"
+        GlobalDefinitions.domain + "/api/v1/ai/chat/messages"
     }
     
     var method: HTTPMethod {
         .post
     }
     
-    // TODO: K9tK6iIQ4mZZNnWhs9c9y3DI -> GlobalDefinitions.apiKey
     var headers: HTTPHeaders? {
         [
-            "Access-Token": "K9tK6iIQ4mZZNnWhs9c9y3DI"
+            "Access-Token": GlobalDefinitions.apiKey
         ]
     }
     

@@ -12,7 +12,6 @@ struct SkinType: Codable {
 
 // MARK: Public
 extension SkinType {
-    // TODO
     static func map(response: Any) -> [SkinType]? {
         guard
             let json = response as? [String: Any],
@@ -22,7 +21,6 @@ extension SkinType {
         return body.compactMap { SkinType(json: $0) }
     }
     
-    // TODO
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

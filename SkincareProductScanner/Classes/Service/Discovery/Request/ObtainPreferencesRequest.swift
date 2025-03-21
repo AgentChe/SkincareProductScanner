@@ -7,17 +7,16 @@
 
 import Alamofire
 
-// TODO
 struct ObtainPreferencesRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String
     
     var url: String {
-        GlobalDefinitions.domain + "/backend/v1/profile/get"
+        GlobalDefinitions.domain + "/api/v1/catalog/discovery/preferences"
     }
     
     var method: HTTPMethod {
-        .post
+        .get
     }
     
     var headers: HTTPHeaders? {

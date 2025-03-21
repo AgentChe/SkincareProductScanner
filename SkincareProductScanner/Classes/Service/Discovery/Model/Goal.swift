@@ -12,7 +12,6 @@ struct Goal: Codable {
 
 // MARK: Public
 extension Goal {
-    // TODO
     static func map(response: Any) -> [Goal]? {
         guard
             let json = response as? [String: Any],
@@ -22,7 +21,6 @@ extension Goal {
         return body.compactMap { Goal(json: $0) }
     }
     
-    // TODO
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

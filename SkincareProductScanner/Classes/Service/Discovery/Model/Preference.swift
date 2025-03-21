@@ -12,7 +12,6 @@ struct Preference: Codable {
 
 // MARK: Public
 extension Preference {
-    // TODO
     static func map(response: Any) -> [Preference]? {
         guard
             let json = response as? [String: Any],
@@ -22,7 +21,6 @@ extension Preference {
         return body.compactMap { Preference(json: $0) }
     }
     
-    // TODO
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

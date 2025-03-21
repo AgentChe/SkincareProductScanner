@@ -8,7 +8,6 @@
 import RxSwift
 import RxCocoa
 
-// TODO: соответствие всех запросов и моделей документации
 protocol ProfileManagerProtocol: AnyObject {
     func create() -> Single<Void>
     func binding() -> Single<Void>

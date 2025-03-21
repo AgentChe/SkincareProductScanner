@@ -91,9 +91,8 @@ final class RestAPITransport {
         message: String
     ) -> Single<Any> {
         Single<Any>.create { single in
-            // TODO: https://skin.thinkaboutapps.com -> GlobalDefinitions.domain
             guard
-                let url = URL(string: "https://skin.thinkaboutapps.com" + "/api/v1/ai/chat/send"),
+                let url = URL(string: GlobalDefinitions.domain + "/api/v1/ai/chat/send"),
                 let chatId = chatId.data(using: .utf8),
                 let anonymousId = anonymousId.data(using: .utf8),
                 let message = message.data(using: .utf8)
@@ -105,9 +104,8 @@ final class RestAPITransport {
             let internalId = internalId?.data(using: .utf8)
             let jpeg = image?.jpegData(compressionQuality: 0.5)
             
-            // TODO: K9tK6iIQ4mZZNnWhs9c9y3DI -> GlobalDefinitions.apiKey
             let headers: HTTPHeaders? = [
-                "Access-Token": "K9tK6iIQ4mZZNnWhs9c9y3DI"
+                "Access-Token": GlobalDefinitions.apiKey
             ]
             
             let request = AF.upload(multipartFormData: { multipartFormData in
