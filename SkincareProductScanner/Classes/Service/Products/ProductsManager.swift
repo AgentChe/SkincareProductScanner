@@ -15,9 +15,9 @@ protocol ProductsManagerProtocol {
         presets: String?,
         filters: [String: [String]]?,
         page: Int
-    ) -> Single<[Product]>
-    func favorites(page: Int) -> Single<[Product]>
-    func recommendations(page: Int) -> Single<[Product]>
+    ) -> Single<ProductsPage?>
+    func favorites(page: Int) -> Single<ProductsPage?>
+    func recommendations(page: Int) -> Single<ProductsPage?>
     func obtainDetails(productId: String) -> Single<ProductDetails?>
     func favorite(productId: String, action: ProductFavoriteRequest.Action) -> Single<RequestResult>
     func scan(image: UIImage) -> Single<ScanProductResult>
@@ -51,7 +51,7 @@ extension ProductsManager: ProductsManagerProtocol {
         presets: String? = nil,
         filters: [String: [String]]? = nil,
         page: Int
-    ) -> Single<[Product]> {
+    ) -> Single<ProductsPage?> {
         let request = GetProductsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -63,10 +63,10 @@ extension ProductsManager: ProductsManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Product.search(response: $0) }
+            .map { ProductsPage(response: $0) }
     }
     
-    func favorites(page: Int) -> Single<[Product]> {
+    func favorites(page: Int) -> Single<ProductsPage?> {
         let request = GetProductsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -78,10 +78,10 @@ extension ProductsManager: ProductsManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Product.search(response: $0) }
+            .map { ProductsPage(response: $0) }
     }
     
-    func recommendations(page: Int) -> Single<[Product]> {
+    func recommendations(page: Int) -> Single<ProductsPage?> {
         let request = GetProductsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -93,7 +93,7 @@ extension ProductsManager: ProductsManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Product.search(response: $0) }
+            .map { ProductsPage(response: $0) }
     }
     
     func obtainDetails(productId: String) -> Single<ProductDetails?> {

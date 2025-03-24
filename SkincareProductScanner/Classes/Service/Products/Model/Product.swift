@@ -16,15 +16,6 @@ struct Product {
 
 // MARK: Public
 extension Product {
-    static func search(response: Any) -> [Product] {
-        guard
-            let json = response as? [String: Any],
-            let body = json["body"] as? [[String: Any]]
-        else { return [] }
-        
-        return body.compactMap { Product(json: $0) }
-    }
-    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,
