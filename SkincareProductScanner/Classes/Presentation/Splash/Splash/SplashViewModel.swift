@@ -19,6 +19,7 @@ final class SplashViewModel {
     private lazy var profileManager = ProfileManager()
     private lazy var discoveryManager = DiscoveryManager()
     private lazy var catalogManager = CatalogManager()
+    private lazy var productsManager = ProductsManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
 }
@@ -83,9 +84,12 @@ private extension SplashViewModel {
                     let glossaries = catalogManager
                         .obtainGlossaries(forceUpdate: true)
                         .mapToVoid()
+                    let productsFilters = productsManager
+                        .obtainFilters(forceUpdate: true)
+                        .mapToVoid()
                     
                     return Single
-                        .zip(profile, skinTypes, goals, preferences, procedures, glossaries)
+                        .zip(profile, skinTypes, goals, preferences, procedures, glossaries, productsFilters)
                         .mapToVoid()
                 }
                 
