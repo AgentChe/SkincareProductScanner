@@ -273,35 +273,35 @@ private extension ProductsManager {
             ProductCategory(
                 id: "1",
                 name: "Holy grails",
-                image: URL(string: "https://ibb.co/xtGzvgS5")!,
+                image: URL(string: "https://i.postimg.cc/BZTd1q2t/temp-Image1-Nxtc8.avif")!,
                 description: "CeraVe, The Ordinary, Avene"
             ),
             
             ProductCategory(
                 id: "2",
                 name: "Trending",
-                image: URL(string: "https://ibb.co/chLHgTp6")!,
+                image: URL(string: "https://i.postimg.cc/XXD231mB/temp-Imageeit-WFI.avif")!,
                 description: "Dior, The Ordinary, Avene"
             ),
             
             ProductCategory(
                 id: "3",
                 name: "Hydrating",
-                image: URL(string: "https://ibb.co/nqBW8SYq")!,
+                image: URL(string: "https://i.postimg.cc/cvfTRxHf/temp-Imagekw5stn.avif")!,
                 description: "CeraVe, The Ordinaly, Avene"
             ),
             
             ProductCategory(
                 id: "4",
                 name: "Oil-control",
-                image: URL(string: "https://ibb.co/BVBPT4GC")!,
+                image: URL(string: "https://i.postimg.cc/HVc6L41Z/temp-Imagela-IEUO.avif")!,
                 description: "Dior, The Ordinary, Avene"
             ),
             
             ProductCategory(
                 id: "5",
                 name: "Soothing",
-                image: URL(string: "https://ibb.co/4ZZLKVH3")!,
+                image: URL(string: "https://i.postimg.cc/LncNgYHH/temp-Image-Shkztm.avif")!,
                 description: "Dior, The Ordinary, Avene"
             )
         ]
@@ -324,7 +324,7 @@ private extension ProductsManager {
             let product = Product(
                 id: String(i),
                 title: String((0..<nameCount).map{ _ in letters.randomElement()! }),
-                image: URL(string: "https://ibb.co/Z6nf5tyv")!,
+                image: URL(string: "https://i.postimg.cc/htfyMgQL/temp-Imagewsizoa.avif")!,
                 brand: String((0..<brandCount).map{ _ in letters.randomElement()! })
             )
             

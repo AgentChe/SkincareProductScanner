@@ -13,6 +13,7 @@ final class ExploreTableView: UITableView {
     private lazy var elements = [ExploreTableElement]()
     
     private lazy var didTapSeeAllRecommendationsTrigger = PublishRelay<Void>()
+    private lazy var didSelectProductTrigger = PublishRelay<Product>()
     private lazy var didTapBookmarksTrigger = PublishRelay<Void>()
     private lazy var didTapAllProductsTrigger = PublishRelay<Void>()
     private lazy var didTapProceduresTrigger = PublishRelay<Void>()
@@ -39,6 +40,10 @@ extension ExploreTableView {
     
     var didTapSeeAllRecommendations: Signal<Void> {
         didTapSeeAllRecommendationsTrigger.asSignal()
+    }
+    
+    var didSelectProduct: Signal<Product> {
+        didSelectProductTrigger.asSignal()
     }
     
     var didTapBookmarks: Signal<Void> {
@@ -75,6 +80,13 @@ extension ExploreTableView: UITableViewDataSource {
         case .stgp(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableSTGPCell.self), for: indexPath) as! ExploreTableSTGPCell
             cell.collectionView.setup(elements: elements)
+            return cell
+        case .recommendationsProducts(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableRecommendationsProductsCell.self), for: indexPath) as! ExploreTableRecommendationsProductsCell
+            cell.collectionView.setup(elements: elements)
+            cell.collectionView.didSelect = { [weak self] product in
+                self?.didSelectProductTrigger.accept(product)
+            }
             return cell
         case .bookmarks:
             return dequeueReusableCell(withIdentifier: String(describing: ExploreTableBookmarksCell.self), for: indexPath)
@@ -115,6 +127,7 @@ private extension ExploreTableView {
     func initialize() {
         register(ExploreTableRecommendationsTitleCell.self, forCellReuseIdentifier: String(describing: ExploreTableRecommendationsTitleCell.self))
         register(ExploreTableSTGPCell.self, forCellReuseIdentifier: String(describing: ExploreTableSTGPCell.self))
+        register(ExploreTableRecommendationsProductsCell.self, forCellReuseIdentifier: String(describing: ExploreTableRecommendationsProductsCell.self))
         register(ExploreTableBookmarksCell.self, forCellReuseIdentifier: String(describing: ExploreTableBookmarksCell.self))
         register(ExploreTableCatalogsCell.self, forCellReuseIdentifier: String(describing: ExploreTableCatalogsCell.self))
         

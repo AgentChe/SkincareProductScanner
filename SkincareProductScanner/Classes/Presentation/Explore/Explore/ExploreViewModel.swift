@@ -112,6 +112,7 @@ private extension ExploreViewModel {
                 return [
                     .recommendationsTitle,
                     .stgp(stgp),
+                    .recommendationsProducts(explore.recommendation.products),
                     .bookmarks,
                     .catalogs
                 ]
