@@ -12,10 +12,19 @@ struct ProductCategory {
     let name: String
     let image: URL
     let description: String
-}
-
-// MARK: Public
-extension ProductCategory {
+    
+    init(
+        id: String,
+        name: String,
+        image: URL,
+        description: String
+    ) {
+        self.id = id
+        self.name = name
+        self.image = image
+        self.description = description
+    }
+    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

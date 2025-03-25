@@ -11,6 +11,7 @@ final class ExploreView: UIView {
     lazy var backgroundView = makeBackgroundView()
     lazy var headerView = makeHeaderView()
     lazy var tableView = makeTableView()
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +54,11 @@ private extension ExploreView {
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+        ])
     }
 }
 
@@ -81,6 +87,13 @@ private extension ExploreView {
         view.showsVerticalScrollIndicator = false
         view.contentInset = UIEdgeInsets(vertical: 24.scale)
         view.setContentOffset(CGPoint(x: 0, y: -24.scale), animated: false)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> Spinner {
+        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

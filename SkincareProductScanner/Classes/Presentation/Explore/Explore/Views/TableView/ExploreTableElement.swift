@@ -6,6 +6,14 @@
 //
 
 enum ExploreTableElement {
+    case recommendationsTitle
+    case stgp([ExploreSTGPElement])
     case bookmarks
     case catalogs
+}
+
+enum ExploreSTGPElement {
+    case skinType(SkinType)
+    case goal(Goal)
+    case preference(Preference)
 }

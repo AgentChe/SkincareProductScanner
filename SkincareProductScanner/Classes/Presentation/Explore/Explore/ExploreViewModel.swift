@@ -16,6 +16,14 @@ final class ExploreViewModel {
         case procedures
         case glossary
     }
+    
+    var tryAgain: ((Error) -> (Observable<Void>))?
+    
+    private lazy var activity = RxActivityIndicator()
+    
+    private lazy var productsManager = ProductsManager()
+    
+    private lazy var observableRetrySingle = ObservableRetrySingle()
 }
 
 // MARK: Public
@@ -31,10 +39,13 @@ extension ExploreViewModel {
     struct Output {
         let route: Driver<Route>
         let elements: Driver<[ExploreTableElement]>
+        let activity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        Output(
+        let explore = makeExplore()
+        
+        return Output(
             route: makeRoute(
                 didTapMenu: input.didTapMenu,
                 didTapBookmarks: input.didTapBookmarks,
@@ -42,7 +53,8 @@ extension ExploreViewModel {
                 didTapProcedures: input.didTapProcedures,
                 didTapGlossary: input.didTapGlossary
             ),
-            elements: makeElements()
+            elements: makeElements(explore: explore),
+            activity: activity.asDriver()
         )
     }
 }
@@ -80,12 +92,55 @@ private extension ExploreViewModel {
             .merge(menu, bookmarks, allProducts, procedures, glossary)
     }
     
-    func makeElements() -> Driver<[ExploreTableElement]> {
-        .deferred {
-            .just([
-                .bookmarks,
-                .catalogs
-            ])
+    func makeElements(explore: Driver<Explore>) -> Driver<[ExploreTableElement]> {
+        explore
+            .map { explore -> [ExploreTableElement] in
+                let stgp: [ExploreSTGPElement] = {
+                    let skinTypes = explore.recommendation.profile.skinTypes
+                        .map { ExploreSTGPElement.skinType($0) }
+                    let goals = explore.recommendation.profile.goals
+                        .map { ExploreSTGPElement.goal($0) }
+                    let preferences = explore.recommendation.profile.preferences
+                        .map { ExploreSTGPElement.preference($0) }
+                    
+                    var result = skinTypes + goals + preferences
+                    result.shuffle()
+                    
+                    return result
+                }()
+                
+                return [
+                    .recommendationsTitle,
+                    .stgp(stgp),
+                    .bookmarks,
+                    .catalogs
+                ]
+            }
+    }
+    
+    func makeExplore() -> Driver<Explore> {
+        func source() -> Single<Explore> {
+            productsManager
+                .obtainExplore()
+                .flatMap { explore -> Single<Explore> in
+                    guard let explore else {
+                        throw ContentError(.notContent)
+                    }
+                    
+                    return .just(explore)
+                }
         }
+        
+        func trigger(error: Error) -> Observable<Void> {
+            tryAgain?(error) ?? .empty()
+        }
+        
+        return observableRetrySingle
+            .retry(
+                source: { source() },
+                trigger: { trigger(error: $0) }
+            )
+            .trackActivity(activity)
+            .asDriver(onErrorDriveWith: .never())
     }
 }

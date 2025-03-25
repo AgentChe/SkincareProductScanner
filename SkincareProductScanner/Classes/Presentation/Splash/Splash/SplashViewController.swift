@@ -27,23 +27,26 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
-            self?.open(error: error) ?? .never()
-        }
+        // TODO
+        route(.main)
         
-        let output = viewModel.configure(input: SplashViewModel.Input(
-            didSDKConfigured: didSDKConfiguredTrigger.asSignal()
-        ))
-        
-        output.route
-            .drive(Binder(self) { base, route in
-                base.route(route)
-            })
-            .disposed(by: disposeBag)
-        
-        sdkInitialize.observe { [weak self] in
-            self?.didSDKConfiguredTrigger.accept(Void())
-        }
+//        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+//            self?.open(error: error) ?? .never()
+//        }
+//        
+//        let output = viewModel.configure(input: SplashViewModel.Input(
+//            didSDKConfigured: didSDKConfiguredTrigger.asSignal()
+//        ))
+//        
+//        output.route
+//            .drive(Binder(self) { base, route in
+//                base.route(route)
+//            })
+//            .disposed(by: disposeBag)
+//        
+//        sdkInitialize.observe { [weak self] in
+//            self?.didSDKConfiguredTrigger.accept(Void())
+//        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

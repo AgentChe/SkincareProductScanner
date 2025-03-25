@@ -9,6 +9,14 @@ struct Explore {
     let recommendation: ExploreRecommendation
     let productsCategories: [ProductCategory]
     
+    init(
+        recommendation: ExploreRecommendation,
+        productsCategories: [ProductCategory]
+    ) {
+        self.recommendation = recommendation
+        self.productsCategories = productsCategories
+    }
+    
     init?(response: Any) {
         guard
             let json = response as? [String: Any],
@@ -31,6 +39,14 @@ struct Explore {
 struct ExploreRecommendation {
     let profile: ExploreRecommendationProfile
     let products: [Product]
+    
+    init(
+        profile: ExploreRecommendationProfile,
+        products: [Product]
+    ) {
+        self.profile = profile
+        self.products = products
+    }
     
     init() {
         profile = ExploreRecommendationProfile()
@@ -55,6 +71,16 @@ struct ExploreRecommendationProfile {
     let skinTypes: [SkinType]
     let goals: [Goal]
     let preferences: [Preference]
+    
+    init(
+        skinTypes: [SkinType],
+        goals: [Goal],
+        preferences: [Preference]
+    ) {
+        self.skinTypes = skinTypes
+        self.goals = goals
+        self.preferences = preferences
+    }
     
     init() {
         skinTypes = []

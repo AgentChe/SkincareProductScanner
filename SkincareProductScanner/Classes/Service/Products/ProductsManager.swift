@@ -31,15 +31,26 @@ final class ProductsManager {
 
 // MARK: ProductsManagerProtocol
 extension ProductsManager: ProductsManagerProtocol {
+    // TODO
     func obtainExplore() -> Single<Explore?> {
-        let request = GetExploreRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId
-        )
+//        let request = GetExploreRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { Explore(response: $0) }
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { Explore(response: $0) }
+        Single<Explore?>.create { single in
+            let mock = Self.exploreMock()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                single(.success(mock))
+            })
+            
+            return Disposables.create()
+        }
     }
     
     func obtainFilters(forceUpdate: Bool) -> Single<ProductFilters?> {
@@ -177,5 +188,149 @@ private extension ProductsManager {
             
             return Disposables.create()
         }
+    }
+    
+    // TODO: remove
+    static func exploreMock() -> Explore {
+        let skinTypes: [SkinType] = {
+            let strings = [
+                "Normal",
+                "City",
+                "Dry",
+                "Combination",
+                "Sensitive"
+            ]
+            var skinTypes = strings.enumerated()
+                .map { index, string in
+                    SkinType(id: String(index), name: string)
+                }
+            skinTypes.shuffle()
+            return Array(skinTypes.prefix(upTo: Int.random(in: 1...strings.count)))
+        }()
+        
+        let goals: [Goal] = {
+            let strings = [
+                "Hydration",
+                "Reduce acne",
+                "Even skin tone",
+                "Anti-aging",
+                "Soothe sensitive skin",
+                "Sun protection",
+                "Deep cleansing"
+            ]
+            var goals = strings.enumerated()
+                .map { index, string in
+                    Goal(id: String(index), name: string)
+                }
+            goals.shuffle()
+            return Array(goals.prefix(upTo: Int.random(in: 1...strings.count)))
+        }()
+        
+        let preferences: [Preference] = {
+            let strings = [
+                "Vegan",
+                "Cruelty Free",
+                "EU-Allergen Free",
+                "Reef Safe",
+                "Malassezia Safe",
+                "Alcohol Free",
+                "Silicone Free",
+                "Fragrance Free",
+                "Sulfate Free",
+                "Paraben Free",
+                "Oil Free",
+                "Non-Comedogenic",
+                "Fatty Alcohol Free"
+            ]
+            var preferences = strings.enumerated()
+                .map { index, string in
+                    Preference(id: String(index), name: string)
+                }
+            preferences.shuffle()
+            return Array(preferences.prefix(upTo: Int.random(in: 1...strings.count)))
+        }()
+        
+        let profile = ExploreRecommendationProfile(
+            skinTypes: skinTypes,
+            goals: goals,
+            preferences: preferences
+        )
+        
+        let recommendation = ExploreRecommendation(
+            profile: profile,
+            products: Self.productsMock()
+        )
+        
+        return Explore(
+            recommendation: recommendation,
+            productsCategories: Self.productsCategoriesMock()
+        )
+    }
+    
+    // TODO: remove
+    static func productsCategoriesMock() -> [ProductCategory] {
+        [
+            ProductCategory(
+                id: "1",
+                name: "Holy grails",
+                image: URL(string: "https://ibb.co/xtGzvgS5")!,
+                description: "CeraVe, The Ordinary, Avene"
+            ),
+            
+            ProductCategory(
+                id: "2",
+                name: "Trending",
+                image: URL(string: "https://ibb.co/chLHgTp6")!,
+                description: "Dior, The Ordinary, Avene"
+            ),
+            
+            ProductCategory(
+                id: "3",
+                name: "Hydrating",
+                image: URL(string: "https://ibb.co/nqBW8SYq")!,
+                description: "CeraVe, The Ordinaly, Avene"
+            ),
+            
+            ProductCategory(
+                id: "4",
+                name: "Oil-control",
+                image: URL(string: "https://ibb.co/BVBPT4GC")!,
+                description: "Dior, The Ordinary, Avene"
+            ),
+            
+            ProductCategory(
+                id: "5",
+                name: "Soothing",
+                image: URL(string: "https://ibb.co/4ZZLKVH3")!,
+                description: "Dior, The Ordinary, Avene"
+            )
+        ]
+    }
+    
+    // TODO: remove
+    static func productsMock(count: Int = 10) -> [Product] {
+        let letters = "abcdefghijklmnopqrstuvwxyz"
+        
+        var products = [Product]()
+        
+        if count <= 0 {
+            return []
+        }
+        
+        for i in 0...(count - 1) {
+            let nameCount = Int.random(in: 5...15)
+            let brandCount = Int.random(in: 3...25)
+            
+            let product = Product(
+                id: String(i),
+                title: String((0..<nameCount).map{ _ in letters.randomElement()! }),
+                image: URL(string: "https://ibb.co/Z6nf5tyv")!,
+                brand: String((0..<brandCount).map{ _ in letters.randomElement()! })
+            )
+            
+            products.append(product)
+        }
+        
+        return products
     }
 }

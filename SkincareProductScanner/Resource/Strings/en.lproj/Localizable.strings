@@ -73,11 +73,14 @@
 
 // MARK: Explore
 "Explore.Title" = "Explore";
+"Explore.SeeAll" = "See all";
 "Explore.Catalogs.AllProducts" = "All products";
 "Explore.Catalogs.Procedures" = "Procedures";
 "Explore.Catalogs.Glossary" = "Glossary";
 "Explore.Bookmarks.Title" = "Bookmarks";
 "Explore.Bookmarks.SubTitle" = "All your saved products";
+"Explore.Recommendations.Title.TailoredForYou" = "Tailored for you";
+"Explore.Recommendations.Title.Recommendations" = "Recommendations";
 
 // MARK: Menu
 "Menu.Title" = "Menu";

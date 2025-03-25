@@ -173,6 +173,11 @@
 		DE6EEA652D883484000577F3 /* CDTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA552D883484000577F3 /* CDTableElement.swift */; };
 		DE6EEA662D883484000577F3 /* CDTableSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA512D883484000577F3 /* CDTableSeparatorCell.swift */; };
 		DE6EEA672D883484000577F3 /* CatalogDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */; };
+		DE7B6D362D9281E700294D27 /* ExploreTableRecommendationsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6D352D9281E700294D27 /* ExploreTableRecommendationsTitleCell.swift */; };
+		DE7B6D382D92867B00294D27 /* ExploreTableSTGPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6D372D92867B00294D27 /* ExploreTableSTGPCell.swift */; };
+		DE7B6D3C2D92877C00294D27 /* ETSTGPCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6D3B2D92877C00294D27 /* ETSTGPCollectionView.swift */; };
+		DE7B6D3E2D92878200294D27 /* ETSTGPCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6D3D2D92878200294D27 /* ETSTGPCollectionCell.swift */; };
+		DE7B6D402D9299CC00294D27 /* ETSTGPCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B6D3F2D9299CC00294D27 /* ETSTGPCollectionLayout.swift */; };
 		DEAAEF432D859BCC0055C6BF /* ChatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF332D859BCC0055C6BF /* ChatsTableView.swift */; };
 		DEAAEF462D859BCC0055C6BF /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF382D859BCC0055C6BF /* ChatsViewModel.swift */; };
 		DEAAEF482D859BCC0055C6BF /* ChatsTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */; };
@@ -419,6 +424,11 @@
 		DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsView.swift; sourceTree = "<group>"; };
 		DE6EEA5A2D883484000577F3 /* CatalogDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsViewController.swift; sourceTree = "<group>"; };
 		DE6EEA5B2D883484000577F3 /* CatalogDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailsViewModel.swift; sourceTree = "<group>"; };
+		DE7B6D352D9281E700294D27 /* ExploreTableRecommendationsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableRecommendationsTitleCell.swift; sourceTree = "<group>"; };
+		DE7B6D372D92867B00294D27 /* ExploreTableSTGPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableSTGPCell.swift; sourceTree = "<group>"; };
+		DE7B6D3B2D92877C00294D27 /* ETSTGPCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSTGPCollectionView.swift; sourceTree = "<group>"; };
+		DE7B6D3D2D92878200294D27 /* ETSTGPCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSTGPCollectionCell.swift; sourceTree = "<group>"; };
+		DE7B6D3F2D9299CC00294D27 /* ETSTGPCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSTGPCollectionLayout.swift; sourceTree = "<group>"; };
 		DEAAEF2E2D859BCC0055C6BF /* ChatsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableCell.swift; sourceTree = "<group>"; };
 		DEAAEF2F2D859BCC0055C6BF /* ChatsTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableFooterView.swift; sourceTree = "<group>"; };
 		DEAAEF302D859BCC0055C6BF /* ChatsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableHeaderView.swift; sourceTree = "<group>"; };
@@ -1092,8 +1102,10 @@
 			isa = PBXGroup;
 			children = (
 				DE6EEA122D87F31C000577F3 /* Atoms */,
+				DE7B6D392D92869B00294D27 /* STGPCell */,
 				DE6EEA102D87F28A000577F3 /* ExploreTableCatalogsCell.swift */,
 				DE6EEA172D880549000577F3 /* ExploreTableBookmarksCell.swift */,
+				DE7B6D352D9281E700294D27 /* ExploreTableRecommendationsTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1225,6 +1237,25 @@
 				DE6EEA592D883484000577F3 /* CatalogDetailsView.swift */,
 			);
 			path = CatalogDetails;
+			sourceTree = "<group>";
+		};
+		DE7B6D392D92869B00294D27 /* STGPCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B6D3A2D9286F100294D27 /* Atoms */,
+				DE7B6D372D92867B00294D27 /* ExploreTableSTGPCell.swift */,
+			);
+			path = STGPCell;
+			sourceTree = "<group>";
+		};
+		DE7B6D3A2D9286F100294D27 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B6D3B2D92877C00294D27 /* ETSTGPCollectionView.swift */,
+				DE7B6D3D2D92878200294D27 /* ETSTGPCollectionCell.swift */,
+				DE7B6D3F2D9299CC00294D27 /* ETSTGPCollectionLayout.swift */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 		DEAAEF012D859B900055C6BF /* Chat */ = {
@@ -1701,6 +1732,7 @@
 				DE0AC0C42D803026001C7664 /* APIFormDataRequestBody.swift in Sources */,
 				DE0AC0CE2D803026001C7664 /* ProfileMediator.swift in Sources */,
 				DE0AC0D42D803026001C7664 /* Scalable.swift in Sources */,
+				DE7B6D3C2D92877C00294D27 /* ETSTGPCollectionView.swift in Sources */,
 				DE6EEA252D880FD9000577F3 /* GetGlossariesRequest.swift in Sources */,
 				DE0AC2352D818552001C7664 /* OnboardingDisclaimerView.swift in Sources */,
 				DE0AC2322D817C29001C7664 /* OnboardingHeaderView.swift in Sources */,
@@ -1740,6 +1772,7 @@
 				DE0AC1182D803026001C7664 /* SplashView.swift in Sources */,
 				DE0AC2372D818557001C7664 /* OnboardingDisclaimerViewController.swift in Sources */,
 				DE0AC1192D803026001C7664 /* TabView.swift in Sources */,
+				DE7B6D362D9281E700294D27 /* ExploreTableRecommendationsTitleCell.swift in Sources */,
 				DE6EEA432D881E4D000577F3 /* CatalogsView.swift in Sources */,
 				DEAD18E52D842A77003C4FFA /* ExploreViewController.swift in Sources */,
 				DE0AC11F2D803026001C7664 /* SessionManager.swift in Sources */,
@@ -1784,6 +1817,7 @@
 				DE0AC17D2D803026001C7664 /* IAPErrorHelper.swift in Sources */,
 				DE0AC1832D803026001C7664 /* Appearance.swift in Sources */,
 				DE0AC1842D803026001C7664 /* ProductPrice.swift in Sources */,
+				DE7B6D402D9299CC00294D27 /* ETSTGPCollectionLayout.swift in Sources */,
 				DE0AC18F2D803026001C7664 /* ProfileManager.swift in Sources */,
 				DE6665A12D9146250049BB2E /* GetProductDetailsRequest.swift in Sources */,
 				DE0AC1922D803026001C7664 /* Fonts.swift in Sources */,
@@ -1841,6 +1875,7 @@
 				DE6EEA652D883484000577F3 /* CDTableElement.swift in Sources */,
 				DE6EEA662D883484000577F3 /* CDTableSeparatorCell.swift in Sources */,
 				DE6EEA672D883484000577F3 /* CatalogDetailsView.swift in Sources */,
+				DE7B6D3E2D92878200294D27 /* ETSTGPCollectionCell.swift in Sources */,
 				DEAAEF882D85A0E30055C6BF /* ChatLoadingCell.swift in Sources */,
 				DEAAEF892D85A0E30055C6BF /* ChatViewModel.swift in Sources */,
 				DEAAEF8A2D85A0E30055C6BF /* ChatView.swift in Sources */,
@@ -1905,6 +1940,7 @@
 				DE0AC21F2D80752B001C7664 /* SkinType.swift in Sources */,
 				DE0AC1DF2D803026001C7664 /* TryAgainView.swift in Sources */,
 				DE0AC1E12D803026001C7664 /* String+Extension.swift in Sources */,
+				DE7B6D382D92867B00294D27 /* ExploreTableSTGPCell.swift in Sources */,
 				DE0AC1E52D803026001C7664 /* NetworkError.swift in Sources */,
 				DE0AC1E62D803026001C7664 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE0AC2452D81982C001C7664 /* OGoalsView.swift in Sources */,

@@ -22,6 +22,10 @@ final class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            self?.open(error: error) ?? .never()
+        }
+        
         let output = viewModel.configure(input: ExploreViewModel.Input(
             didTapMenu: mainView.headerView.menuButton.rx.tap.asSignal(),
             didTapBookmarks: mainView.tableView.didTapBookmarks,
@@ -39,6 +43,12 @@ final class ExploreViewController: UIViewController {
         output.elements
             .drive(Binder(mainView.tableView) { base, elements in
                 base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        output.activity
+            .drive(Binder(mainView.preloader) { base, activity in
+                activity ? base.startAnimating() : base.stopAnimating()
             })
             .disposed(by: disposeBag)
     }
@@ -84,5 +94,19 @@ private extension ExploreViewController {
             let vc = CatalogsViewController.make(item: .glossary)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self else { return Disposables.create() }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

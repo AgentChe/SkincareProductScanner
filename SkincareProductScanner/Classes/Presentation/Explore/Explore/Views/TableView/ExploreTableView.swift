@@ -12,6 +12,7 @@ import RxCocoa
 final class ExploreTableView: UITableView {
     private lazy var elements = [ExploreTableElement]()
     
+    private lazy var didTapSeeAllRecommendationsTrigger = PublishRelay<Void>()
     private lazy var didTapBookmarksTrigger = PublishRelay<Void>()
     private lazy var didTapAllProductsTrigger = PublishRelay<Void>()
     private lazy var didTapProceduresTrigger = PublishRelay<Void>()
@@ -34,6 +35,10 @@ extension ExploreTableView {
         self.elements = elements
         
         reloadData()
+    }
+    
+    var didTapSeeAllRecommendations: Signal<Void> {
+        didTapSeeAllRecommendationsTrigger.asSignal()
     }
     
     var didTapBookmarks: Signal<Void> {
@@ -61,6 +66,16 @@ extension ExploreTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch elements[indexPath.row] {
+        case .recommendationsTitle:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableRecommendationsTitleCell.self), for: indexPath) as! ExploreTableRecommendationsTitleCell
+            cell.didTapSeeAll = { [weak self] in
+                self?.didTapSeeAllRecommendationsTrigger.accept(Void())
+            }
+            return cell
+        case .stgp(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableSTGPCell.self), for: indexPath) as! ExploreTableSTGPCell
+            cell.collectionView.setup(elements: elements)
+            return cell
         case .bookmarks:
             return dequeueReusableCell(withIdentifier: String(describing: ExploreTableBookmarksCell.self), for: indexPath)
         case .catalogs:
@@ -98,6 +113,8 @@ extension ExploreTableView: UITableViewDelegate {
 // MARK: Private
 private extension ExploreTableView {
     func initialize() {
+        register(ExploreTableRecommendationsTitleCell.self, forCellReuseIdentifier: String(describing: ExploreTableRecommendationsTitleCell.self))
+        register(ExploreTableSTGPCell.self, forCellReuseIdentifier: String(describing: ExploreTableSTGPCell.self))
         register(ExploreTableBookmarksCell.self, forCellReuseIdentifier: String(describing: ExploreTableBookmarksCell.self))
         register(ExploreTableCatalogsCell.self, forCellReuseIdentifier: String(describing: ExploreTableCatalogsCell.self))
         
