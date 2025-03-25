@@ -11,6 +11,7 @@ import RxCocoa
 final class ExploreViewModel {
     enum Route {
         case menu
+        case recommendations
         case bookmarks
         case allProducts
         case procedures
@@ -30,6 +31,7 @@ final class ExploreViewModel {
 extension ExploreViewModel {
     struct Input {
         let didTapMenu: Signal<Void>
+        let didTapRecommendations: Signal<Void>
         let didTapBookmarks: Signal<Void>
         let didTapAllProducts: Signal<Void>
         let didTapProcedures: Signal<Void>
@@ -48,6 +50,7 @@ extension ExploreViewModel {
         return Output(
             route: makeRoute(
                 didTapMenu: input.didTapMenu,
+                didTapRecommendations: input.didTapRecommendations,
                 didTapBookmarks: input.didTapBookmarks,
                 didTapAllProducts: input.didTapAllProducts,
                 didTapProcedures: input.didTapProcedures,
@@ -63,6 +66,7 @@ extension ExploreViewModel {
 private extension ExploreViewModel {
     func makeRoute(
         didTapMenu: Signal<Void>,
+        didTapRecommendations: Signal<Void>,
         didTapBookmarks: Signal<Void>,
         didTapAllProducts: Signal<Void>,
         didTapProcedures: Signal<Void>,
@@ -70,6 +74,10 @@ private extension ExploreViewModel {
     ) -> Driver<Route> {
         let menu = didTapMenu
             .map { Route.menu }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let recommendations = didTapRecommendations
+            .map { Route.recommendations }
             .asDriver(onErrorDriveWith: .never())
         
         let bookmarks = didTapBookmarks
@@ -89,7 +97,7 @@ private extension ExploreViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(menu, bookmarks, allProducts, procedures, glossary)
+            .merge(menu, recommendations, bookmarks, allProducts, procedures, glossary)
     }
     
     func makeElements(explore: Driver<Explore>) -> Driver<[ExploreTableElement]> {

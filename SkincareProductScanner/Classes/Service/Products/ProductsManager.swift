@@ -15,9 +15,9 @@ protocol ProductsManagerProtocol {
         presets: String?,
         filters: [String: [String]]?,
         page: Int
-    ) -> Single<ProductsPage?>
-    func favorites(page: Int) -> Single<ProductsPage?>
-    func recommendations(page: Int) -> Single<ProductsPage?>
+    ) -> Single<Page<[Product]>?>
+    func favorites(page: Int) -> Single<Page<[Product]>?>
+    func recommendations(page: Int) -> Single<Page<[Product]>?>
     func obtainDetails(productId: String) -> Single<ProductDetails?>
     func favorite(productId: String, action: ProductFavoriteRequest.Action) -> Single<RequestResult>
     func scan(image: UIImage) -> Single<ScanProductResult>
@@ -62,7 +62,7 @@ extension ProductsManager: ProductsManagerProtocol {
         presets: String? = nil,
         filters: [String: [String]]? = nil,
         page: Int
-    ) -> Single<ProductsPage?> {
+    ) -> Single<Page<[Product]>?> {
         let request = GetProductsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -74,10 +74,10 @@ extension ProductsManager: ProductsManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { ProductsPage(response: $0) }
+            .map { Product.map(response: $0) }
     }
     
-    func favorites(page: Int) -> Single<ProductsPage?> {
+    func favorites(page: Int) -> Single<Page<[Product]>?> {
         let request = GetProductsRequest(
             anonymousId: sessionManager.anonymousId,
             internalId: sessionManager.internalId,
@@ -89,22 +89,25 @@ extension ProductsManager: ProductsManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { ProductsPage(response: $0) }
+            .map { Product.map(response: $0) }
     }
     
-    func recommendations(page: Int) -> Single<ProductsPage?> {
-        let request = GetProductsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            search: nil,
-            presets: "recommendation",
-            filters: nil,
-            page: page
-        )
+    // TODO
+    func recommendations(page: Int) -> Single<Page<[Product]>?> {
+//        let request = GetProductsRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            search: nil,
+//            presets: "recommendation",
+//            filters: nil,
+//            page: page
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { Product.map(response: $0) }
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { ProductsPage(response: $0) }
+        Self.recommendationsMock(page: page)
     }
     
     func obtainDetails(productId: String) -> Single<ProductDetails?> {
@@ -332,5 +335,20 @@ private extension ProductsManager {
         }
         
         return products
+    }
+    
+    // TODO: remove
+    static func recommendationsMock(page: Int) -> Single<Page<[Product]>?> {
+        Single<Page<[Product]>?>.create { single in
+            let products = Self.productsMock(count: 10)
+            let pageInfo = PageInfo(current: page, total: 5)
+            let page = Page(info: pageInfo, elements: products)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                single(.success(page))
+            })
+            
+            return Disposables.create()
+        }
     }
 }

@@ -16,6 +16,20 @@ struct Product {
 
 // MARK: Public
 extension Product {
+    static func map(response: Any) -> Page<[Product]>? {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any],
+            let array = body["items"] as? [[String: Any]],
+            let paginationJSON = body["pagination"] as? [String: Any],
+            let pageInfo = PageInfo(json: paginationJSON)
+        else { return nil }
+        
+        let products = array.compactMap { Product(json: $0) }
+        
+        return Page(info: pageInfo, elements: products)
+    }
+    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,

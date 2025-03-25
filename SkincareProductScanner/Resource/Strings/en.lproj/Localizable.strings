@@ -132,3 +132,6 @@
 "Bookmarks.Empty.Products" = "Keep your favourite products\nlisted in one place";
 "Bookmarks.Empty.Procedures" = "Saved procedures will\nappear here";
 "Bookmarks.Empty.Glossary" = "Saved dermatologic terms\nwill appear here";
+
+// MARK: Recommendations
+"Recommendations.Title" = "Recommendations";

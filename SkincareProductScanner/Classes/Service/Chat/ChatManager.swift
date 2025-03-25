@@ -11,7 +11,7 @@ protocol ChatManagerProtocol {
     func createChat() -> Single<String?>
     func send(image: UIImage?, message: String, chatId: String) -> Single<SendMessageResponse?>
     func checkMessageComplete(chatId: String, runnerId: String) -> Single<CheckMessageCompleteResponse?>
-    func messagesPage(chatId: String, page: Int) -> Single<ChatMessagesPage?>
+    func messagesPage(chatId: String, page: Int) -> Single<Page<[ChatMessage]>?>
     func chats() -> Single<[Chat]>
     func deleteChat(id: String) -> Single<Void>
 }
@@ -69,7 +69,7 @@ extension ChatManager: ChatManagerProtocol {
             .map { CheckMessageCompleteResponse(response: $0) }
     }
     
-    func messagesPage(chatId: String, page: Int) -> Single<ChatMessagesPage?> {
+    func messagesPage(chatId: String, page: Int) -> Single<Page<[ChatMessage]>?> {
         let anonymousId = sessionManager.anonymousId
         let internalId = sessionManager.internalId
         
@@ -82,7 +82,7 @@ extension ChatManager: ChatManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { ChatMessagesPage(response: $0, chatId: chatId) }
+            .map { ChatMessage.map(response: $0, chatId: chatId) }
     }
     
     func chats() -> Single<[Chat]> {

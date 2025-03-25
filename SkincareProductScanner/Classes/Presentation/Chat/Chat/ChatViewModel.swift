@@ -240,7 +240,7 @@ private extension ChatViewModel {
                 )
                 
                 let historyElements = historyPage
-                    .map { $0.messages }
+                    .map { $0.elements }
                     .map { messages -> [ChatTableElement] in
                         var elements = [ChatTableElement]()
                         
@@ -341,35 +341,35 @@ private extension ChatViewModel {
             }
     }
     
-    func makeHistoryPage(mode: Driver<Mode>, didScrollToTop: Signal<Void>, chatId: Driver<String>) -> Driver<ChatMessagesPage> {
+    func makeHistoryPage(mode: Driver<Mode>, didScrollToTop: Signal<Void>, chatId: Driver<String>) -> Driver<Page<[ChatMessage]>> {
         chatId
             .withLatestFrom(mode) { ($0, $1) }
-            .flatMapLatest { [weak self] args -> Driver<ChatMessagesPage> in
+            .flatMapLatest { [weak self] args -> Driver<Page<[ChatMessage]>> in
                 let (chatId, mode) = args
                 
                 guard let self, mode.isHistory else { return .never() }
                 
-                var lastPage: ChatMessagesPage?
+                var lastPageInfo: PageInfo?
                 
-                func fetch(page: Int) -> Driver<ChatMessagesPage> {
+                func fetch(page: Int) -> Driver<Page<[ChatMessage]>> {
                     chatManager
                         .messagesPage(chatId: chatId, page: page)
                         .compactMap { $0 }
                         .asDriver(onErrorDriveWith: .never())
                         .do(onNext: { page in
-                            lastPage = page
+                            lastPageInfo = page.info
                         })
                 }
                 
                 let firstPage = fetch(page: 1)
                 
                 return firstPage
-                    .flatMapLatest { firstPage -> Driver<ChatMessagesPage> in
+                    .flatMapLatest { firstPage -> Driver<Page<[ChatMessage]>> in
                         didScrollToTop
-                            .compactMap { lastPage }
-                            .filter { (($0.page.current + 1) <= $0.page.total) && ($0.page.current != $0.page.total) }
-                            .flatMapFirst { lastPage -> Driver<ChatMessagesPage> in
-                                fetch(page: lastPage.page.current + 1)
+                            .compactMap { lastPageInfo }
+                            .filter { (($0.current + 1) <= $0.total) && ($0.current != $0.total) }
+                            .flatMapFirst { lastPage -> Driver<Page<[ChatMessage]>> in
+                                fetch(page: lastPage.current + 1)
                             }
                             .startWith(firstPage)
                     }
