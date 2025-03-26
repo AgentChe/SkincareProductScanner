@@ -11,6 +11,7 @@ import RxCocoa
 final class CategoryViewModel {
     enum Action {
         case openDetails(Product)
+        case openPaygate
         case setup([Product])
         case append([Product])
     }
@@ -69,7 +70,9 @@ private extension CategoryViewModel {
         fetchProducts: Driver<FetchProductsResult>
     ) -> Driver<Action> {
         let openDetails = didSelect
-            .map { Action.openDetails($0) }
+            .map { product -> Action in
+                SessionManager().hasActiveSubscriptions() ? .openDetails(product) : .openPaygate
+            }
             .asDriver(onErrorDriveWith: .never())
         
         let elements = fetchProducts

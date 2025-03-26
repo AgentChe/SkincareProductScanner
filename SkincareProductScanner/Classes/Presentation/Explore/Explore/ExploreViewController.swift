@@ -108,6 +108,9 @@ private extension ExploreViewController {
         case .glossary:
             let vc = CatalogsViewController.make(item: .glossary)
             navigationController?.pushViewController(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

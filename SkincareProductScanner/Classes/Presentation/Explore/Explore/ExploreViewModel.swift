@@ -19,6 +19,7 @@ final class ExploreViewModel {
         case allProducts
         case procedures
         case glossary
+        case paygate
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -93,7 +94,9 @@ private extension ExploreViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let product = didSelectProduct
-            .map { Route.product($0) }
+            .map { product -> Route in
+                SessionManager().hasActiveSubscriptions() ? .product(product) : .paygate
+            }
             .asDriver(onErrorDriveWith: .never())
         
         let categories = didTapCategories

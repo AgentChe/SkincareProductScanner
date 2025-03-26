@@ -74,6 +74,9 @@ private extension CategoryViewController {
         switch action {
         case .openDetails(let product):
             break // TODO
+        case .openPaygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         case .setup(let products):
             mainView.tableView.setup(elements: products)
         case .append(let products):

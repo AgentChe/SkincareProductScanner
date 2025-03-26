@@ -67,10 +67,6 @@ private extension BookmarksProductsViewController {
     func action(_ action: BookmarksProductsViewModel.Action) {
         switch action {
         case .openDetails(let product):
-            // TODO
-            ProductsMediator.shared
-                .removeProductFromFavorite(id: product.id)
-            
             break // TODO
         case .openPaygate:
             let vc = PaygateViewController.make()
