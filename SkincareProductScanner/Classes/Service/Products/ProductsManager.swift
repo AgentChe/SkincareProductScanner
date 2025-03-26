@@ -57,24 +57,27 @@ extension ProductsManager: ProductsManagerProtocol {
         forceUpdate ? loadFilters() : cachedFilters()
     }
     
+    // TODO
     func search(
         userInput: String? = nil,
         presets: String? = nil,
         filters: [String: [String]]? = nil,
         page: Int
     ) -> Single<Page<[Product]>?> {
-        let request = GetProductsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            search: userInput,
-            presets: presets,
-            filters: filters,
-            page: page
-        )
+//        let request = GetProductsRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            search: userInput,
+//            presets: presets,
+//            filters: filters,
+//            page: page
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { Product.map(response: $0) }
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { Product.map(response: $0) }
+        Self.recommendationsMock(page: page)
     }
     
     // TODO

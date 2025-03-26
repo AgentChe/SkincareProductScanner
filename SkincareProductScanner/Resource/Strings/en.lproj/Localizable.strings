@@ -81,6 +81,8 @@
 "Explore.Bookmarks.SubTitle" = "All your saved products";
 "Explore.Recommendations.Title.TailoredForYou" = "Tailored for you";
 "Explore.Recommendations.Title.Recommendations" = "Recommendations";
+"Explore.Categories.Title.ExploreMore" = "Explore more";
+"Explore.Categories.Title.PopularProducts" = "Popular products";
 
 // MARK: Menu
 "Menu.Title" = "Menu";
@@ -135,3 +137,6 @@
 
 // MARK: Recommendations
 "Recommendations.Title" = "Recommendations";
+
+// MARK: Categories
+"Categories.Title" = "Popular products";

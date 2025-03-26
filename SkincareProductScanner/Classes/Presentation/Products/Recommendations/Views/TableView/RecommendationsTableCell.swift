@@ -116,7 +116,7 @@ private extension RecommendationsTableCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.layer.masksToBounds = true
-        view.layer.cornerRadius = 16.scale
+        view.layer.cornerRadius = 8.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

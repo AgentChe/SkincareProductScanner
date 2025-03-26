@@ -14,7 +14,9 @@ final class ExploreTableView: UITableView {
     
     private lazy var didTapSeeAllRecommendationsTrigger = PublishRelay<Void>()
     private lazy var didSelectProductTrigger = PublishRelay<Product>()
+    private lazy var didTapSeeAllCategoriesTrigger = PublishRelay<Void>()
     private lazy var didTapBookmarksTrigger = PublishRelay<Void>()
+    private lazy var didSelectCategoryTrigger = PublishRelay<ProductCategory>()
     private lazy var didTapAllProductsTrigger = PublishRelay<Void>()
     private lazy var didTapProceduresTrigger = PublishRelay<Void>()
     private lazy var didTapGlossaryTrigger = PublishRelay<Void>()
@@ -46,8 +48,16 @@ extension ExploreTableView {
         didSelectProductTrigger.asSignal()
     }
     
+    var didTapSeeAllCategories: Signal<Void> {
+        didTapSeeAllCategoriesTrigger.asSignal()
+    }
+    
     var didTapBookmarks: Signal<Void> {
         didTapBookmarksTrigger.asSignal()
+    }
+    
+    var didSelectCategory: Signal<ProductCategory> {
+        didSelectCategoryTrigger.asSignal()
     }
     
     var didTapAllProducts: Signal<Void> {
@@ -86,6 +96,19 @@ extension ExploreTableView: UITableViewDataSource {
             cell.collectionView.setup(elements: elements)
             cell.collectionView.didSelect = { [weak self] product in
                 self?.didSelectProductTrigger.accept(product)
+            }
+            return cell
+        case .categoriesTitle:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableCategoriesTitleCell.self), for: indexPath) as! ExploreTableCategoriesTitleCell
+            cell.didTapSeeAll = { [weak self] in
+                self?.didTapSeeAllCategoriesTrigger.accept(Void())
+            }
+            return cell
+        case .categories(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ExploreTableCategoriesCell.self), for: indexPath) as! ExploreTableCategoriesCell
+            cell.collectionView.setup(elements: elements)
+            cell.collectionView.didSelect = { [weak self] element in
+                self?.didSelectCategoryTrigger.accept(element)
             }
             return cell
         case .bookmarks:
@@ -128,6 +151,8 @@ private extension ExploreTableView {
         register(ExploreTableRecommendationsTitleCell.self, forCellReuseIdentifier: String(describing: ExploreTableRecommendationsTitleCell.self))
         register(ExploreTableSTGPCell.self, forCellReuseIdentifier: String(describing: ExploreTableSTGPCell.self))
         register(ExploreTableRecommendationsProductsCell.self, forCellReuseIdentifier: String(describing: ExploreTableRecommendationsProductsCell.self))
+        register(ExploreTableCategoriesTitleCell.self, forCellReuseIdentifier: String(describing: ExploreTableCategoriesTitleCell.self))
+        register(ExploreTableCategoriesCell.self, forCellReuseIdentifier: String(describing: ExploreTableCategoriesCell.self))
         register(ExploreTableBookmarksCell.self, forCellReuseIdentifier: String(describing: ExploreTableBookmarksCell.self))
         register(ExploreTableCatalogsCell.self, forCellReuseIdentifier: String(describing: ExploreTableCatalogsCell.self))
         

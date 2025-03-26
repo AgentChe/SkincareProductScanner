@@ -10,6 +10,8 @@ enum ExploreTableElement {
     case stgp([ExploreSTGPElement])
     case recommendationsProducts([Product])
     case bookmarks
+    case categoriesTitle
+    case categories([ProductCategory])
     case catalogs
 }
 

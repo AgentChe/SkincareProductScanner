@@ -29,6 +29,9 @@ final class ExploreViewController: UIViewController {
         let output = viewModel.configure(input: ExploreViewModel.Input(
             didTapMenu: mainView.headerView.menuButton.rx.tap.asSignal(),
             didTapRecommendations: mainView.tableView.didTapSeeAllRecommendations,
+            didSelectProduct: mainView.tableView.didSelectProduct,
+            didTapCategories: mainView.tableView.didTapSeeAllCategories,
+            didSelectCategory: mainView.tableView.didSelectCategory,
             didTapBookmarks: mainView.tableView.didTapBookmarks,
             didTapAllProducts: mainView.tableView.didTapAllProducts,
             didTapProcedures: mainView.tableView.didTapProcedures,
@@ -85,6 +88,14 @@ private extension ExploreViewController {
             navigationController?.pushViewController(vc, animated: true)
         case .recommendations:
             let vc = RecommendationsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .product(let product):
+            print("product") // TODO
+        case .categories:
+            let vc = CategoriesViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .category(let category):
+            let vc = CategoryViewController.make(category: category)
             navigationController?.pushViewController(vc, animated: true)
         case .bookmarks:
             let vc = BookmarksViewController.make()

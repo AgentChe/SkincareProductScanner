@@ -12,6 +12,9 @@ final class ExploreViewModel {
     enum Route {
         case menu
         case recommendations
+        case product(Product)
+        case categories
+        case category(ProductCategory)
         case bookmarks
         case allProducts
         case procedures
@@ -32,6 +35,9 @@ extension ExploreViewModel {
     struct Input {
         let didTapMenu: Signal<Void>
         let didTapRecommendations: Signal<Void>
+        let didSelectProduct: Signal<Product>
+        let didTapCategories: Signal<Void>
+        let didSelectCategory: Signal<ProductCategory>
         let didTapBookmarks: Signal<Void>
         let didTapAllProducts: Signal<Void>
         let didTapProcedures: Signal<Void>
@@ -51,6 +57,9 @@ extension ExploreViewModel {
             route: makeRoute(
                 didTapMenu: input.didTapMenu,
                 didTapRecommendations: input.didTapRecommendations,
+                didSelectProduct: input.didSelectProduct,
+                didTapCategories: input.didTapCategories,
+                didSelectCategory: input.didSelectCategory,
                 didTapBookmarks: input.didTapBookmarks,
                 didTapAllProducts: input.didTapAllProducts,
                 didTapProcedures: input.didTapProcedures,
@@ -67,6 +76,9 @@ private extension ExploreViewModel {
     func makeRoute(
         didTapMenu: Signal<Void>,
         didTapRecommendations: Signal<Void>,
+        didSelectProduct: Signal<Product>,
+        didTapCategories: Signal<Void>,
+        didSelectCategory: Signal<ProductCategory>,
         didTapBookmarks: Signal<Void>,
         didTapAllProducts: Signal<Void>,
         didTapProcedures: Signal<Void>,
@@ -78,6 +90,18 @@ private extension ExploreViewModel {
         
         let recommendations = didTapRecommendations
             .map { Route.recommendations }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let product = didSelectProduct
+            .map { Route.product($0) }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let categories = didTapCategories
+            .map { Route.categories }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let category = didSelectCategory
+            .map { Route.category($0) }
             .asDriver(onErrorDriveWith: .never())
         
         let bookmarks = didTapBookmarks
@@ -97,7 +121,7 @@ private extension ExploreViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(menu, recommendations, bookmarks, allProducts, procedures, glossary)
+            .merge(menu, recommendations, product, categories, category, bookmarks, allProducts, procedures, glossary)
     }
     
     func makeElements(explore: Driver<Explore>) -> Driver<[ExploreTableElement]> {
@@ -122,6 +146,8 @@ private extension ExploreViewModel {
                     .stgp(stgp),
                     .recommendationsProducts(explore.recommendation.products),
                     .bookmarks,
+                    .categoriesTitle,
+                    .categories(explore.productsCategories),
                     .catalogs
                 ]
             }
