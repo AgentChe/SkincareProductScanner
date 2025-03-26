@@ -77,19 +77,22 @@ extension ProductsManager: ProductsManagerProtocol {
             .map { Product.map(response: $0) }
     }
     
+    // TODO
     func favorites(page: Int) -> Single<Page<[Product]>?> {
-        let request = GetProductsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            search: nil,
-            presets: "favorite",
-            filters: nil,
-            page: page
-        )
+//        let request = GetProductsRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            search: nil,
+//            presets: "favorite",
+//            filters: nil,
+//            page: page
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { Product.map(response: $0) }
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { Product.map(response: $0) }
+        Self.recommendationsMock(page: page)
     }
     
     // TODO

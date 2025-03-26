@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A8E8A715E7B2526A79E91970 /* Pods_SkincareProductScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970926C6B4FE7997E5C32299 /* Pods_SkincareProductScanner.framework */; };
+		DE0922302D92FB32004A9840 /* BookmarksProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09222F2D92FB32004A9840 /* BookmarksProductsViewController.swift */; };
+		DE0922322D92FB38004A9840 /* BookmarksProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0922312D92FB38004A9840 /* BookmarksProductsViewModel.swift */; };
+		DE0922342D92FB3C004A9840 /* BookmarksProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0922332D92FB3C004A9840 /* BookmarksProductsView.swift */; };
 		DE0ABE672D802E9A001C7664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0ABE5E2D802E9A001C7664 /* Assets.xcassets */; };
 		DE0ABE692D802E9A001C7664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0ABE612D802E9A001C7664 /* LaunchScreen.storyboard */; };
 		DE0AC08C2D803026001C7664 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0ABE802D803026001C7664 /* Collection+Extension.swift */; };
@@ -264,6 +267,9 @@
 /* Begin PBXFileReference section */
 		8FE93681E613A8FA58F89A1C /* Pods-SkincareProductScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkincareProductScanner.debug.xcconfig"; path = "Target Support Files/Pods-SkincareProductScanner/Pods-SkincareProductScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		970926C6B4FE7997E5C32299 /* Pods_SkincareProductScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkincareProductScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE09222F2D92FB32004A9840 /* BookmarksProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksProductsViewController.swift; sourceTree = "<group>"; };
+		DE0922312D92FB38004A9840 /* BookmarksProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksProductsViewModel.swift; sourceTree = "<group>"; };
+		DE0922332D92FB3C004A9840 /* BookmarksProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksProductsView.swift; sourceTree = "<group>"; };
 		DE0ABE452D802E8F001C7664 /* SkincareProductScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkincareProductScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0ABE5E2D802E9A001C7664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE0ABE5F2D802E9A001C7664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -547,6 +553,16 @@
 				970926C6B4FE7997E5C32299 /* Pods_SkincareProductScanner.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE09222E2D92FB20004A9840 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE09222F2D92FB32004A9840 /* BookmarksProductsViewController.swift */,
+				DE0922312D92FB38004A9840 /* BookmarksProductsViewModel.swift */,
+				DE0922332D92FB3C004A9840 /* BookmarksProductsView.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 		DE0ABE3C2D802E8F001C7664 = {
@@ -1642,6 +1658,7 @@
 		DEC29E062D8B2759003803BA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				DE09222E2D92FB20004A9840 /* Products */,
 				DEC29E072D8B2762003803BA /* Catalogs */,
 			);
 			path = List;
@@ -1856,6 +1873,7 @@
 				DE6EEA0C2D87F1F6000577F3 /* ExploreTableView.swift in Sources */,
 				DE0AC1282D803026001C7664 /* OProfileCollector.swift in Sources */,
 				DE0AC1322D803026001C7664 /* AmplitudeManager.swift in Sources */,
+				DE0922322D92FB38004A9840 /* BookmarksProductsViewModel.swift in Sources */,
 				DE0AC1342D803026001C7664 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				DE7B6D432D929C8E00294D27 /* ExploreTableRecommendationsProductsCell.swift in Sources */,
 				DE0AC1392D803026001C7664 /* FirebaseManager.swift in Sources */,
@@ -1973,7 +1991,9 @@
 				DE7B6D562D92B99700294D27 /* RecommendationsTableCell.swift in Sources */,
 				DEAAEF702D859E980055C6BF /* ChatMessageRunner.swift in Sources */,
 				DE66659B2D91353F0049BB2E /* ProductFilters.swift in Sources */,
+				DE0922342D92FB3C004A9840 /* BookmarksProductsView.swift in Sources */,
 				DEAAEF712D859E980055C6BF /* SendMessageResponse.swift in Sources */,
+				DE0922302D92FB32004A9840 /* BookmarksProductsViewController.swift in Sources */,
 				DEAAEF722D859E980055C6BF /* PageInfo.swift in Sources */,
 				DEAAEF732D859E980055C6BF /* CheckMessageCompleteRequest.swift in Sources */,
 				DEAAEF4C2D859BCC0055C6BF /* ChatsTableSection.swift in Sources */,

@@ -11,7 +11,7 @@ final class BookmarksCoordinator {
     private weak var parentVC: UIViewController?
     private weak var container: UIView?
     
-    lazy var productsVC = UIViewController() // TODO
+    lazy var productsVC = BookmarksProductsViewController.make()
     lazy var proceduresVC = BookmarksCatalogsViewController.make(entity: .procedures)
     lazy var glossaryVC = BookmarksCatalogsViewController.make(entity: .glossary)
     
@@ -21,7 +21,10 @@ final class BookmarksCoordinator {
         self.parentVC = parentVC
         self.container = container
     }
-    
+}
+
+// MARK: Public
+extension BookmarksCoordinator {
     func change(entity: BookmarksEntityButton.Entity) {
         switch entity {
         case .products:

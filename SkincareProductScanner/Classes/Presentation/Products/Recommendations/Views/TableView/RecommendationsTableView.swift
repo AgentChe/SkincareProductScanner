@@ -40,6 +40,12 @@ extension RecommendationsTableView {
         reloadData()
     }
     
+    func remove(id: String) {
+        elements.removeAll(where: { $0.id == id })
+        
+        reloadData()
+    }
+    
     var didSelect: Signal<Product> {
         didSelectTrigger.asSignal()
     }
