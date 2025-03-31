@@ -140,3 +140,24 @@
 
 // MARK: Categories
 "Categories.Title" = "Popular products";
+
+// MARK: Scan
+"Scan.Placeholder" = "Center the lable in the frame";
+"Scan.NotPermissions.Title" = "No permission";
+"Scan.NotPermissions.Text" = "Please go to settings and give permission to receive images for scanning";
+"Scan.PermissionProblem.Title" = "Allow access to camera";
+"Scan.PermissionProblem.SubTitle" = "This will allow us to select similar products.";
+"Scan.PermissionProblem.Button" = "Allow access";
+
+// MARK: ScanImageResize
+"ScanImageResize.AcceptPhoto" = "Accept photo";
+"ScanImageResize.RetakePhoto" = "Retake photo";
+"ScanImageResize.Preloader" = "Browsing our database...";
+"ScanImageResize.Incorrect" = "Cannot scan the product";
+
+// MARK: ScanProducts
+"ScanProducts.Title.Empty" = "No result";
+"ScanProducts.Title.Count" = "%i matches found";
+"ScanProducts.NewSearch" = "New search";
+"ScanProducts.SubTitle.Empty" = "We couldn’t find similar products.";
+"ScanProducts.SubTitle.Result" = "Select the product you’re looking for:";

@@ -9,12 +9,17 @@ struct ScanProductResult {
     let products: [Product]?
     let error: Error?
     
-    init(response: Any) {
+    init(
+        products: [Product]?,
+        error: Error?
+    ) {
+        self.products = products
+        self.error = error
+    }
+    
+    init?(response: Any) {
         guard let json = response as? [String: Any] else {
-            self.products = nil
-            self.error = ContentError(.notContent)
-            
-            return
+            return nil
         }
         
         products = {

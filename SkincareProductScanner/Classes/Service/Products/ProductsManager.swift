@@ -20,7 +20,7 @@ protocol ProductsManagerProtocol {
     func recommendations(page: Int) -> Single<Page<[Product]>?>
     func obtainDetails(productId: String) -> Single<ProductDetails?>
     func favorite(productId: String, action: ProductFavoriteRequest.Action) -> Single<RequestResult>
-    func scan(image: UIImage) -> Single<ScanProductResult>
+    func scan(image: UIImage) -> Single<ScanProductResult?>
 }
 
 final class ProductsManager {
@@ -151,16 +151,29 @@ extension ProductsManager: ProductsManagerProtocol {
             })
     }
     
-    func scan(image: UIImage) -> Single<ScanProductResult> {
-        let request = ScanRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            image: image
-        )
+    // TODO
+    func scan(image: UIImage) -> Single<ScanProductResult?> {
+//        let request = ScanRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            image: image
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(formDataBody: request)
+//            .map { ScanProductResult(response: $0) }
         
-        return restAPITransport
-            .callServerApi(formDataBody: request)
-            .map { ScanProductResult(response: $0) }
+        Single<ScanProductResult?>.create { single in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                let result = ScanProductResult(
+                    products: Self.productsMock(count: Int.random(in: 0...30)),
+                    error: nil
+                )
+                single(.success(result))
+            })
+            
+            return Disposables.create()
+        }
     }
 }
 

@@ -8,6 +8,7 @@ target 'SkincareProductScanner' do
   pod 'Toast-Swift'
   pod 'lottie-ios'
   pod 'Kingfisher'
+  pod 'Mantis'
   
   pod 'RxSwift'
   pod 'RxCocoa'

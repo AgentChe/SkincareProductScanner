@@ -55,7 +55,7 @@ final class MainViewController: UIViewController {
         
         mainView.tabView.scanButton
             .rx.tap.bind(to: (Binder(self) { base, void in
-                // TODO
+                ScanAssembly().scan(from: base)
             }))
             .disposed(by: disposeBag)
         
