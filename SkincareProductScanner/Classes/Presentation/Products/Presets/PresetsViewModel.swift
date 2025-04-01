@@ -1,5 +1,5 @@
 //
-//  CategoryViewModel.swift
+//  PresetsViewModel.swift
 //  SkincareProductScanner
 //
 //  Created by Андрей Чернышев on 26.03.2025.
@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-final class CategoryViewModel {
+final class PresetsViewModel {
     enum Action {
         case openDetails(Product)
         case openPaygate
@@ -16,20 +16,20 @@ final class CategoryViewModel {
         case append([Product])
     }
     
-    private let category: Driver<ProductCategory>
+    private let preset: Driver<String>
     
     private lazy var firstPageActivity = RxActivityIndicator()
     private lazy var paginationActivity = RxActivityIndicator()
     
     private lazy var productsManager = ProductsManager()
     
-    init(category: ProductCategory) {
-        self.category = BehaviorRelay(value: category).asDriver()
+    init(preset: String) {
+        self.preset = BehaviorRelay(value: preset).asDriver()
     }
 }
 
 // MARK: Public
-extension CategoryViewModel {
+extension PresetsViewModel {
     struct Input {
         let didSelect: Signal<Product>
         let didScrollToBottom: Signal<Void>
@@ -44,7 +44,7 @@ extension CategoryViewModel {
     func configure(input: Input) -> Output {
         let fetchProducts = makeProducts(
             didScrollToBottom: input.didScrollToBottom,
-            category: category
+            preset: preset
         )
         
         return Output(
@@ -59,7 +59,7 @@ extension CategoryViewModel {
 }
 
 // MARK: Private
-private extension CategoryViewModel {
+private extension PresetsViewModel {
     struct FetchProductsResult {
         let products: [Product]
         let isFirstPage: Bool
@@ -90,13 +90,13 @@ private extension CategoryViewModel {
     
     func makeProducts(
         didScrollToBottom: Signal<Void>,
-        category: Driver<ProductCategory>
+        preset: Driver<String>
     ) -> Driver<FetchProductsResult> {
         var lastPageInfo: PageInfo?
         
-        func fetch(page: Int, category: ProductCategory) -> Driver<Page<[Product]>> {
+        func fetch(page: Int, preset: String) -> Driver<Page<[Product]>> {
             productsManager
-                .search(presets: category.name, page: page)
+                .search(presets: preset, page: page)
                 .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
                 .asDriver(onErrorJustReturn: nil)
                 .compactMap { $0 }
@@ -105,25 +105,25 @@ private extension CategoryViewModel {
                 })
         }
         
-        let firstPage = category.flatMapLatest { category -> Driver<Page<[Product]>> in
-            fetch(page: 1, category: category)
+        let firstPage = preset.flatMapLatest { preset -> Driver<Page<[Product]>> in
+            fetch(page: 1, preset: preset)
         }
         let downloadedPage = firstPage
             .flatMapLatest { firstPage -> Driver<Page<[Product]>> in
                 didScrollToBottom
                     .asDriver(onErrorDriveWith: .never())
-                    .withLatestFrom(category)
-                    .compactMap { category -> (ProductCategory, PageInfo)? in
+                    .withLatestFrom(preset)
+                    .compactMap { preset -> (String, PageInfo)? in
                         guard let lastPageInfo else { return nil }
-                        return (category, lastPageInfo)
+                        return (preset, lastPageInfo)
                     }
-                    .filter { category, pageInfo -> Bool in
+                    .filter { preset, pageInfo -> Bool in
                         let hasNext = ((pageInfo.current + 1) <= pageInfo.total)
                         let currentNotTotal = (pageInfo.current != pageInfo.total)
                         return hasNext && currentNotTotal
                     }
-                    .flatMapFirst { category, lastPageInfo -> Driver<Page<[Product]>> in
-                        fetch(page: lastPageInfo.current + 1, category: category)
+                    .flatMapFirst { preset, lastPageInfo -> Driver<Page<[Product]>> in
+                        fetch(page: lastPageInfo.current + 1, preset: preset)
                     }
                     .startWith(firstPage)
             }

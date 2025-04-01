@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  PresetsViewController.swift
 //  SkincareProductScanner
 //
 //  Created by Андрей Чернышев on 26.03.2025.
@@ -8,15 +8,15 @@
 import UIKit
 import RxSwift
 
-final class CategoryViewController: UIViewController {
-    private lazy var mainView = CategoryView()
+final class PresetsViewController: UIViewController {
+    private lazy var mainView = PresetsView()
     
-    private let viewModel: CategoryViewModel
+    private let viewModel: PresetsViewModel
     
     private lazy var disposeBag = DisposeBag()
     
-    private init(category: ProductCategory) {
-        viewModel = CategoryViewModel(category: category)
+    private init(preset: String) {
+        viewModel = PresetsViewModel(preset: preset)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +32,7 @@ final class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let output = viewModel.configure(input: CategoryViewModel.Input(
+        let output = viewModel.configure(input: PresetsViewModel.Input(
             didSelect: mainView.tableView.didSelect,
             didScrollToBottom: mainView.tableView.didScrollToBottom
         ))
@@ -59,18 +59,18 @@ final class CategoryViewController: UIViewController {
 }
 
 // MARK: Public
-extension CategoryViewController {
-    static func make(category: ProductCategory) -> CategoryViewController {
-        let vc = CategoryViewController(category: category)
+extension PresetsViewController {
+    static func make(preset: String) -> PresetsViewController {
+        let vc = PresetsViewController(preset: preset)
         vc.navigationItem.backButtonTitle = " "
-        vc.navigationItem.title = category.name
+        vc.navigationItem.title = preset
         return vc
     }
 }
 
 // MARK: Private
-private extension CategoryViewController {
-    func action(_ action: CategoryViewModel.Action) {
+private extension PresetsViewController {
+    func action(_ action: PresetsViewModel.Action) {
         switch action {
         case .openDetails(let product):
             break // TODO

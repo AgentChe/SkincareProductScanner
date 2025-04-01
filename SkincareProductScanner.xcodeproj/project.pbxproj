@@ -158,9 +158,9 @@
 		DE6C255A2D93EDF5005FA00C /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25592D93EDF5005FA00C /* CategoriesView.swift */; };
 		DE6C255E2D93EF79005FA00C /* CategoriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C255D2D93EF79005FA00C /* CategoriesTableView.swift */; };
 		DE6C25602D93EF7E005FA00C /* CategoriesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C255F2D93EF7E005FA00C /* CategoriesTableCell.swift */; };
-		DE6C25632D93F405005FA00C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25622D93F405005FA00C /* CategoryViewController.swift */; };
-		DE6C25652D93F40B005FA00C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25642D93F40B005FA00C /* CategoryViewModel.swift */; };
-		DE6C25672D93F40F005FA00C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25662D93F40F005FA00C /* CategoryView.swift */; };
+		DE6C25632D93F405005FA00C /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25622D93F405005FA00C /* PresetsViewController.swift */; };
+		DE6C25652D93F40B005FA00C /* PresetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25642D93F40B005FA00C /* PresetsViewModel.swift */; };
+		DE6C25672D93F40F005FA00C /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C25662D93F40F005FA00C /* PresetsView.swift */; };
 		DE6EEA0C2D87F1F6000577F3 /* ExploreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA0B2D87F1F6000577F3 /* ExploreTableView.swift */; };
 		DE6EEA0E2D87F1FE000577F3 /* ExploreTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA0D2D87F1FE000577F3 /* ExploreTableElement.swift */; };
 		DE6EEA112D87F28A000577F3 /* ExploreTableCatalogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6EEA102D87F28A000577F3 /* ExploreTableCatalogsCell.swift */; };
@@ -444,9 +444,9 @@
 		DE6C25592D93EDF5005FA00C /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		DE6C255D2D93EF79005FA00C /* CategoriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableView.swift; sourceTree = "<group>"; };
 		DE6C255F2D93EF7E005FA00C /* CategoriesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableCell.swift; sourceTree = "<group>"; };
-		DE6C25622D93F405005FA00C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		DE6C25642D93F40B005FA00C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		DE6C25662D93F40F005FA00C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		DE6C25622D93F405005FA00C /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
+		DE6C25642D93F40B005FA00C /* PresetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewModel.swift; sourceTree = "<group>"; };
+		DE6C25662D93F40F005FA00C /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
 		DE6EEA0B2D87F1F6000577F3 /* ExploreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableView.swift; sourceTree = "<group>"; };
 		DE6EEA0D2D87F1FE000577F3 /* ExploreTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableElement.swift; sourceTree = "<group>"; };
 		DE6EEA102D87F28A000577F3 /* ExploreTableCatalogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableCatalogsCell.swift; sourceTree = "<group>"; };
@@ -1282,14 +1282,14 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		DE6C25612D93F3EF005FA00C /* Category */ = {
+		DE6C25612D93F3EF005FA00C /* Presets */ = {
 			isa = PBXGroup;
 			children = (
-				DE6C25622D93F405005FA00C /* CategoryViewController.swift */,
-				DE6C25642D93F40B005FA00C /* CategoryViewModel.swift */,
-				DE6C25662D93F40F005FA00C /* CategoryView.swift */,
+				DE6C25622D93F405005FA00C /* PresetsViewController.swift */,
+				DE6C25642D93F40B005FA00C /* PresetsViewModel.swift */,
+				DE6C25662D93F40F005FA00C /* PresetsView.swift */,
 			);
-			path = Category;
+			path = Presets;
 			sourceTree = "<group>";
 		};
 		DE6EEA0A2D87F1E9000577F3 /* TableView */ = {
@@ -1487,7 +1487,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5C8CAC2D9A78D500D39712 /* Scan */,
-				DE6C25612D93F3EF005FA00C /* Category */,
+				DE6C25612D93F3EF005FA00C /* Presets */,
 				DE6C25542D93EDE0005FA00C /* Categories */,
 				DE7B6D4A2D92B86100294D27 /* Recommendations */,
 			);
@@ -1996,7 +1996,7 @@
 				DE0AC0BB2D803026001C7664 /* UIDevice+Extension.swift in Sources */,
 				DE0AC2292D80774B001C7664 /* ObtainPreferencesRequest.swift in Sources */,
 				DE0AC0BF2D803026001C7664 /* PaygateBestOfferView.swift in Sources */,
-				DE6C25652D93F40B005FA00C /* CategoryViewModel.swift in Sources */,
+				DE6C25652D93F40B005FA00C /* PresetsViewModel.swift in Sources */,
 				DE0AC0C42D803026001C7664 /* APIFormDataRequestBody.swift in Sources */,
 				DE0AC0CE2D803026001C7664 /* ProfileMediator.swift in Sources */,
 				DE0AC0D42D803026001C7664 /* Scalable.swift in Sources */,
@@ -2104,7 +2104,7 @@
 				DE6665A12D9146250049BB2E /* GetProductDetailsRequest.swift in Sources */,
 				DE0AC1922D803026001C7664 /* Fonts.swift in Sources */,
 				DE0AC1932D803026001C7664 /* AppDelegate.swift in Sources */,
-				DE6C25632D93F405005FA00C /* CategoryViewController.swift in Sources */,
+				DE6C25632D93F405005FA00C /* PresetsViewController.swift in Sources */,
 				DE0AC1952D803026001C7664 /* Profile.swift in Sources */,
 				DE6EEA372D881027000577F3 /* GetBookmarksProceduresRequest.swift in Sources */,
 				DE0AC19D2D803026001C7664 /* ProfileCreateRequest.swift in Sources */,
@@ -2156,7 +2156,7 @@
 				DE6EEA5E2D883484000577F3 /* CDTableSectionCell.swift in Sources */,
 				DE6EEA5F2D883484000577F3 /* CDTableTextCell.swift in Sources */,
 				DE6EEA602D883484000577F3 /* CDTableView.swift in Sources */,
-				DE6C25672D93F40F005FA00C /* CategoryView.swift in Sources */,
+				DE6C25672D93F40F005FA00C /* PresetsView.swift in Sources */,
 				DE6EEA612D883484000577F3 /* CDTableNameCell.swift in Sources */,
 				DE6EEA622D883484000577F3 /* CatalogDetailsViewModel.swift in Sources */,
 				DE6EEA632D883484000577F3 /* CDTableTitleCell.swift in Sources */,

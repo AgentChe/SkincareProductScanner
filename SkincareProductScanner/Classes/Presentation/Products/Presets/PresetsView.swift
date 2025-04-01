@@ -1,5 +1,5 @@
 //
-//  CategoryView.swift
+//  PresetsView.swift
 //  SkincareProductScanner
 //
 //  Created by Андрей Чернышев on 26.03.2025.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CategoryView: UIView {
+final class PresetsView: UIView {
     lazy var tableView = makeTableView()
     lazy var centerPreloader = makePreloader()
     lazy var bottomPreloader = makePreloader()
@@ -25,14 +25,14 @@ final class CategoryView: UIView {
 }
 
 // MARK: Private
-private extension CategoryView {
+private extension PresetsView {
     func initialize() {
         backgroundColor = Appearance.main500
     }
 }
 
 // MARK: Make constraints
-private extension CategoryView {
+private extension PresetsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -54,7 +54,7 @@ private extension CategoryView {
 }
 
 // MARK: Lazy initialization
-private extension CategoryView {
+private extension PresetsView {
     func makeTableView() -> RecommendationsTableView {
         let view = RecommendationsTableView()
         view.backgroundColor = UIColor.clear

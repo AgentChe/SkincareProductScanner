@@ -95,7 +95,7 @@ private extension ExploreViewController {
             let vc = CategoriesViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .category(let category):
-            let vc = CategoryViewController.make(category: category)
+            let vc = PresetsViewController.make(preset: category.name)
             navigationController?.pushViewController(vc, animated: true)
         case .bookmarks:
             let vc = BookmarksViewController.make()

@@ -61,7 +61,7 @@ private extension CategoriesViewController {
     func route(_ route: CategoriesViewModel.Route) {
         switch route {
         case .category(let category):
-            let vc = CategoryViewController.make(category: category)
+            let vc = PresetsViewController.make(preset: category.name)
             navigationController?.pushViewController(vc, animated: true)
         }
     }
