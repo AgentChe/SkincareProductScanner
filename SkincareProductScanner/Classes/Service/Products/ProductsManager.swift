@@ -53,8 +53,11 @@ extension ProductsManager: ProductsManagerProtocol {
         }
     }
     
+    // TODO
     func obtainFilters(forceUpdate: Bool) -> Single<ProductFilters?> {
-        forceUpdate ? loadFilters() : cachedFilters()
+//        forceUpdate ? loadFilters() : cachedFilters()
+        
+        Self.fitlers()
     }
     
     // TODO
@@ -366,6 +369,45 @@ private extension ProductsManager {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                 single(.success(page))
             })
+            
+            return Disposables.create()
+        }
+    }
+    
+    // TODO: remove
+    static func fitlers() -> Single<ProductFilters?> {
+        Single<ProductFilters?>.create { single in
+            let letters = "abcdefghijklmnopqrstuvwxyz"
+            
+            let presets: [ProductPresetFilter] =  Array(1...Int.random(in: 1...10)).map { i -> ProductPresetFilter in
+                ProductPresetFilter(
+                    name: String((0..<25).map{ _ in letters.randomElement()! }),
+                    image: URL(string: "https://i.postimg.cc/nL0NmzWS/temp-Imageo-IWKKA.avif")!,
+                    items: Array(1...Int.random(in: 1...10)).map { i -> String in
+                        String((0..<25).map{ _ in letters.randomElement()! })
+                    }
+                )
+            }
+            
+            let filters: [ProductFilter] = Array(1...Int.random(in: 1...30)).map { i -> ProductFilter in
+                ProductFilter(
+                    id: String(i),
+                    name: String((0..<25).map{ _ in letters.randomElement()! }),
+                    items: Array(1...Int.random(in: 1...30)).map { i -> ProductFilterItem in
+                        ProductFilterItem(
+                            id: String(i),
+                            name: String((0..<25).map{ _ in letters.randomElement()! })
+                        )
+                    }
+                )
+            }
+            
+            let result = ProductFilters(
+                presets: presets,
+                filters: filters
+            )
+            
+            single(.success(result))
             
             return Disposables.create()
         }

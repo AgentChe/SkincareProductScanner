@@ -34,7 +34,7 @@ extension CDTableSectionCell {
     func setup(name: String, opened: Bool) {
         label.attributedText = name.attributed(with: attrs)
         
-        let iconName = opened ? "CatalogDetails.Arrow.Down" : "CatalogDetails.Arrow.Up"
+        let iconName = opened ? "CatalogDetails.Arrow.Up" : "CatalogDetails.Arrow.Down"
         iconView.image = UIImage(named: iconName)
     }
 }

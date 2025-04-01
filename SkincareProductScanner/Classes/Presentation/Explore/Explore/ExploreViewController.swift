@@ -101,7 +101,8 @@ private extension ExploreViewController {
             let vc = BookmarksViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .allProducts:
-            print("allProducts") // TODO
+            let vc = AllProductsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .procedures:
             let vc = CatalogsViewController.make(item: .procedure)
             navigationController?.pushViewController(vc, animated: true)

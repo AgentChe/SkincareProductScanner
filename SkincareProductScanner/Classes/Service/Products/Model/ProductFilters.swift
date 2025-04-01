@@ -11,6 +11,14 @@ struct ProductFilters: Codable {
     let presets: [ProductPresetFilter]
     let filters: [ProductFilter]
     
+    init(
+        presets: [ProductPresetFilter],
+        filters: [ProductFilter]
+    ) {
+        self.presets = presets
+        self.filters = filters
+    }
+    
     init?(response: Any) {
         guard
             let json = response as? [String: Any],
@@ -33,6 +41,16 @@ struct ProductPresetFilter: Codable {
     let image: URL
     let items: [String]
     
+    init(
+        name: String,
+        image: URL,
+        items: [String]
+    ) {
+        self.name = name
+        self.image = image
+        self.items = items
+    }
+    
     init?(json: [String: Any]) {
         guard
             let name = json["name"] as? String,
@@ -54,6 +72,16 @@ struct ProductFilter: Codable {
     let name: String
     let items: [ProductFilterItem]
     
+    init(
+        id: String,
+        name: String,
+        items: [ProductFilterItem]
+    ) {
+        self.id = id
+        self.name = name
+        self.items = items
+    }
+    
     init?(json: [String: Any]) {
         guard
             let id = json["id"] as? String,
@@ -70,6 +98,14 @@ struct ProductFilter: Codable {
 struct ProductFilterItem: Codable {
     let id: String
     let name: String
+    
+    init(
+        id: String,
+        name: String
+    ) {
+        self.id = id
+        self.name = name
+    }
     
     init?(json: [String: Any]) {
         guard

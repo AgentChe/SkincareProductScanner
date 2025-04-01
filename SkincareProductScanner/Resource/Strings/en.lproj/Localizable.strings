@@ -161,3 +161,17 @@
 "ScanProducts.NewSearch" = "New search";
 "ScanProducts.SubTitle.Empty" = "We couldn’t find similar products.";
 "ScanProducts.SubTitle.Result" = "Select the product you’re looking for:";
+
+// MARK: AllProducts
+"AllProducts.Title" = "All products";
+"AllProducts.Search.Placeholder" = "Type in a product name";
+
+// MARK: ProductsFilters
+"ProductsFilters.Title" = "Filters";
+"ProductsFilters.ApplyFilters" = "Apply filters";
+"ProductsFilters.ClearAllFilters" = "Clear all filters";
+
+// MARK: ConfirmClearFilters
+"ConfirmClearFilters.Title" = "Are you sure?";
+"ConfirmClearFilters.SubTitle" = "Do you really want to clear all filters?";
+"ConfirmClearFilters.ClearAll" = "Clear all";
