@@ -165,6 +165,8 @@
 // MARK: AllProducts
 "AllProducts.Title" = "All products";
 "AllProducts.Search.Placeholder" = "Type in a product name";
+"AllProducts.Empty.Title" = "No result";
+"AllProducts.Empty.SubTitle" = "Try searching again.";
 
 // MARK: ProductsFilters
 "ProductsFilters.Title" = "Filters";

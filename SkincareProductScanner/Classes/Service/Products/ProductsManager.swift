@@ -362,7 +362,7 @@ private extension ProductsManager {
     // TODO: remove
     static func recommendationsMock(page: Int) -> Single<Page<[Product]>?> {
         Single<Page<[Product]>?>.create { single in
-            let products = Self.productsMock(count: 10)
+            let products = Self.productsMock(count: [0, 10].randomElement()!)
             let pageInfo = PageInfo(current: page, total: 5)
             let page = Page(info: pageInfo, elements: products)
             

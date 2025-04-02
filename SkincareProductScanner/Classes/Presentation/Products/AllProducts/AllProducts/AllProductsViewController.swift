@@ -27,7 +27,12 @@ final class AllProductsViewController: UIViewController {
         
         let output = viewModel.configure(input: AllProductsViewModel.Input(
             didTapFilter: mainView.filterButton.rx.tap.asSignal(),
-            didSelectFilters: didSelectFiltersTrigger.asSignal()
+            didSelectFilters: didSelectFiltersTrigger.asSignal(),
+            didChangedInputText: mainView.searchField.changedText,
+            didTapSearch: mainView.searchField.didTapSearch,
+            didSelectPreset: mainView.tableView.didSelectPreset,
+            didSelectProduct: mainView.tableView.didSelectProduct,
+            didScrollToBottom: mainView.tableView.didScrollToBottom
         ))
         
         output.route
@@ -40,6 +45,29 @@ final class AllProductsViewController: UIViewController {
             .drive(Binder(mainView.filterButton) { base, filtersCount in
                 base.setup(count: filtersCount)
             })
+            .disposed(by: disposeBag)
+        
+        output.sections
+            .drive(Binder(mainView.tableView) { base, sections in
+                base.setup(sections: sections)
+            })
+            .disposed(by: disposeBag)
+        
+        output.firstPageActivity
+            .drive(Binder(mainView.centerPreloader) { base, activity in
+                activity ? base.startAnimating() : base.stopAnimating()
+            })
+            .disposed(by: disposeBag)
+        
+        output.paginationActivity
+            .drive(Binder(mainView) { base, activity in
+                base.tableView.contentInset.bottom = activity ? 48.scale : 16.scale
+                activity ? base.bottomPreloader.startAnimating() : base.bottomPreloader.stopAnimating()
+            })
+            .disposed(by: disposeBag)
+        
+        output.emptyViewHidden
+            .drive(mainView.emptyView.rx.isHidden)
             .disposed(by: disposeBag)
     }
 }
@@ -63,6 +91,11 @@ private extension AllProductsViewController {
                 self?.didSelectFiltersTrigger.accept(filters)
             }
             navigationController?.pushViewController(vc, animated: true)
+        case .preset(let preset):
+            let vc = PresetsViewController.make(preset: preset)
+            navigationController?.pushViewController(vc, animated: true)
+        case .product(let product):
+            break // TODO
         }
     }
 }

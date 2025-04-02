@@ -13,7 +13,8 @@ final class AllProductsSearchField: UIView {
     lazy var iconView = makeIconView()
     lazy var textField = makeTextField()
     
-    private lazy var searchTrigger = PublishRelay<String>()
+    private lazy var didTapSearchTrigger = PublishRelay<String>()
+    private lazy var text = BehaviorRelay(value: "")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,8 +30,12 @@ final class AllProductsSearchField: UIView {
 
 // MARK: Public
 extension AllProductsSearchField {
-    var search: Signal<String> {
-        searchTrigger.asSignal()
+    var didTapSearch: Signal<String> {
+        didTapSearchTrigger.asSignal()
+    }
+    
+    var changedText: Signal<String> {
+        text.asSignal(onErrorSignalWith: .never())
     }
 }
 
@@ -39,7 +44,7 @@ extension AllProductsSearchField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        searchTrigger.accept(textField.text ?? "")
+        didTapSearchTrigger.accept(textField.text ?? "")
         
         return true
     }
@@ -53,6 +58,11 @@ private extension AllProductsSearchField {
         layer.masksToBounds = true
         layer.borderWidth = 1.scale
         layer.borderColor = Appearance.main700.cgColor
+    }
+    
+    @objc
+    func textEditing() {
+        text.accept(textField.text ?? "")
     }
 }
 
@@ -103,6 +113,7 @@ private extension AllProductsSearchField {
         view.defaultTextAttributes = attrs.dictionary
         view.attributedPlaceholder = "AllProducts.Search.Placeholder".localized.attributed(with: placeholderAttrs)
         view.textPadding = UIEdgeInsets(vertical: 13.scale)
+        view.addTarget(self, action: #selector(textEditing), for: .editingChanged)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
