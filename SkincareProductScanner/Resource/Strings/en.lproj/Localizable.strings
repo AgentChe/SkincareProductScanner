@@ -177,3 +177,14 @@
 "ConfirmClearFilters.Title" = "Are you sure?";
 "ConfirmClearFilters.SubTitle" = "Do you really want to clear all filters?";
 "ConfirmClearFilters.ClearAll" = "Clear all";
+
+// MARK: Product
+"Product.Tab.Overview" = "Product overview";
+"Product.Tab.Ingredients" = "Full ingredient list";
+"Product.Favorite.T" = "Remove from favorites";
+"Product.Favorite.F" = "Add to favorites";
+"Product.KeyIngredients" = "Key ingredients";
+"Product.FreeFrom" = "Free from";
+"Product.Apply" = "How to apply?";
+"Product.SimilarProducts" = "Similar products";
+"Product.TailoredForYou" = "Tailored for you";

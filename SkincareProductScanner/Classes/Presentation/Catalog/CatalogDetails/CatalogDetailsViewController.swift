@@ -46,11 +46,7 @@ final class CatalogDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
-            guard let self = self else {
-                return .never()
-            }
-            
-            return self.open(error: error)
+            self?.open(error: error) ?? .never()
         }
         
         let output = viewModel.configure(input: CatalogDetailsViewModel.Input(

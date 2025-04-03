@@ -100,7 +100,8 @@ private extension ScanProductsViewController {
         case .newSearch:
             newSearch()
         case .product(let product):
-            break // TODO
+            let vc = ProductViewController.make(id: product.id)
+            present(vc, animated: true)
         }
     }
     

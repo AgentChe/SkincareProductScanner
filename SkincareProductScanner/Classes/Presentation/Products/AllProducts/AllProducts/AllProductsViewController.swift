@@ -95,7 +95,8 @@ private extension AllProductsViewController {
             let vc = PresetsViewController.make(preset: preset)
             navigationController?.pushViewController(vc, animated: true)
         case .product(let product):
-            break // TODO
+            let vc = ProductViewController.make(id: product.id)
+            present(vc, animated: true)
         }
     }
 }

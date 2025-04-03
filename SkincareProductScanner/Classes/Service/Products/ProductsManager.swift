@@ -119,31 +119,47 @@ extension ProductsManager: ProductsManagerProtocol {
         Self.recommendationsMock(page: page)
     }
     
+    // TODO
     func obtainDetails(productId: String) -> Single<ProductDetails?> {
-        let request = GetProductDetailsRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            id: productId
-        )
+//        let request = GetProductDetailsRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            id: productId
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { ProductDetails(response: $0) }
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { ProductDetails(response: $0) }
+        Self.detailsMock()
     }
     
+    // TODO
     func favorite(productId: String, action: ProductFavoriteRequest.Action) -> Single<RequestResult> {
-        let request = ProductFavoriteRequest(
-            anonymousId: sessionManager.anonymousId,
-            internalId: sessionManager.internalId,
-            id: productId,
-            action: action
-        )
+//        let request = ProductFavoriteRequest(
+//            anonymousId: sessionManager.anonymousId,
+//            internalId: sessionManager.internalId,
+//            id: productId,
+//            action: action
+//        )
+//        
+//        return restAPITransport
+//            .callServerApi(requestBody: request)
+//            .map { RequestResult.map(response: $0) }
+//            .do(onSuccess: { requestResult in
+//                guard requestResult.success else { return }
+//                
+//                switch action {
+//                case .add:
+//                    ProductsMediator.shared.addProductToFavorite(id: productId)
+//                case .remove:
+//                    ProductsMediator.shared.removeProductFromFavorite(id: productId)
+//                }
+//            })
         
-        return restAPITransport
-            .callServerApi(requestBody: request)
-            .map { RequestResult.map(response: $0) }
-            .do(onSuccess: { requestResult in
-                guard requestResult.success else { return }
+        Single<RequestResult>.create { single in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                single(.success(RequestResult(success: Bool.random())))
                 
                 switch action {
                 case .add:
@@ -152,6 +168,9 @@ extension ProductsManager: ProductsManagerProtocol {
                     ProductsMediator.shared.removeProductFromFavorite(id: productId)
                 }
             })
+            
+            return Disposables.create()
+        }
     }
     
     // TODO
@@ -408,6 +427,50 @@ private extension ProductsManager {
             )
             
             single(.success(result))
+            
+            return Disposables.create()
+        }
+    }
+    
+    // TODO: remove
+    static func detailsMock() -> Single<ProductDetails?> {
+        Single<ProductDetails?>.create { single in
+            let letters = "abcdefghijklmnopqrstuvwxyz"
+            
+            let skinTypes = Array(1...Int.random(in: 2...10)).map { i -> SkinType in
+                SkinType(id: String(i), name: String((0..<Int.random(in: 5...25)).map{ _ in letters.randomElement()! }))
+            }
+            let goals = Array(1...Int.random(in: 2...10)).map { i -> Goal in
+                Goal(id: String(i), name: String((0..<Int.random(in: 5...25)).map{ _ in letters.randomElement()! }))
+            }
+            let preferences = Array(1...Int.random(in: 2...10)).map { i -> Preference in
+                Preference(id: String(i), name: String((0..<Int.random(in: 5...25)).map{ _ in letters.randomElement()! }))
+            }
+            
+            let tailored = ProductTailoredForYou(
+                skinTypes: skinTypes,
+                goals: goals,
+                preferences: preferences
+            )
+            
+            let details = ProductDetails(
+                id: "1",
+                image: URL(string: "https://i.postimg.cc/htfyMgQL/temp-Imagewsizoa.avif")!,
+                title: "The Ordinary",
+                brand: "Niacinamide 10% + Zinc 1%",
+                favorite: Bool.random(),
+                description: "Multi-Technology Peptide Serum that combines a comprehensive array of studied technologies to target multiple signs of aging at once.",
+                tailoredForYou: tailored,
+                keyIngredients: "Aloe Vera, Hyaluronic Acid, Vitamin E".split(separator: ", ").map { String($0) },
+                ingredients: "NIACINAMIDE, ZINC PCA, TOCOPHERYL ACETATE (VITAMIN E), ALOE BARBADENSIS (ALOE VERA) LEAF EXTRACT, HAMAMELIS VIRGINIANA (WITCH HAZEL) LEAF EXTRACT, GLYCERIN, ROSA DAMASCENA (ROSE) FLOWER WATER, PHENOXYETHANOL.".split(separator: ", ").map { String($0) },
+                freeForm: "Fragrance, Parabens, Alcohol".split(separator: ", ").map { String($0) },
+                apply: "Apply a pea-sized amount to cleansed skin. Use daily for best results.",
+                similar: Self.productsMock(count: Int.random(in: 5...10))
+            )
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                single(.success(details))
+            })
             
             return Disposables.create()
         }

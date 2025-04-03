@@ -90,7 +90,8 @@ private extension ExploreViewController {
             let vc = RecommendationsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .product(let product):
-            print("product") // TODO
+            let vc = ProductViewController.make(id: product.id)
+            present(vc, animated: true)
         case .categories:
             let vc = CategoriesViewController.make()
             navigationController?.pushViewController(vc, animated: true)

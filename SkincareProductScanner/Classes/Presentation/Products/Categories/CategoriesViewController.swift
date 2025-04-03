@@ -22,6 +22,10 @@ final class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            self?.open(error: error) ?? .never()
+        }
+        
         let output = viewModel.configure(input: CategoriesViewModel.Input(
             didSelectCategory: mainView.tableView.didSelect
         ))
@@ -64,5 +68,21 @@ private extension CategoriesViewController {
             let vc = PresetsViewController.make(preset: category.name)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

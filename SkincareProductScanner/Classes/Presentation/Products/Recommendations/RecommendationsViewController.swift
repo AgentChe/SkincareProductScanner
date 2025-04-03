@@ -63,7 +63,8 @@ private extension RecommendationsViewController {
     func action(_ action: RecommendationsViewModel.Action) {
         switch action {
         case .openDetails(let product):
-            break // TODO
+            let vc = ProductViewController.make(id: product.id)
+            present(vc, animated: true)
         case .openPaygate:
             let vc = PaygateViewController.make()
             present(vc, animated: true)

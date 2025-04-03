@@ -67,7 +67,8 @@ private extension BookmarksProductsViewController {
     func action(_ action: BookmarksProductsViewModel.Action) {
         switch action {
         case .openDetails(let product):
-            break // TODO
+            let vc = ProductViewController.make(id: product.id)
+            present(vc, animated: true)
         case .openPaygate:
             let vc = PaygateViewController.make()
             present(vc, animated: true)
