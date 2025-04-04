@@ -63,7 +63,8 @@ extension ProductViewModel {
             ),
             route: makeRoute(
                 didTapClose: input.didTapClose,
-                didTapFavorite: input.didTapFavorite
+                didTapFavorite: input.didTapFavorite,
+                didSeletProduct: input.didSeletProduct
             ),
             selectedTab: selectedTab,
             elements: makeElements(

@@ -97,6 +97,9 @@ private extension AllProductsViewController {
         case .product(let product):
             let vc = ProductViewController.make(id: product.id)
             present(vc, animated: true)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
 }

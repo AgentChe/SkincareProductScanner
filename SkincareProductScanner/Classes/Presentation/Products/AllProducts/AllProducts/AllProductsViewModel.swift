@@ -13,6 +13,7 @@ final class AllProductsViewModel {
         case filter(SelectedProductsFilters)
         case preset(String)
         case product(Product)
+        case paygate
     }
     
     private lazy var firstPageProductsActivity = RxActivityIndicator()
@@ -129,7 +130,9 @@ private extension AllProductsViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let product = didSelectProduct
-            .map { Route.product($0) }
+            .map { product -> Route in
+                SessionManager().hasActiveSubscriptions() ? .product(product) : .paygate
+            }
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
