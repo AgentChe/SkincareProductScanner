@@ -8,18 +8,15 @@
 import Foundation
 
 struct ProductCategory {
-    let id: String
     let name: String
     let image: URL
     let description: String
     
     init(
-        id: String,
         name: String,
         image: URL,
         description: String
     ) {
-        self.id = id
         self.name = name
         self.image = image
         self.description = description
@@ -27,7 +24,6 @@ struct ProductCategory {
     
     init?(json: [String: Any]) {
         guard
-            let id = json["id"] as? String,
             let name = json["name"] as? String,
             let image: URL = {
                 guard let path = json["image"] as? String else { return nil }
@@ -36,7 +32,6 @@ struct ProductCategory {
             let description = json["description"] as? String
         else { return nil }
         
-        self.id = id
         self.name = name
         self.image = image
         self.description = description

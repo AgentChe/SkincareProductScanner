@@ -42,43 +42,18 @@ private extension DiscoveryManager {
         static let preferencesKey = "dm_preferences"
     }
     
-    // TODO
     func loadSkinTypes() -> Single<[SkinType]?> {
-//        let request = ObtainSkinTypesRequest(
-//            anonymousId: sessionManager.anonymousId,
-//            internalId: sessionManager.internalId
-//        )
-//        
-//        return restApiTransport
-//            .callServerApi(requestBody: request)
-//            .map { SkinType.map(response: $0) }
-//            .do(onSuccess: { skinTypes in
-//                guard let skinTypes, let data = try? JSONEncoder().encode(skinTypes) else { return }
-//                
-//                UserDefaults.standard.set(data, forKey: Constants.skinTypesKey)
-//            })
+        let request = ObtainSkinTypesRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId
+        )
         
-        Single<[SkinType]?>
-            .create { single in
-                let strings = [
-                    "Normal",
-                    "City",
-                    "Dry",
-                    "Combination",
-                    "Sensitive"
-                ]
-                let skinTypes = strings.enumerated()
-                    .map { index, string in
-                        SkinType(id: String(index), name: string)
-                    }
-                
-                single(.success(skinTypes))
-                
-                return Disposables.create()
-            }
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { SkinType.map(response: $0) }
             .do(onSuccess: { skinTypes in
                 guard let skinTypes, let data = try? JSONEncoder().encode(skinTypes) else { return }
-
+                
                 UserDefaults.standard.set(data, forKey: Constants.skinTypesKey)
             })
     }
@@ -96,45 +71,18 @@ private extension DiscoveryManager {
         }
     }
     
-    // TODO
     func loadGoals() -> Single<[Goal]?> {
-//        let request = ObtainGoalsRequest(
-//            anonymousId: sessionManager.anonymousId,
-//            internalId: sessionManager.internalId
-//        )
-//        
-//        return restApiTransport
-//            .callServerApi(requestBody: request)
-//            .map { Goal.map(response: $0) }
-//            .do(onSuccess: { goals in
-//                guard let goals, let data = try? JSONEncoder().encode(goals) else { return }
-//                
-//                UserDefaults.standard.set(data, forKey: Constants.goalsKey)
-//            })
+        let request = ObtainGoalsRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId
+        )
         
-        Single<[Goal]?>
-            .create { single in
-                let strings = [
-                    "Hydration",
-                    "Reduce acne",
-                    "Even skin tone",
-                    "Anti-aging",
-                    "Soothe sensitive skin",
-                    "Sun protection",
-                    "Deep cleansing"
-                ]
-                let goals = strings.enumerated()
-                    .map { index, string in
-                        Goal(id: String(index), name: string)
-                    }
-                
-                single(.success(goals))
-                
-                return Disposables.create()
-            }
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Goal.map(response: $0) }
             .do(onSuccess: { goals in
                 guard let goals, let data = try? JSONEncoder().encode(goals) else { return }
-
+                
                 UserDefaults.standard.set(data, forKey: Constants.goalsKey)
             })
     }
@@ -152,51 +100,18 @@ private extension DiscoveryManager {
         }
     }
     
-    // TODO
     func loadPreferences() -> Single<[Preference]?> {
-//        let request = ObtainPreferencesRequest(
-//            anonymousId: sessionManager.anonymousId,
-//            internalId: sessionManager.internalId
-//        )
-//        
-//        return restApiTransport
-//            .callServerApi(requestBody: request)
-//            .map { Preference.map(response: $0) }
-//            .do(onSuccess: { preferences in
-//                guard let preferences, let data = try? JSONEncoder().encode(preferences) else { return }
-//                
-//                UserDefaults.standard.set(data, forKey: Constants.preferencesKey)
-//            })
+        let request = ObtainPreferencesRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId
+        )
         
-        Single<[Preference]?>
-            .create { single in
-                let strings = [
-                    "Vegan",
-                    "Cruelty Free",
-                    "EU-Allergen Free",
-                    "Reef Safe",
-                    "Malassezia Safe",
-                    "Alcohol Free",
-                    "Silicone Free",
-                    "Fragrance Free",
-                    "Sulfate Free",
-                    "Paraben Free",
-                    "Oil Free",
-                    "Non-Comedogenic",
-                    "Fatty Alcohol Free"
-                ]
-                let preferences = strings.enumerated()
-                    .map { index, string in
-                        Preference(id: String(index), name: string)
-                    }
-                
-                single(.success(preferences))
-                
-                return Disposables.create()
-            }
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { Preference.map(response: $0) }
             .do(onSuccess: { preferences in
                 guard let preferences, let data = try? JSONEncoder().encode(preferences) else { return }
-
+                
                 UserDefaults.standard.set(data, forKey: Constants.preferencesKey)
             })
     }

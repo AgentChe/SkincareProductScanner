@@ -31,4 +31,8 @@ struct ObtainGoalsRequest: APIRequestBody {
             "internal_id": internalId
         ]
     }
+    
+    var encoding: ParameterEncoding {
+        URLEncoding.queryString
+    }
 }

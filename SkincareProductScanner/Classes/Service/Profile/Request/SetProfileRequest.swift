@@ -15,11 +15,11 @@ struct SetProfileRequest: APIRequestBody {
     let preferencesIds: [String]?
     
     var url: String {
-        GlobalDefinitions.domain + "/api/v1/profile/attribute"
+        GlobalDefinitions.domain + "/api/v1/profile/attributes"
     }
     
     var method: HTTPMethod {
-        .put
+        .post
     }
     
     var headers: HTTPHeaders? {
