@@ -48,7 +48,8 @@ final class ChatsViewController: UIViewController {
         let output = viewModel.configure(input: ChatsViewModel.Input(
             didWantDelete: mainView.tableView.didDelete,
             didConfirmDelete: didConfirmDeleteTrigger.asSignal(),
-            selectChat: mainView.tableView.didSelect
+            selectChat: mainView.tableView.didSelect,
+            didScrollToBottom: mainView.tableView.didScrollToBottom
         ))
         
         output.route
@@ -63,9 +64,16 @@ final class ChatsViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        output.activity
-            .drive(Binder(mainView.preloader) { base, activity in
+        output.firstPageActivity
+            .drive(Binder(mainView.centerPreloader) { base, activity in
                 activity ? base.startAnimating() : base.stopAnimating()
+            })
+            .disposed(by: disposeBag)
+        
+        output.paginationActivity
+            .drive(Binder(mainView) { base, activity in
+                base.tableView.contentInset.bottom = activity ? 48.scale : 16.scale
+                activity ? base.bottomPreloader.startAnimating() : base.bottomPreloader.stopAnimating()
             })
             .disposed(by: disposeBag)
     }

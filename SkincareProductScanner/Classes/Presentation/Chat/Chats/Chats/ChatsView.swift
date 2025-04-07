@@ -9,7 +9,8 @@ import UIKit
 
 final class ChatsView: UIView {
     lazy var tableView = makeTableView()
-    lazy var preloader = makePreloader()
+    lazy var centerPreloader = makePreloader()
+    lazy var bottomPreloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,8 +42,13 @@ private extension ChatsView {
         ])
         
         NSLayoutConstraint.activate([
-            preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
-            preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
+            centerPreloader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            centerPreloader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomPreloader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            bottomPreloader.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: -8.scale)
         ])
     }
 }

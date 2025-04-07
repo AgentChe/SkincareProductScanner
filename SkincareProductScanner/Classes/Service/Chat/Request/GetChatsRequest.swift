@@ -10,6 +10,7 @@ import Alamofire
 struct GetChatsRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String?
+    let page: Int
     
     var url: String {
         GlobalDefinitions.domain + "/api/v1/ai/chat/history"
@@ -27,7 +28,8 @@ struct GetChatsRequest: APIRequestBody {
     
     var parameters: Parameters? {
         var params: Parameters = [
-            "anonymous_id": anonymousId
+            "anonymous_id": anonymousId,
+            "page": page
         ]
         
         if let internalId {

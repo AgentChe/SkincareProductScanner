@@ -16,7 +16,8 @@ final class ChatsViewModel {
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
-    private lazy var activity = RxActivityIndicator()
+    private lazy var firstPageActivity = RxActivityIndicator()
+    private lazy var paginationActivity = RxActivityIndicator()
     
     private lazy var chatManager = ChatManager()
     
@@ -29,24 +30,32 @@ extension ChatsViewModel {
         let didWantDelete: Signal<Chat>
         let didConfirmDelete: Signal<Chat>
         let selectChat: Signal<Chat>
+        let didScrollToBottom: Signal<Void>
     }
     
     struct Output {
         let route: Driver<Route>
         let sections: Driver<[ChatsTableSection]>
-        let activity: Driver<Bool>
+        let firstPageActivity: Driver<Bool>
+        let paginationActivity: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
         let chatDeleted = makeDeleteChat(didConfirmDelete: input.didConfirmDelete)
+        let fetchPageChats = makePageChats(didScrollToBottom: input.didScrollToBottom)
+        let allChats = makeAllChats(
+            fetchPageChats: fetchPageChats,
+            deletedChat: chatDeleted
+        )
         
         return Output(
             route: makeRoute(
                 didWantDelete: input.didWantDelete,
                 selectChat: input.selectChat
             ),
-            sections: makeSections(chats: makeChats(chatDeleted: chatDeleted)),
-            activity: activity.asDriver()
+            sections: makeSections(chats: allChats),
+            firstPageActivity: firstPageActivity.asDriver(),
+            paginationActivity: paginationActivity.asDriver()
         )
     }
 }
@@ -99,34 +108,79 @@ private extension ChatsViewModel {
             }
     }
     
-    func makeChats(chatDeleted: Signal<Void>) -> Driver<[Chat]> {
-        chatManager
-            .chats()
-            .trackActivity(activity)
-            .asDriver(onErrorJustReturn: [])
-            .flatMapLatest { [weak self] chats -> Driver<[Chat]> in
-                chatDeleted
-                    .flatMapLatest { [weak self] void -> Driver<[Chat]> in
-                        guard let self else { return .never() }
-                        
-                        return chatManager
-                            .chats()
-                            .asDriver(onErrorJustReturn: [])
-                    }
-                    .startWith(chats)
+    func makeAllChats(
+        fetchPageChats: Driver<Page<[Chat]>>,
+        deletedChat: Signal<String>
+    ) -> Driver<[Chat]> {
+        enum Action {
+            case fetch(Page<[Chat]>)
+            case deleted(String)
+        }
+        
+        let action = Driver
+            .merge(
+                fetchPageChats.map { Action.fetch($0) },
+                deletedChat.map { Action.deleted($0) }.asDriver(onErrorDriveWith: .never())
+            )
+        
+        return action
+            .scan([]) { allChats, action -> [Chat] in
+                switch action {
+                case .fetch(let page):
+                    return page.info.current == 1 ? page.elements : (allChats + page.elements)
+                case .deleted(let id):
+                    var result = allChats
+                    result.removeAll(where: { $0.id == id })
+                    return result
+                }
             }
     }
     
-    func makeDeleteChat(didConfirmDelete: Signal<Chat>) -> Signal<Void> {
+    func makePageChats(didScrollToBottom: Signal<Void>) -> Driver<Page<[Chat]>> {
+        var lastPageInfo: PageInfo?
+        
+        func fetch(page: Int) -> Driver<Page<[Chat]>> {
+            chatManager
+                .chats(page: page)
+                .trackActivity(page == 1 ? firstPageActivity : paginationActivity)
+                .asDriver(onErrorJustReturn: nil)
+                .compactMap { $0 }
+                .do(onNext: { page in
+                    lastPageInfo = page.info
+                })
+        }
+        
+        let firstPage = fetch(page: 1)
+        let downloadedPage = firstPage
+            .flatMapLatest { firstPage -> Driver<Page<[Chat]>> in
+                didScrollToBottom
+                    .asDriver(onErrorDriveWith: .never())
+                    .compactMap { lastPageInfo }
+                    .filter { lastPageInfo -> Bool in
+                        let nextPage = lastPageInfo.current + 1
+                        let nextPageNotTotal = nextPage <= lastPageInfo.total
+                        let currentNotTotal = lastPageInfo.current != lastPageInfo.total
+                        return nextPageNotTotal && currentNotTotal
+                    }
+                    .flatMapFirst { lastPageInfo -> Driver<Page<[Chat]>> in
+                        fetch(page: lastPageInfo.current + 1)
+                    }
+                    .startWith(firstPage)
+            }
+        return downloadedPage
+    }
+    
+    func makeDeleteChat(didConfirmDelete: Signal<Chat>) -> Signal<String> {
         didConfirmDelete
-            .flatMapLatest { [weak self] chat -> Signal<Void> in
+            .flatMapLatest { [weak self] chat -> Signal<String> in
                 guard let self = self else {
                     return .never()
                 }
                 
-                func source() -> Single<Void> {
+                func source() -> Single<String> {
                     self.chatManager
                         .deleteChat(id: chat.id)
+                        .map { chat.id }
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {

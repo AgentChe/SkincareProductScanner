@@ -14,6 +14,7 @@ final class ChatsTableView: UITableView {
     
     private lazy var didSelectTrigger = PublishRelay<Chat>()
     private lazy var didDeleteTrigger = PublishRelay<Chat>()
+    private lazy var didScrollToBottomTrigger = PublishRelay<Void>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -40,6 +41,10 @@ extension ChatsTableView {
     
     var didDelete: Signal<Chat> {
         didDeleteTrigger.asSignal()
+    }
+    
+    var didScrollToBottom: Signal<Void> {
+        didScrollToBottomTrigger.asSignal()
     }
 }
 
@@ -95,6 +100,14 @@ extension ChatsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chat = sections[indexPath.section].chats[indexPath.row]
         didSelectTrigger.accept(chat)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let elements = sections[indexPath.section].chats
+        
+        guard (elements.count - 1) == indexPath.row else { return }
+        
+        didScrollToBottomTrigger.accept(Void())
     }
 }
 

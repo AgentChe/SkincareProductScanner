@@ -27,7 +27,7 @@ extension ChatMessage {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any],
-            let messagesArray = body["messages"] as? [[String: Any]],
+            let messagesArray = body["items"] as? [[String: Any]],
             let pageJSON = body["pagination"] as? [String: Any],
             let pageInfo = PageInfo(json: pageJSON)
         else { return nil }
