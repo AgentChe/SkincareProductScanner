@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO
 final class GlobalDefinitions {
     static let domain = "https://skincarescanner.korrekted.com"
     static let apiKey = "1E0fCaZs7zvSEZoXPP"
@@ -16,18 +15,18 @@ final class GlobalDefinitions {
     static let dermatologyApiKey = "7LexM8IGOSmIrpEimANw"
     
     static let otterScaleHost = "https://api.korrekted.com"
-    static let otterScaleApiKey = "v6yHI2AQpAq7YNYX"
+    static let otterScaleApiKey = "kVEafkhPlIzMsuT6"
     
-    static let applicationTag = "SMART_CLOSET"
-    static let amplitudeApiKey = "fbd4c855690516f00baa6b9d7f032e66"
+    static let applicationTag = "SKIN_CARE_PRODUCT_SCANNER"
+    static let amplitudeApiKey = "17fa94a421fa4349d8b1db59c8e06fbe"
     
-    static let termsOfServiceUrl = URL(string: "https://camplain-apps.com/terms-of-use.html")!
-    static let privacyPolicyUrl = URL(string: "https://camplain-apps.com/privacy-policy.html")!
-    static let contactUsUrl = URL(string: "https://camplain-apps.com/contacts.html")!
+    static let termsOfServiceUrl = URL(string: "https://sergeyapps.com/terms-of-use")!
+    static let privacyPolicyUrl = URL(string: "https://sergeyapps.com/privacy-policy")!
+    static let contactUsUrl = URL(string: "https://sergeyapps.com/#contact")!
     
     enum Paygate {
-        static let yearly = "app.iphone.tracker.lifetime"
-        static let weekly = "app.iphone.tracker.weekly2"
+        static let yearly = "sj.skincareproductscanner.yearly"
+        static let weekly = "sj.skincareproductscanner.weekly"
     }
     
     enum References {
