@@ -31,7 +31,7 @@ struct CreateChatRequest: APIRequestBody {
         ]
         
         if let internalId {
-            params["internalId"] = internalId
+            params["internal_id"] = internalId
         }
         
         return params
