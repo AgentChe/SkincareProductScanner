@@ -50,10 +50,13 @@ final class ScanImageResizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        makeCropView(image: originalImage)
+
         rx.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
             .take(1)
+            .observe(on: MainScheduler.asyncInstance)
             .bind(to: Binder(self) { base, void in
-                base.makeCropView(image: base.originalImage)
+                base.cropVC?.didSelectReset()
             })
             .disposed(by: disposeBag)
         
@@ -130,9 +133,15 @@ private extension ScanImageResizeViewController {
         self.cropVC = cropVC
         
         addChild(cropVC)
-        cropVC.view.frame = mainView.imageContainer.bounds
+        cropVC.view.translatesAutoresizingMaskIntoConstraints = false
         mainView.imageContainer.addSubview(cropVC.view)
-        cropVC.willMove(toParent: self)
+        NSLayoutConstraint.activate([
+            cropVC.view.leadingAnchor.constraint(equalTo: mainView.imageContainer.leadingAnchor),
+            cropVC.view.trailingAnchor.constraint(equalTo: mainView.imageContainer.trailingAnchor),
+            cropVC.view.topAnchor.constraint(equalTo: mainView.imageContainer.topAnchor),
+            cropVC.view.bottomAnchor.constraint(equalTo: mainView.imageContainer.bottomAnchor)
+        ])
+        cropVC.didMove(toParent: self)
     }
     
     func route(_ route: ScanImageResizeViewModel.Route) {
